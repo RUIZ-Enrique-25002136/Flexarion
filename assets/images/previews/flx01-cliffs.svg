@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Croquis d'environnement — Falaises de brume">
+  <rect width="1200" height="750" fill="#111111"/>
+  <path d="M0 430 L180 260 L340 310 L460 185 L640 245 L820 155 L1010 290 L1200 220 L1200 750 L0 750 Z" fill="#1B1B1B"/>
+  <path d="M290 750 L290 420 Q450 295 610 420 L610 750 L520 750 L520 455 Q450 385 380 455 L380 750 Z" fill="#090909"/>
+  <path d="M0 510 Q300 455 600 505 T1200 475 L1200 750 L0 750 Z" fill="#F4F2ED" fill-opacity="0.09"/>
+  <path d="M0 590 Q320 545 660 585 T1200 555 L1200 750 L0 750 Z" fill="#F4F2ED" fill-opacity="0.14"/>
+  <circle cx="820" cy="190" r="10" fill="#FF5A1F"/>
+  <circle cx="450" cy="360" r="6" fill="#FF5A1F"/>
+  <line x1="200" y1="365" x2="820" y2="190" stroke="#F4F2ED" stroke-opacity="0.22" stroke-dasharray="4 8"/>
+  <text x="56" y="70" fill="#A3A3A3" font-family="monospace" font-size="22" letter-spacing="4">FLX-01 // SILHOUETTE &amp; ARCH STUDY</text>
+</svg>

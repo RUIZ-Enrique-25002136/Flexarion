@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
-    (function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js');window.__flxFailsafe=setTimeout(function(){r.classList.add('anim-fallback');},2500);})();
+    (function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js');try{if(sessionStorage.getItem('flx-pt')){sessionStorage.removeItem('flx-pt');r.classList.add('pt-enter');}}catch(e){}window.__flxFailsafe=setTimeout(function(){r.classList.add('anim-fallback');},2500);})();
   </script>
 
   <title>Neon Calanques | Flexarion Game</title>
@@ -34,22 +34,28 @@
   <meta name="twitter:image" content="https://flexarion.timeoms.fr/assets/images/og-image.jpg">
   <meta name="twitter:image:alt" content="Neon Calanques — Independent game by Flexarion.">
 
+  <!-- Style critique transition d'entrée (évite tout flash noir entre deux pages) -->
+  <style>
+    html.pt-enter{background-color:#ff5a1f}
+    html.pt-enter .page-curtain{position:fixed;inset:0;z-index:150;display:grid;place-items:center;background:#ff5a1f;color:#090909;visibility:visible;transform:translateY(0%)}
+    html.pt-enter .page-curtain__label{font-family:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,3rem);letter-spacing:0.2em}
+  </style>
+
   <!-- Icônes & Manifest -->
   <link rel="icon" href="../../favicon.ico" sizes="32x32">
   <link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="alternate" type="application/rss+xml" title="Flexarion Devlog (RSS)" href="https://flexarion.timeoms.fr/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Flexarion Devlog (RSS)" href="https://flexarion.timeoms.fr/en/feed.xml">
 
-  <!-- Polices Google Fonts (font-display: swap) -->
+  <!-- Bundle CSS unique compilé & minifié (avec cache-busting) -->
+  <link rel="stylesheet" href="../../css/bundle.min.css?v=6f591ca8">
+
+  <!-- Polices Google Fonts (non-bloquant au rendu initial) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap">
-
-  <!-- Styles compilés (sans runtime Tailwind CDN) -->
-  <link rel="stylesheet" href="../../css/tailwind.min.css">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/responsive.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap"></noscript>
   <!-- Données structurées Schema.org (JSON-LD) -->
   <script type="application/ld+json">
   {
@@ -63,6 +69,8 @@
         "genre": "Action roguelite",
         "gamePlatform": ["PC", "Console"],
         "applicationCategory": "Game",
+        "datePublished": "2028-05-20",
+        "releaseDate": "2028-05-20",
         "author": { "@type": "Organization", "name": "Flexarion", "url": "https://flexarion.timeoms.fr/" },
         "inLanguage": "en-US"
       },
@@ -81,14 +89,20 @@
   <!-- Scripts différés -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-  <script src="../../js/config.js" defer></script>
-  <script src="../../js/main.js" defer></script>
-  <script src="../../js/animations.js" defer></script>
-  <script src="../../js/wishlist.js" defer></script>
-  <script src="../../js/newsletter.js" defer></script>
+  <script src="../../js/config.js?v=36c787d5" defer></script>
+  <script src="../../js/main.js?v=31c60520" defer></script>
+  <script src="../../js/animations.js?v=2db2a3f9" defer></script>
+  <script src="../../js/wishlist.js?v=4146dc19" defer></script>
+  <script src="../../js/lightbox.js?v=5e293a14" defer></script>
+  <script src="../../js/newsletter.js?v=b9e270c9" defer></script>
 </head>
 <body id="top">
   <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Rideau de transition orange entre pages -->
+  <div class="page-curtain" aria-hidden="true">
+    <span class="page-curtain__label">FLEXARION</span>
+  </div>
 
   <!-- En-tête & Navigation principale -->
   <header class="site-header" data-header>
@@ -160,10 +174,10 @@
         </nav>
       </div>
       <div class="social-list">
-        <a href="https://bsky.app/profile/flexarion-studio.bsky.social" target="_blank" rel="noopener me" class="social-link" data-social="bluesky" aria-label="Flexarion on Bluesky (new tab)"><span>Bluesky</span></a>
-            <a href="https://www.youtube.com/@FlexarionStudio" target="_blank" rel="noopener me" class="social-link" data-social="youtube" aria-label="Flexarion on YouTube (new tab)"><span>YouTube</span></a>
-            <a href="https://flexarion.itch.io" target="_blank" rel="noopener me" class="social-link" data-social="itch" aria-label="Flexarion on Itch.io (new tab)"><span>Itch.io</span></a>
-            <a href="https://github.com/flexarion-studio" target="_blank" rel="noopener me" class="social-link" data-social="github" aria-label="Flexarion on GitHub (new tab)"><span>GitHub</span></a>
+        <a href="https://bsky.app/profile/flexarion-studio.bsky.social" target="_blank" rel="noopener me" class="social-link" aria-label="Flexarion on Bluesky (new tab)"><span>Bluesky</span></a>
+            <a href="https://www.youtube.com/@FlexarionStudio" target="_blank" rel="noopener me" class="social-link" aria-label="Flexarion on YouTube (new tab)"><span>YouTube</span></a>
+            <a href="https://flexarion.itch.io" target="_blank" rel="noopener me" class="social-link" aria-label="Flexarion on Itch.io (new tab)"><span>Itch.io</span></a>
+            <a href="https://github.com/flexarion-studio" target="_blank" rel="noopener me" class="social-link" aria-label="Flexarion on GitHub (new tab)"><span>GitHub</span></a>
       </div>
     </div>
   </div>
@@ -300,6 +314,81 @@
 
     <hr class="rule">
 
+    <section class="section section--coal" aria-labelledby="gallery-heading">
+      <div class="container-flx">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">03 / Visual Previews &amp; Art Direction</span>
+            <h2 id="gallery-heading" class="h-section mt-4" data-split>Scenes, HUD &amp; Environment Studies</h2>
+          </div>
+          <p class="lead" data-reveal>Select any plate to inspect it at full scale in our accessible lightbox.</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3" data-lightbox-gallery data-reveal-stagger>
+          <button type="button" class="gallery-thumb" data-lightbox-item data-src="../../assets/images/previews/flx02-sormiou.svg" data-tag="Parkour · Calanques" data-title="Sormiou Viaduct — Zenithal Parkour" data-desc="Three-band cel-shaded lighting contrasting blinding white limestone, cobalt cast shadows, and high-speed rail grinds." data-reveal>
+            <div class="gallery-thumb__media">
+              <img src="../../assets/images/previews/flx02-sormiou.svg" width="1200" height="750" alt="Sormiou Viaduct — Zenithal Parkour" loading="lazy">
+              <span class="gallery-thumb__zoom" aria-hidden="true">Inspect ↗</span>
+            </div>
+            <div class="gallery-thumb__body">
+              <span class="mono text-ember">Parkour · Calanques</span>
+              <h3 class="h-sub mt-2" style="font-size: 1.15rem;">Sormiou Viaduct — Zenithal Parkour</h3>
+              <p class="mt-2 text-sm text-muted">Three-band cel-shaded lighting contrasting blinding white limestone, cobalt cast shadows, and high-speed rail grinds.</p>
+            </div>
+          </button>
+          <button type="button" class="gallery-thumb" data-lightbox-item data-src="../../assets/images/previews/flx02-wisps.svg" data-tag="Combat · Symbiosis" data-title="Luminescent Wisps — Cel-Shaded Bestiary" data-desc="Three capturable neon creature archetypes mutating melee strikes and ranged bursts mid-run." data-reveal>
+            <div class="gallery-thumb__media">
+              <img src="../../assets/images/previews/flx02-wisps.svg" width="1200" height="750" alt="Luminescent Wisps — Cel-Shaded Bestiary" loading="lazy">
+              <span class="gallery-thumb__zoom" aria-hidden="true">Inspect ↗</span>
+            </div>
+            <div class="gallery-thumb__body">
+              <span class="mono text-ember">Combat · Symbiosis</span>
+              <h3 class="h-sub mt-2" style="font-size: 1.15rem;">Luminescent Wisps — Cel-Shaded Bestiary</h3>
+              <p class="mt-2 text-sm text-muted">Three capturable neon creature archetypes mutating melee strikes and ranged bursts mid-run.</p>
+            </div>
+          </button>
+          <button type="button" class="gallery-thumb" data-lightbox-item data-src="../../assets/images/previews/flx02-harbor.svg" data-tag="Arena · Nightfall" data-title="Harbor Grid — Midnight Arena" data-desc="Dusk shift toward the tidal harbor’s HDR beacons, reshaping vertical traversal shortcuts." data-reveal>
+            <div class="gallery-thumb__media">
+              <img src="../../assets/images/previews/flx02-harbor.svg" width="1200" height="750" alt="Harbor Grid — Midnight Arena" loading="lazy">
+              <span class="gallery-thumb__zoom" aria-hidden="true">Inspect ↗</span>
+            </div>
+            <div class="gallery-thumb__body">
+              <span class="mono text-ember">Arena · Nightfall</span>
+              <h3 class="h-sub mt-2" style="font-size: 1.15rem;">Harbor Grid — Midnight Arena</h3>
+              <p class="mt-2 text-sm text-muted">Dusk shift toward the tidal harbor’s HDR beacons, reshaping vertical traversal shortcuts.</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="related-devlog-heading">
+      <div class="container-flx">
+        <div class="devlog-card" data-reveal>
+          <div class="devlog-card__meta">
+            <span class="tag">FLX-02 · LOG #02</span>
+            <span class="eyebrow">Latest related devlog dispatch</span>
+            <time class="mono text-muted" datetime="2026-10-14">October 14, 2026</time>
+            <span class="mono text-muted">By Hugo Banti</span>
+          </div>
+          <div class="mt-5 grid gap-6 lg:grid-cols-12 lg:items-center">
+            <div class="lg:col-span-8">
+              <h2 id="related-devlog-heading" class="h-sub">Art Direction: Translating Mediterranean Calanques Light into Cel-Shading</h2>
+              <p class="mt-3 text-muted max-w-2xl">Neon Calanques: building a custom cel-shaded pipeline in Unreal Engine 5 pairing blinding limestone with nocturnal neon emission.</p>
+            </div>
+            <div class="lg:col-span-4 lg:flex lg:justify-end">
+              <a href="../devlog.html#log-02" class="btn" data-magnetic>
+                <span>Read full engineering note</span>
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
     <section class="section section--tight" aria-labelledby="newsletter-heading">
       <div class="container-flx">
         <div class="newsletter-box">
@@ -368,13 +457,13 @@
             Independent game development studio based in Aix-en-Provence, Provence-Alpes-Côte d’Azur, France.
           </p>
           <div class="social-list mt-6" aria-label="Flexarion social channels">
-            <a href="https://bsky.app/profile/flexarion-studio.bsky.social" target="_blank" rel="noopener me" class="social-link" data-social="bluesky" aria-label="Flexarion on Bluesky (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 10.8C10.2 7.5 6.4 4.5 4.2 5.7c-1.8 1-1.3 5.2-.7 6.8.7 2 2.9 2.6 4.9 2.3-2.6.4-4.7 1.8-2.4 4.7 2.2 2.7 5-1.1 6-3.7 1 2.6 3.8 6.4 6 3.7 2.3-2.9.2-4.3-2.4-4.7 2 .3 4.2-.3 4.9-2.3.6-1.6 1.1-5.8-.7-6.8-2.2-1.2-6 1.8-7.8 5.1Z"/></svg>
+            <a href="https://bsky.app/profile/flexarion-studio.bsky.social" target="_blank" rel="noopener me" class="social-link" aria-label="Flexarion on Bluesky (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 10.8C10.2 7.5 6.4 4.5 4.2 5.7c-1.8 1-1.3 5.2-.7 6.8.7 2 2.9 2.6 4.9 2.3-2.6.4-4.7 1.8-2.4 4.7 2.2 2.7 5-1.1 6-3.7 1 2.6 3.8 6.4 6 3.7 2.3-2.9.2-4.3-2.4-4.7 2 .3 4.2-.3 4.9-2.3.6-1.6 1.1-5.8-.7-6.8-2.2-1.2-6 1.8-7.8 5.1Z"/></svg>
               <span class="sr-only">Bluesky</span></a>
-            <a href="https://www.youtube.com/@FlexarionStudio" target="_blank" rel="noopener me" class="social-link" data-social="youtube" aria-label="Flexarion on YouTube (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>
+            <a href="https://www.youtube.com/@FlexarionStudio" target="_blank" rel="noopener me" class="social-link" aria-label="Flexarion on YouTube (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>
               <span class="sr-only">YouTube</span></a>
-            <a href="https://flexarion.itch.io" target="_blank" rel="noopener me" class="social-link" data-social="itch" aria-label="Flexarion on Itch.io (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4.5 6.5 6 4h12l1.5 2.5v2a2 2 0 0 1-3.5 1.3 2 2 0 0 1-4 0 2 2 0 0 1-4 0A2 2 0 0 1 4.5 8.5v-2Z"/><path d="M5.5 10.5V19a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-8.5"/><path d="M9.5 15h5M12 12.5v5"/></svg>
+            <a href="https://flexarion.itch.io" target="_blank" rel="noopener me" class="social-link" aria-label="Flexarion on Itch.io (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4.5 6.5 6 4h12l1.5 2.5v2a2 2 0 0 1-3.5 1.3 2 2 0 0 1-4 0 2 2 0 0 1-4 0A2 2 0 0 1 4.5 8.5v-2Z"/><path d="M5.5 10.5V19a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-8.5"/><path d="M9.5 15h5M12 12.5v5"/></svg>
               <span class="sr-only">Itch.io</span></a>
-            <a href="https://github.com/flexarion-studio" target="_blank" rel="noopener me" class="social-link" data-social="github" aria-label="Flexarion on GitHub (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            <a href="https://github.com/flexarion-studio" target="_blank" rel="noopener me" class="social-link" aria-label="Flexarion on GitHub (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
               <span class="sr-only">GitHub</span></a>
           </div>
         </div>
@@ -398,7 +487,7 @@
             <li><a href="../press.html">Press Kit</a></li>
             <li><a href="../legal.html">Legal notice</a></li>
             <li><a href="../privacy.html">Privacy policy</a></li>
-            <li><a href="../../feed.xml">RSS Feed (Devlog)</a></li>
+            <li><a href="../feed.xml">RSS Feed (Devlog)</a></li>
             <li><a href="../../sitemap.xml">XML Sitemap</a></li>
           </ul>
         </div>
@@ -407,7 +496,7 @@
           <h2 class="footer-title">Location &amp; Contact</h2>
           <address class="footer-address">
             <p>Aix-en-Provence</p>
-            <p>Provence-Alpes-Côte d’Azur, France</p>
+            <p>Provence-Alpes-Côte d'Azur, France</p>
             <p class="mt-3">
               <a href="mailto:contact@flexarion.timeoms.fr" class="underline decoration-ember underline-offset-4 hover:text-ember" data-email-link data-email-text>contact@flexarion.timeoms.fr</a>
             </p>

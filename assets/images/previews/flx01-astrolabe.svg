@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Interface HUD minimaliste — Boussole éolienne">
+  <rect width="1200" height="750" fill="#090909"/>
+  <g stroke="#F4F2ED" stroke-opacity="0.12" fill="none">
+    <circle cx="600" cy="375" r="245"/>
+    <circle cx="600" cy="375" r="180" stroke-dasharray="8 8"/>
+    <circle cx="600" cy="375" r="110" stroke="#FF5A1F" stroke-opacity="0.55"/>
+    <line x1="250" y1="375" x2="950" y2="375"/>
+    <line x1="600" y1="90" x2="600" y2="660"/>
+  </g>
+  <polygon points="600,150 618,225 582,225" fill="#FF5A1F"/>
+  <path d="M360 440 Q480 320 600 375 T840 310" fill="none" stroke="#7C4DFF" stroke-width="3"/>
+  <path d="M360 470 Q500 365 620 400 T840 345" fill="none" stroke="#F4F2ED" stroke-opacity="0.45" stroke-width="1.5"/>
+  <rect x="64" y="64" width="290" height="86" fill="#151515" stroke="#858585" stroke-opacity="0.4"/>
+  <text x="88" y="102" fill="#FF5A1F" font-family="monospace" font-size="18">WIND VECTOR · 15 HZ</text>
+  <text x="88" y="132" fill="#F4F2ED" font-family="monospace" font-size="24">AZIMUTH 242.8° NW</text>
+  <rect x="846" y="600" width="290" height="86" fill="#151515" stroke="#858585" stroke-opacity="0.4"/>
+  <text x="870" y="638" fill="#A3A3A3" font-family="monospace" font-size="18">ACOUSTIC ASTROLABE</text>
+  <text x="870" y="668" fill="#F4F2ED" font-family="monospace" font-size="24">3 BEACONS LOCKED</text>
+</svg>

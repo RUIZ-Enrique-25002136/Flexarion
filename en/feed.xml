@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flexarion — Studio Engineering Devlog</title>
+    <link>https://flexarion.timeoms.fr/en/devlog.html</link>
+    <atom:link href="https://flexarion.timeoms.fr/en/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Engineering notes, cel-shading art direction, and procedural audio architecture from independent studio Flexarion (Aix-en-Provence).</description>
+    <language>en-US</language>
+    <item>
+      <title>Procedural Audio Architecture and Minimalist Synth Pads</title>
+      <link>https://flexarion.timeoms.fr/en/devlog.html#log-03</link>
+      <guid>https://flexarion.timeoms.fr/en/devlog.html#log-03</guid>
+      <pubDate>Tue, 10 Nov 2026 10:00:00 +0100</pubDate>
+      <description>Lisière: how every puzzle stone drives a live additive synth graph and resonant low-pass filter in Godot 4 and PipeWire.</description>
+    </item>
+    <item>
+      <title>Art Direction: Translating Mediterranean Calanques Light into Cel-Shading</title>
+      <link>https://flexarion.timeoms.fr/en/devlog.html#log-02</link>
+      <guid>https://flexarion.timeoms.fr/en/devlog.html#log-02</guid>
+      <pubDate>Wed, 14 Oct 2026 10:00:00 +0200</pubDate>
+      <description>Neon Calanques: building a custom cel-shaded pipeline in Unreal Engine 5 pairing blinding limestone with nocturnal neon emission.</description>
+    </item>
+    <item>
+      <title>Generating Wind-Reactive Volumetric Fog in Godot 4</title>
+      <link>https://flexarion.timeoms.fr/en/devlog.html#log-01</link>
+      <guid>https://flexarion.timeoms.fr/en/devlog.html#log-01</guid>
+      <pubDate>Fri, 18 Sep 2026 10:00:00 +0200</pubDate>
+      <description>The Mist Watchers: technical deep dive on 3D Worley-Perlin density shaders, 15 Hz wind vector fields, and lighthouse lighting in Godot 4.3.</description>
+    </item>
+  </channel>
+</rss>

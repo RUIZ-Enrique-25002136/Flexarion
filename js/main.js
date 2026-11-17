@@ -41,27 +41,6 @@
     });
   }
 
-  function hydrateSocial() {
-    var social = CONFIG.social || {};
-    document.querySelectorAll('[data-social]').forEach(function (el) {
-      var network = social[el.getAttribute('data-social')];
-      if (network && network.url) {
-        el.setAttribute('href', network.url);
-        el.setAttribute('target', '_blank');
-        el.setAttribute('rel', 'noopener me');
-        el.setAttribute('aria-label', isEn
-          ? 'Flexarion on ' + network.label + ' (new tab)'
-          : network.label + ' de Flexarion (nouvel onglet)');
-        el.removeAttribute('title');
-      } else {
-        // Pas de compte officiel : lien neutralisé (un <a> sans href n'est ni
-        // cliquable ni focalisable), libellé explicite pour les lecteurs d'écran.
-        el.removeAttribute('href');
-        el.setAttribute('title', isEn ? 'Official account coming soon' : 'Compte officiel bientôt disponible');
-      }
-    });
-  }
-
   /** Remplace le texte des éléments [data-bind="chemin"] si la config est renseignée. */
   function hydrateBindings() {
     document.querySelectorAll('[data-bind]').forEach(function (el) {
@@ -196,9 +175,83 @@
   }
 
   /* ------------------------------------------------------------------------
-   * 4. PRÉCHARGEMENT AU SURVOL DES LIENS INTERNES
-   *    La transition visuelle entre pages est assurée nativement par CSS
-   *    (@view-transition { navigation: auto; }) sans blocage JavaScript.
+   * 4. TRANSITIONS DE PAGE (RIDEAU ORANGE)
+   *    Animations 100 % CSS (@keyframes flx-curtain-in / flx-curtain-out)
+   *    pilotées sans conflit entre pages avec ou sans GSAP.
+   * --------------------------------------------------------------------- */
+  function initPageTransitions() {
+    var curtain = document.querySelector('.page-curtain');
+    if (!curtain) return;
+    var leaving = false;
+    var enterTimer = null;
+
+    function clearEnterState() {
+      if (enterTimer) {
+        window.clearTimeout(enterTimer);
+        enterTimer = null;
+      }
+      root.classList.remove('pt-enter');
+    }
+
+    if (root.classList.contains('pt-enter')) {
+      enterTimer = window.setTimeout(clearEnterState, 1000);
+      curtain.addEventListener('animationend', function onEnterEnd(ev) {
+        if (ev.animationName === 'flx-curtain-out') {
+          curtain.removeEventListener('animationend', onEnterEnd);
+          clearEnterState();
+        }
+      });
+    }
+
+    // Nettoyage lors d'un retour arrière depuis le bfcache navigateur.
+    window.addEventListener('pageshow', function (e) {
+      leaving = false;
+      root.classList.remove('pt-leave');
+      if (e.persisted) clearEnterState();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var link = e.target.closest('a[href]');
+      if (!link || reduceMotion.matches || leaving) return;
+      if (link.target && link.target !== '_self') return;
+      if (link.hasAttribute('download') || link.hasAttribute('data-no-transition')) return;
+
+      var href = link.getAttribute('href');
+      if (!href || href.charAt(0) === '#' || /^(mailto|tel|javascript):/i.test(href)) return;
+
+      var url = new URL(link.href, window.location.href);
+      if (url.origin !== window.location.origin) return;
+      // Même page avec ancre : laisser le défilement natif.
+      if (url.pathname === window.location.pathname && url.hash) return;
+
+      e.preventDefault();
+      leaving = true;
+      clearEnterState();
+      try { sessionStorage.setItem('flx-pt', '1'); } catch (err) { /* navigation privée */ }
+      root.classList.add('pt-leave');
+
+      var navigated = false;
+      var navigate = function () {
+        if (navigated) return;
+        navigated = true;
+        window.location.href = url.href;
+      };
+
+      curtain.addEventListener('animationend', function onLeaveEnd(ev) {
+        if (ev.animationName === 'flx-curtain-in') {
+          curtain.removeEventListener('animationend', onLeaveEnd);
+          window.requestAnimationFrame(function () {
+            window.setTimeout(navigate, 20);
+          });
+        }
+      });
+      window.setTimeout(navigate, 450);
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+   * 5. PRÉCHARGEMENT AU SURVOL DES LIENS INTERNES
    * --------------------------------------------------------------------- */
   function initLinkPrefetch() {
     var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
@@ -247,10 +300,10 @@
    * --------------------------------------------------------------------- */
   function init() {
     hydrateEmail();
-    hydrateSocial();
     hydrateBindings();
     initHeader();
     initMobileMenu();
+    initPageTransitions();
     initLinkPrefetch();
     initYear();
   }

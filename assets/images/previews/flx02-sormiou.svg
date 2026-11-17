@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Viaduc de Sormiou — Parkour zénithal">
+  <defs>
+    <linearGradient id="cobalt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#17234B"/>
+      <stop offset="100%" stop-color="#090909"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#cobalt)"/>
+  <polygon points="0,750 0,210 380,140 520,420 260,750" fill="#F4F2ED"/>
+  <polygon points="260,750 520,420 680,460 470,750" fill="#2A448C"/>
+  <polygon points="840,750 960,240 1200,180 1200,750" fill="#F4F2ED"/>
+  <polygon points="730,750 870,310 960,240 840,750" fill="#1F3470"/>
+  <line x1="120" y1="530" x2="1080" y2="290" stroke="#FF5A1F" stroke-width="8"/>
+  <line x1="120" y1="560" x2="1080" y2="320" stroke="#7C4DFF" stroke-width="4"/>
+  <circle cx="620" cy="405" r="24" fill="#FF5A1F"/>
+  <text x="56" y="70" fill="#F4F2ED" font-family="monospace" font-size="22" letter-spacing="4">FLX-02 // CEL-SHADED 3-BAND STUDY · SORMIOU</text>
+</svg>

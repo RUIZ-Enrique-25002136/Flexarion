@@ -6,7 +6,8 @@
   "inSubdir": true,
   "prefix": "../../",
   "animations": true,
-  "scripts": ["js/wishlist.js", "js/newsletter.js"],
+  "gameCode": "FLX-02",
+  "scripts": ["js/wishlist.js", "js/lightbox.js", "js/newsletter.js"],
   "canonical": "en/games/neon-calanques.html",
   "frPath": "games/neon-calanques.html",
   "enPath": "en/games/neon-calanques.html",
@@ -14,7 +15,7 @@
   "description": "Neon Calanques is a cel-shaded action roguelite built in Unreal Engine 5 by independent studio Flexarion in Aix-en-Provence.",
   "ogImageAlt": "Neon Calanques — Independent game by Flexarion.",
   "sitemap": { "changefreq": "monthly", "priority": "0.7" },
-  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Neon Calanques\",\n        \"url\": \"https://flexarion.timeoms.fr/en/games/neon-calanques.html\",\n        \"description\": \"Fast-paced cel-shaded roguelite in Unreal Engine 5 set in a futuristic Marseille blending solar parkour and neon creatures.\",\n        \"genre\": \"Action roguelite\",\n        \"gamePlatform\": [\"PC\", \"Console\"],\n        \"applicationCategory\": \"Game\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"en-US\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://flexarion.timeoms.fr/en/index.html\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Games\", \"item\": \"https://flexarion.timeoms.fr/en/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Neon Calanques\", \"item\": \"https://flexarion.timeoms.fr/en/games/neon-calanques.html\" }\n        ]\n      }\n    ]\n  }"
+  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Neon Calanques\",\n        \"url\": \"https://flexarion.timeoms.fr/en/games/neon-calanques.html\",\n        \"description\": \"Fast-paced cel-shaded roguelite in Unreal Engine 5 set in a futuristic Marseille blending solar parkour and neon creatures.\",\n        \"genre\": \"Action roguelite\",\n        \"gamePlatform\": [\"PC\", \"Console\"],\n        \"applicationCategory\": \"Game\",\n        \"datePublished\": \"2028-05-20\",\n        \"releaseDate\": \"2028-05-20\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"en-US\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://flexarion.timeoms.fr/en/index.html\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Games\", \"item\": \"https://flexarion.timeoms.fr/en/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Neon Calanques\", \"item\": \"https://flexarion.timeoms.fr/en/games/neon-calanques.html\" }\n        ]\n      }\n    ]\n  }"
 }
 -->
 <body id="top">
@@ -151,6 +152,12 @@
         </div>
       </div>
     </section>
+
+    <hr class="rule">
+
+    {{> game-gallery}}
+
+    {{> game-devlog}}
 
     <hr class="rule">
 

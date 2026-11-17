@@ -5,7 +5,8 @@
   "nav": "games",
   "prefix": "../",
   "animations": true,
-  "scripts": ["js/wishlist.js", "js/newsletter.js"],
+  "gameCode": "FLX-03",
+  "scripts": ["js/wishlist.js", "js/lightbox.js", "js/newsletter.js"],
   "canonical": "games/lisiere.html",
   "frPath": "games/lisiere.html",
   "enPath": "en/games/lisiere.html",
@@ -13,7 +14,7 @@
   "description": "Lisière est un puzzle contemplatif sonore sous Godot 4 imaginé par Flexarion, studio indépendant à Aix-en-Provence.",
   "ogImageAlt": "Lisière — Jeu vidéo indépendant par Flexarion.",
   "sitemap": { "changefreq": "monthly", "priority": "0.8" },
-  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Lisière\",\n        \"url\": \"https://flexarion.timeoms.fr/games/lisiere.html\",\n        \"description\": \"Un puzzle contemplatif sous Godot 4 sur la frontière entre forêt et mémoire, construit autour de la synthèse audio et de la lumière.\",\n        \"genre\": \"Puzzle contemplatif\",\n        \"gamePlatform\": [\"PC\", \"Mobile\"],\n        \"applicationCategory\": \"Game\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"fr-FR\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Accueil\", \"item\": \"https://flexarion.timeoms.fr/\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Nos jeux\", \"item\": \"https://flexarion.timeoms.fr/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Lisière\", \"item\": \"https://flexarion.timeoms.fr/games/lisiere.html\" }\n        ]\n      }\n    ]\n  }"
+  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Lisière\",\n        \"url\": \"https://flexarion.timeoms.fr/games/lisiere.html\",\n        \"description\": \"Un puzzle contemplatif sous Godot 4 sur la frontière entre forêt et mémoire, construit autour de la synthèse audio et de la lumière.\",\n        \"genre\": \"Puzzle contemplatif\",\n        \"gamePlatform\": [\"PC\", \"Mobile\"],\n        \"applicationCategory\": \"Game\",\n        \"datePublished\": \"2028-09-10\",\n        \"releaseDate\": \"2028-09-10\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"fr-FR\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Accueil\", \"item\": \"https://flexarion.timeoms.fr/\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Nos jeux\", \"item\": \"https://flexarion.timeoms.fr/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Lisière\", \"item\": \"https://flexarion.timeoms.fr/games/lisiere.html\" }\n        ]\n      }\n    ]\n  }"
 }
 -->
 <body id="top">
@@ -149,6 +150,12 @@
         </div>
       </div>
     </section>
+
+    <hr class="rule">
+
+    {{> game-gallery}}
+
+    {{> game-devlog}}
 
     <hr class="rule">
 

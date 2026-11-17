@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Schéma sonore — Synthèse additive en direct">
+  <rect width="1200" height="750" fill="#090909"/>
+  <path d="M100 375 C220 205 340 545 460 375 C580 205 700 545 820 375 C940 205 1040 485 1120 375" fill="none" stroke="#FF5A1F" stroke-width="4"/>
+  <path d="M100 375 C180 265 260 485 340 375 C420 265 500 485 580 375 C660 265 740 485 820 375 C900 265 980 485 1120 375" fill="none" stroke="#7C4DFF" stroke-width="2.5"/>
+  <line x1="100" y1="375" x2="1120" y2="375" stroke="#F4F2ED" stroke-opacity="0.25" stroke-dasharray="6 6"/>
+  <rect x="96" y="555" width="310" height="110" fill="#151515" stroke="#858585" stroke-opacity="0.45"/>
+  <text x="122" y="600" fill="#FF5A1F" font-family="monospace" font-size="18">GODOT 4 + PIPEWIRE DSP</text>
+  <text x="122" y="636" fill="#F4F2ED" font-family="monospace" font-size="24">RATIO 3:2 · PURE FIFTH</text>
+  <text x="56" y="70" fill="#A3A3A3" font-family="monospace" font-size="22" letter-spacing="4">FLX-03 // ADDITIVE SYNTHESIS GRAPH</text>
+</svg>

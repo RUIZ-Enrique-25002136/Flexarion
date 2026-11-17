@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Clairière aux diapasons — Résonance harmonique">
+  <rect width="1200" height="750" fill="#0F1411"/>
+  <polygon points="340,0 520,0 740,750 480,750" fill="#F4F2ED" fill-opacity="0.09"/>
+  <polygon points="620,0 760,0 980,750 760,750" fill="#FF5A1F" fill-opacity="0.08"/>
+  <g transform="translate(600,455)" fill="none">
+    <ellipse cx="0" cy="0" rx="280" ry="90" stroke="#7C4DFF" stroke-opacity="0.55" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="190" ry="60" stroke="#FF5A1F" stroke-opacity="0.7" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="95" ry="30" stroke="#F4F2ED" stroke-opacity="0.85" stroke-width="2"/>
+  </g>
+  <rect x="572" y="315" width="56" height="145" rx="6" fill="#151515" stroke="#F4F2ED" stroke-width="2"/>
+  <circle cx="600" cy="360" r="10" fill="#FF5A1F"/>
+  <text x="56" y="70" fill="#A3A3A3" font-family="monospace" font-size="22" letter-spacing="4">FLX-03 // HARMONIC CLEARING STUDY</text>
+</svg>

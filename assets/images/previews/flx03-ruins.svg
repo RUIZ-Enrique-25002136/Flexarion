@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Lisière du hameau — Botanique réactive">
+  <rect width="1200" height="750" fill="#121412"/>
+  <path d="M0 580 L280 510 L620 560 L920 495 L1200 545 L1200 750 L0 750 Z" fill="#191D19"/>
+  <rect x="420" y="340" width="170" height="205" fill="#151515" stroke="#F4F2ED" stroke-opacity="0.25" stroke-width="2"/>
+  <rect x="615" y="390" width="140" height="155" fill="#151515" stroke="#F4F2ED" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M505 545 C505 450 560 410 610 340 M505 495 C475 455 445 430 410 415" fill="none" stroke="#FF5A1F" stroke-width="3"/>
+  <circle cx="610" cy="340" r="12" fill="#FF5A1F"/>
+  <circle cx="410" cy="415" r="8" fill="#7C4DFF"/>
+  <text x="56" y="70" fill="#A3A3A3" font-family="monospace" font-size="22" letter-spacing="4">FLX-03 // REACTIVE BOTANY &amp; RUINS</text>
+</svg>

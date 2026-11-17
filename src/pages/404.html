@@ -16,12 +16,12 @@
   {{> mobile-menu}}
 
   <main id="main-content">
-    <section class="error-page" data-hero aria-labelledby="error-title">
+    <section class="error-page" data-hero aria-labelledby="error-title-fr">
       <span class="error-code" aria-hidden="true">404</span>
 
-      <div class="container-flx">
+      <div id="err-fr" class="container-flx">
         <span class="eyebrow">Erreur 404 — Hors carte</span>
-        <h1 id="error-title" class="page-hero__title mt-6">
+        <h1 id="error-title-fr" class="page-hero__title mt-6">
           <span class="page-hero__kicker">Ce monde n’existe pas encore</span>
           <span class="page-hero__display">
             <span class="split-word"><span>PAGE</span></span>
@@ -55,7 +55,62 @@
           </ul>
         </nav>
       </div>
+
+      <div id="err-en" class="container-flx" lang="en" hidden>
+        <span class="eyebrow">Error 404 — Off the chart</span>
+        <h1 id="error-title-en" class="page-hero__title mt-6">
+          <span class="page-hero__kicker">This world hasn’t been mapped yet</span>
+          <span class="page-hero__display">
+            <span class="split-word"><span>PAGE</span></span>
+            <span class="split-word"><span class="text-ember">NOT FOUND</span></span>
+          </span>
+        </h1>
+
+        <p class="lead mt-8">
+          The requested URL could not be found, has moved, or no longer exists on Flexarion’s official website.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="/en/index.html" class="btn btn--primary" data-magnetic>
+            <span>Back to English home</span>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/en/games.html" class="btn" data-magnetic>
+            <span>Explore our games</span>
+          </a>
+        </div>
+
+        <nav class="mt-14 pt-8 border-t border-white/10" aria-label="Useful links from the error page">
+          <p class="mono text-muted mb-4">Main studio pages</p>
+          <ul class="flex flex-wrap gap-x-8 gap-y-3 font-display">
+            <li><a href="/en/studio.html" class="link-arrow">Studio</a></li>
+            <li><a href="/en/games.html" class="link-arrow">Games</a></li>
+            <li><a href="/en/devlog.html" class="link-arrow">Devlog</a></li>
+            <li><a href="/en/faq.html" class="link-arrow">FAQ</a></li>
+            <li><a href="/en/credits.html" class="link-arrow">Credits</a></li>
+            <li><a href="/en/contact.html" class="link-arrow">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </section>
+
+    <script>
+      (function () {
+        if (window.location.pathname.indexOf('/en/') === 0) {
+          var fr = document.getElementById('err-fr');
+          var en = document.getElementById('err-en');
+          var homeLink = document.querySelector('[data-error-home]');
+          document.documentElement.lang = 'en';
+          document.title = 'Page Not Found (404) | Flexarion';
+          if (fr) fr.hidden = true;
+          if (en) en.hidden = false;
+          if (homeLink) {
+            homeLink.href = '/en/index.html';
+            homeLink.textContent = 'Back to home →';
+          }
+        }
+      })();
+    </script>
   </main>
 
   {{> footer}}

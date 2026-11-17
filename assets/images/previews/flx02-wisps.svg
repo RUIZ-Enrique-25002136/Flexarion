@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Spectres luminescents — Bestiaire cel-shaded">
+  <rect width="1200" height="750" fill="#090909"/>
+  <g transform="translate(270,380)">
+    <circle r="110" fill="#151515" stroke="#FF5A1F" stroke-width="3"/>
+    <polygon points="0,-78 68,45 -68,45" fill="#FF5A1F"/>
+    <text x="-76" y="155" fill="#F4F2ED" font-family="monospace" font-size="20">IGNIS WISP // PYRO</text>
+  </g>
+  <g transform="translate(600,340)">
+    <circle r="125" fill="#151515" stroke="#7C4DFF" stroke-width="3"/>
+    <polygon points="0,-88 78,0 0,88 -78,0" fill="#7C4DFF"/>
+    <text x="-82" y="175" fill="#F4F2ED" font-family="monospace" font-size="20">ARC WISP // KINETIC</text>
+  </g>
+  <g transform="translate(930,380)">
+    <circle r="110" fill="#151515" stroke="#F4F2ED" stroke-width="3"/>
+    <circle r="48" fill="#F4F2ED"/>
+    <text x="-84" y="155" fill="#F4F2ED" font-family="monospace" font-size="20">PRISM WISP // SHIELD</text>
+  </g>
+  <text x="56" y="70" fill="#A3A3A3" font-family="monospace" font-size="22" letter-spacing="4">FLX-02 // NEON SYMBIOSIS ARCHETYPES</text>
+</svg>

@@ -85,6 +85,8 @@
     scroll-behavior: auto !important;
   }
   .scroll-indicator__line::after { transform: none; }
+  .pt-leave .page-curtain,
+  .pt-enter .page-curtain { animation: none; visibility: hidden; transform: translateY(100%); }
   .cursor { display: none; }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -105,7 +107,7 @@
 
 /* ---------- Impression ---------- */
 @media print {
-  body::after, .site-header, .mobile-menu, .cursor, .marquee,
+  body::after, .site-header, .mobile-menu, .page-curtain, .cursor, .marquee,
   .scroll-indicator, .hero__media, .footer-wordmark, .filter-bar, form { display: none !important; }
   html body { background: #fff; color: #000; }
   a { color: #000; text-decoration: underline; }

@@ -1,4 +1,4 @@
-name: CI — Build & Integrity Check
+name: CI — Build, Integrity & E2E Check
 
 on:
   push:
@@ -18,10 +18,10 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Build Tailwind CSS and static HTML pages
+      - name: Build Tailwind CSS, bundle CSS, and static HTML pages
         run: npm run build
 
-      - name: Verify generated HTML, links, and assets
+      - name: Verify generated HTML, JSON-LD, links, and assets
         run: npm run check
 
       - name: Syntax check JavaScript files
@@ -29,3 +29,16 @@ jobs:
           for f in js/*.js scripts/*.mjs tailwind.config.js; do
             node --check "$f"
           done
+
+      - name: Run HTTP E2E smoke tests against local static server
+        run: |
+          node scripts/serve.mjs &
+          SERVER_PID=$!
+          trap "kill $SERVER_PID 2>/dev/null || true" EXIT
+          for i in $(seq 1 20); do
+            if node -e "fetch('http://127.0.0.1:4173/').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"; then
+              break
+            fi
+            sleep 0.25
+          done
+          E2E_REQUIRE_EXTERNAL=1 node scripts/test-e2e.mjs

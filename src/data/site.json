@@ -1,0 +1,243 @@
+{
+  "version": "1.2.0",
+  "siteUrl": "https://flexarion.timeoms.fr",
+  "demoMode": true,
+  "studio": {
+    "name": "Flexarion",
+    "activity": "Studio indépendant de développement et de création de jeux vidéo",
+    "city": "Aix-en-Provence",
+    "department": "Bouches-du-Rhône",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "country": "France",
+    "countryCode": "FR"
+  },
+  "contact": {
+    "email": "contact@flexarion.timeoms.fr"
+  },
+  "form": {
+    "endpoint": "",
+    "accessKey": ""
+  },
+  "social": {
+    "bluesky": {
+      "label": "Bluesky",
+      "url": "https://bsky.app/profile/flexarion-studio.bsky.social"
+    },
+    "youtube": {
+      "label": "YouTube",
+      "url": "https://www.youtube.com/@FlexarionStudio"
+    },
+    "itch": {
+      "label": "Itch.io",
+      "url": "https://flexarion.itch.io"
+    },
+    "github": {
+      "label": "GitHub",
+      "url": "https://github.com/flexarion-studio"
+    }
+  },
+  "team": {
+    "timeo": {
+      "name": "Timéo Morsilli",
+      "role": "Développeur",
+      "roleEn": "Developer",
+      "bio": ""
+    },
+    "hugo": {
+      "name": "Hugo Banti",
+      "role": "Modélisateur 3D",
+      "roleEn": "3D Artist",
+      "bio": ""
+    },
+    "enrique": {
+      "name": "Enrique Ruiz",
+      "role": "Développeur",
+      "roleEn": "Developer",
+      "bio": ""
+    }
+  },
+  "games": [
+    {
+      "code": "FLX-01",
+      "id": "projet-01",
+      "name": "Les Veilleurs de Brume",
+      "nameEn": "The Mist Watchers",
+      "status": "dev",
+      "genre": "Aventure narrative",
+      "genreEn": "Narrative adventure",
+      "engine": "Godot 4.3",
+      "releaseDate": "2027-11-15",
+      "releaseWindowFr": "T4 2027",
+      "releaseWindowEn": "Q4 2027",
+      "platforms": ["PC"],
+      "detailUrl": "games/les-veilleurs-de-brume.html",
+      "detailUrlEn": "en/games/les-veilleurs-de-brume.html",
+      "devlogId": "log-01",
+      "gallery": [
+        {
+          "src": "assets/images/previews/flx01-lighthouse.svg",
+          "tagFr": "Environnement · Phare",
+          "tagEn": "Environment · Lighthouse",
+          "titleFr": "Le Phare de l’Archipel — Exploration nocturne",
+          "titleEn": "Archipelago Lighthouse — Night Exploration",
+          "descFr": "Triangulation lumineuse entre deux belvédères au-dessus des strates de brouillard volumétrique réactif au vent.",
+          "descEn": "Optical triangulation between two belvederes above wind-reactive volumetric fog strata."
+        },
+        {
+          "src": "assets/images/previews/flx01-astrolabe.svg",
+          "tagFr": "Interface · HUD",
+          "tagEn": "Interface · HUD",
+          "titleFr": "Interface HUD minimaliste — Boussole éolienne",
+          "titleEn": "Minimalist HUD — Wind Compass & Astrolabe",
+          "descFr": "Astrolabe acoustique diégétique affichant les caps des phares, les vecteurs de vent à 15 Hz et la résonance captée.",
+          "descEn": "Diegetic acoustic astrolabe displaying lighthouse bearings, 15 Hz wind vectors, and captured resonance."
+        },
+        {
+          "src": "assets/images/previews/flx01-cliffs.svg",
+          "tagFr": "Croquis · Direction artistique",
+          "tagEn": "Study · Art Direction",
+          "titleFr": "Croquis d’environnement — Falaises de brume",
+          "titleEn": "Environment Study — Mist-Shrouded Cliffs",
+          "descFr": "Étude de composition sur les arches calcaires d’Ombrefalaise et la lecture des silhouettes à contre-jour.",
+          "descEn": "Composition study of Ombrefalaise’s limestone arches and backlit silhouette readability."
+        }
+      ]
+    },
+    {
+      "code": "FLX-02",
+      "id": "projet-02",
+      "name": "Neon Calanques",
+      "nameEn": "Neon Calanques",
+      "status": "soon",
+      "genre": "Action roguelite",
+      "genreEn": "Action roguelite",
+      "engine": "Unreal Engine 5",
+      "releaseDate": "2028-05-20",
+      "releaseWindowFr": "2028",
+      "releaseWindowEn": "2028",
+      "platforms": ["PC", "Console"],
+      "detailUrl": "games/neon-calanques.html",
+      "detailUrlEn": "en/games/neon-calanques.html",
+      "devlogId": "log-02",
+      "gallery": [
+        {
+          "src": "assets/images/previews/flx02-sormiou.svg",
+          "tagFr": "Parkour · Calanques",
+          "tagEn": "Parkour · Calanques",
+          "titleFr": "Viaduc de Sormiou — Parkour zénithal",
+          "titleEn": "Sormiou Viaduct — Zenithal Parkour",
+          "descFr": "Rendu cel-shaded à trois paliers opposant calcaire blanc aveuglant, ombres cobalt et câbles de glissade à haute vitesse.",
+          "descEn": "Three-band cel-shaded lighting contrasting blinding white limestone, cobalt cast shadows, and high-speed rail grinds."
+        },
+        {
+          "src": "assets/images/previews/flx02-wisps.svg",
+          "tagFr": "Combat · Symbiose",
+          "tagEn": "Combat · Symbiosis",
+          "titleFr": "Spectres luminescents — Bestiaire cel-shaded",
+          "titleEn": "Luminescent Wisps — Cel-Shaded Bestiary",
+          "descFr": "Trois archétypes de créatures de néon capturables en plein combat pour modifier l’arsenal du coursier.",
+          "descEn": "Three capturable neon creature archetypes mutating melee strikes and ranged bursts mid-run."
+        },
+        {
+          "src": "assets/images/previews/flx02-harbor.svg",
+          "tagFr": "Arène · Nocturne",
+          "tagEn": "Arena · Nightfall",
+          "titleFr": "Grille du Port — Arène nocturne",
+          "titleEn": "Harbor Grid — Midnight Arena",
+          "descFr": "Transition crépusculaire vers les balises HDR du port marémoteur, modifiant les raccourcis verticaux de l’arène.",
+          "descEn": "Dusk shift toward the tidal harbor’s HDR beacons, reshaping vertical traversal shortcuts."
+        }
+      ]
+    },
+    {
+      "code": "FLX-03",
+      "id": "projet-03",
+      "name": "Lisière",
+      "nameEn": "Lisière",
+      "status": "soon",
+      "genre": "Puzzle contemplatif",
+      "genreEn": "Contemplative puzzle",
+      "engine": "Godot 4",
+      "releaseDate": "2028-09-10",
+      "releaseWindowFr": "2028",
+      "releaseWindowEn": "2028",
+      "platforms": ["PC", "Mobile"],
+      "detailUrl": "games/lisiere.html",
+      "detailUrlEn": "en/games/lisiere.html",
+      "devlogId": "log-03",
+      "gallery": [
+        {
+          "src": "assets/images/previews/flx03-clearing.svg",
+          "tagFr": "Puzzle · Clairière",
+          "tagEn": "Puzzle · Clearing",
+          "titleFr": "Clairière aux diapasons — Résonance harmonique",
+          "titleEn": "Tuning-Fork Clearing — Harmonic Resonance",
+          "descFr": "Agencement des bornes acoustiques orientant les percées solaires dans la canopée pour réveiller la flore.",
+          "descEn": "Acoustic standing stones aligning sunbeams through the canopy to awaken dormant flora."
+        },
+        {
+          "src": "assets/images/previews/flx03-dsp.svg",
+          "tagFr": "Audio · Synthèse DSP",
+          "tagEn": "Audio · DSP Graph",
+          "titleFr": "Schéma sonore — Synthèse additive en direct",
+          "titleEn": "Audio Graph — Live Additive Synthesis",
+          "descFr": "Visualisation du graphe audio procédural sous Godot 4 et PipeWire : battements de phase convergeant vers une quinte juste.",
+          "descEn": "Procedural audio graph visualization in Godot 4 and PipeWire: phase beats locking into a pure fifth."
+        },
+        {
+          "src": "assets/images/previews/flx03-ruins.svg",
+          "tagFr": "Narration · Ruines",
+          "tagEn": "Narrative · Ruins",
+          "titleFr": "Lisière du hameau — Botanique réactive",
+          "titleEn": "Hamlet Edge — Reactive Botany",
+          "descFr": "Reconstitution progressive du village abandonné au fil des accords résolus, sans texte ni minuterie.",
+          "descEn": "Gradual architectural memory revealed with each solved chord, with zero text or timers."
+        }
+      ]
+    }
+  ],
+  "devlogs": [
+    {
+      "id": "log-03",
+      "num": "03",
+      "gameCode": "FLX-03",
+      "dateIso": "2026-11-10",
+      "pubDateRss": "Tue, 10 Nov 2026 10:00:00 +0100",
+      "dateFr": "10 novembre 2026",
+      "dateEn": "November 10, 2026",
+      "author": "Enrique Ruiz",
+      "titleFr": "Architecture sonore procédurale et nappes synthétiques minimalistes",
+      "titleEn": "Procedural Audio Architecture and Minimalist Synth Pads",
+      "summaryFr": "Lisière : comment chaque interaction puzzle pilote des synthétiseurs modulaires légers et des filtres passe-bas dans Godot 4 et PipeWire.",
+      "summaryEn": "Lisière: how every puzzle stone drives a live additive synth graph and resonant low-pass filter in Godot 4 and PipeWire."
+    },
+    {
+      "id": "log-02",
+      "num": "02",
+      "gameCode": "FLX-02",
+      "dateIso": "2026-10-14",
+      "pubDateRss": "Wed, 14 Oct 2026 10:00:00 +0200",
+      "dateFr": "14 octobre 2026",
+      "dateEn": "October 14, 2026",
+      "author": "Hugo Banti",
+      "titleFr": "Direction artistique : traduire la lumière des calanques méditerranéennes en rendu cell-shaded",
+      "titleEn": "Art Direction: Translating Mediterranean Calanques Light into Cel-Shading",
+      "summaryFr": "Neon Calanques : construction d’un pipeline cel-shaded dans Unreal Engine 5 mariant calcaire blanc éblouissant et néons synthétiques nocturnes.",
+      "summaryEn": "Neon Calanques: building a custom cel-shaded pipeline in Unreal Engine 5 pairing blinding limestone with nocturnal neon emission."
+    },
+    {
+      "id": "log-01",
+      "num": "01",
+      "gameCode": "FLX-01",
+      "dateIso": "2026-09-18",
+      "pubDateRss": "Fri, 18 Sep 2026 10:00:00 +0200",
+      "dateFr": "18 septembre 2026",
+      "dateEn": "September 18, 2026",
+      "author": "Timéo Morsilli",
+      "titleFr": "Générer un brouillard volumétrique réactif au vent dans Godot 4",
+      "titleEn": "Generating Wind-Reactive Volumetric Fog in Godot 4",
+      "summaryFr": "Les Veilleurs de Brume : retour technique sur les shaders 3D de densité, champs de vecteurs de vent et éclairage des balises nocturnes dans Godot 4.3.",
+      "summaryEn": "The Mist Watchers: technical deep dive on 3D Worley-Perlin density shaders, 15 Hz wind vector fields, and lighthouse lighting in Godot 4.3."
+    }
+  ]
+}

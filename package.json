@@ -1,12 +1,13 @@
 {
   "name": "flexarion-website",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "description": "Site officiel du studio indépendant de jeux vidéo Flexarion (Aix-en-Provence).",
   "scripts": {
     "build:html": "node scripts/build.mjs",
     "build:css": "npx --yes tailwindcss@3 -c tailwind.config.js -i css/tailwind.input.css -o css/tailwind.min.css --minify",
     "build": "npm run build:css && npm run build:html",
-    "check": "node scripts/build.mjs --check-only"
+    "check": "node scripts/build.mjs --check-only",
+    "test:e2e": "node scripts/test-e2e.mjs"
   }
 }

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
-    (function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js','anim-fallback');})();
+    (function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js','anim-fallback');try{if(sessionStorage.getItem('flx-pt')){sessionStorage.removeItem('flx-pt');r.classList.add('pt-enter');}}catch(e){}})();
   </script>
 
   <title>Page introuvable (404) | Flexarion</title>
@@ -13,6 +13,13 @@
   <meta name="theme-color" content="#090909">
 
 
+  <!-- Style critique transition d'entrée (évite tout flash noir entre deux pages) -->
+  <style>
+    html.pt-enter{background-color:#ff5a1f}
+    html.pt-enter .page-curtain{position:fixed;inset:0;z-index:150;display:grid;place-items:center;background:#ff5a1f;color:#090909;visibility:visible;transform:translateY(0%)}
+    html.pt-enter .page-curtain__label{font-family:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,3rem);letter-spacing:0.2em}
+  </style>
+
   <!-- Icônes & Manifest -->
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
@@ -20,22 +27,26 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="Flexarion Devlog (RSS)" href="https://flexarion.timeoms.fr/feed.xml">
 
-  <!-- Polices Google Fonts (font-display: swap) -->
+  <!-- Bundle CSS unique compilé & minifié (avec cache-busting) -->
+  <link rel="stylesheet" href="/css/bundle.min.css?v=6f591ca8">
+
+  <!-- Polices Google Fonts (non-bloquant au rendu initial) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap">
-
-  <!-- Styles compilés (sans runtime Tailwind CDN) -->
-  <link rel="stylesheet" href="/css/tailwind.min.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap"></noscript>
 
   <!-- Scripts différés -->
-  <script src="/js/config.js" defer></script>
-  <script src="/js/main.js" defer></script>
+  <script src="/js/config.js?v=36c787d5" defer></script>
+  <script src="/js/main.js?v=31c60520" defer></script>
 </head>
 <body id="top">
   <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Rideau de transition orange entre pages -->
+  <div class="page-curtain" aria-hidden="true">
+    <span class="page-curtain__label">FLEXARION</span>
+  </div>
 
   <!-- En-tête & Navigation principale -->
   <header class="site-header" data-header>
@@ -107,21 +118,21 @@
         </nav>
       </div>
       <div class="social-list">
-        <a href="https://bsky.app/profile/flexarion-studio.bsky.social" target="_blank" rel="noopener me" class="social-link" data-social="bluesky" aria-label="Bluesky de Flexarion (nouvel onglet)"><span>Bluesky</span></a>
-            <a href="https://www.youtube.com/@FlexarionStudio" target="_blank" rel="noopener me" class="social-link" data-social="youtube" aria-label="YouTube de Flexarion (nouvel onglet)"><span>YouTube</span></a>
-            <a href="https://flexarion.itch.io" target="_blank" rel="noopener me" class="social-link" data-social="itch" aria-label="Itch.io de Flexarion (nouvel onglet)"><span>Itch.io</span></a>
-            <a href="https://github.com/flexarion-studio" target="_blank" rel="noopener me" class="social-link" data-social="github" aria-label="GitHub de Flexarion (nouvel onglet)"><span>GitHub</span></a>
+        <a href="https://bsky.app/profile/flexarion-studio.bsky.social" target="_blank" rel="noopener me" class="social-link" aria-label="Bluesky de Flexarion (nouvel onglet)"><span>Bluesky</span></a>
+            <a href="https://www.youtube.com/@FlexarionStudio" target="_blank" rel="noopener me" class="social-link" aria-label="YouTube de Flexarion (nouvel onglet)"><span>YouTube</span></a>
+            <a href="https://flexarion.itch.io" target="_blank" rel="noopener me" class="social-link" aria-label="Itch.io de Flexarion (nouvel onglet)"><span>Itch.io</span></a>
+            <a href="https://github.com/flexarion-studio" target="_blank" rel="noopener me" class="social-link" aria-label="GitHub de Flexarion (nouvel onglet)"><span>GitHub</span></a>
       </div>
     </div>
   </div>
 
   <main id="main-content">
-    <section class="error-page" data-hero aria-labelledby="error-title">
+    <section class="error-page" data-hero aria-labelledby="error-title-fr">
       <span class="error-code" aria-hidden="true">404</span>
 
-      <div class="container-flx">
+      <div id="err-fr" class="container-flx">
         <span class="eyebrow">Erreur 404 — Hors carte</span>
-        <h1 id="error-title" class="page-hero__title mt-6">
+        <h1 id="error-title-fr" class="page-hero__title mt-6">
           <span class="page-hero__kicker">Ce monde n’existe pas encore</span>
           <span class="page-hero__display">
             <span class="split-word"><span>PAGE</span></span>
@@ -155,14 +166,69 @@
           </ul>
         </nav>
       </div>
+
+      <div id="err-en" class="container-flx" lang="en" hidden>
+        <span class="eyebrow">Error 404 — Off the chart</span>
+        <h1 id="error-title-en" class="page-hero__title mt-6">
+          <span class="page-hero__kicker">This world hasn’t been mapped yet</span>
+          <span class="page-hero__display">
+            <span class="split-word"><span>PAGE</span></span>
+            <span class="split-word"><span class="text-ember">NOT FOUND</span></span>
+          </span>
+        </h1>
+
+        <p class="lead mt-8">
+          The requested URL could not be found, has moved, or no longer exists on Flexarion’s official website.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="/en/index.html" class="btn btn--primary" data-magnetic>
+            <span>Back to English home</span>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/en/games.html" class="btn" data-magnetic>
+            <span>Explore our games</span>
+          </a>
+        </div>
+
+        <nav class="mt-14 pt-8 border-t border-white/10" aria-label="Useful links from the error page">
+          <p class="mono text-muted mb-4">Main studio pages</p>
+          <ul class="flex flex-wrap gap-x-8 gap-y-3 font-display">
+            <li><a href="/en/studio.html" class="link-arrow">Studio</a></li>
+            <li><a href="/en/games.html" class="link-arrow">Games</a></li>
+            <li><a href="/en/devlog.html" class="link-arrow">Devlog</a></li>
+            <li><a href="/en/faq.html" class="link-arrow">FAQ</a></li>
+            <li><a href="/en/credits.html" class="link-arrow">Credits</a></li>
+            <li><a href="/en/contact.html" class="link-arrow">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </section>
+
+    <script>
+      (function () {
+        if (window.location.pathname.indexOf('/en/') === 0) {
+          var fr = document.getElementById('err-fr');
+          var en = document.getElementById('err-en');
+          var homeLink = document.querySelector('[data-error-home]');
+          document.documentElement.lang = 'en';
+          document.title = 'Page Not Found (404) | Flexarion';
+          if (fr) fr.hidden = true;
+          if (en) en.hidden = false;
+          if (homeLink) {
+            homeLink.href = '/en/index.html';
+            homeLink.textContent = 'Back to home →';
+          }
+        }
+      })();
+    </script>
   </main>
 
   <footer class="site-footer">
     <div class="container-flx">
       <div class="footer-bottom">
         <p>© <span data-year>2026</span> Flexarion — Studio indépendant de jeux vidéo à Aix-en-Provence. Tous droits réservés.</p>
-        <a href="/index.html" class="back-to-top">Retour à l’accueil →</a>
+        <a href="/index.html" class="back-to-top" data-error-home>Retour à l’accueil →</a>
       </div>
     </div>
   </footer>

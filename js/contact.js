@@ -152,11 +152,13 @@
     var initialLabel = label ? label.textContent : '';
     if (label) label.textContent = isEn ? 'Sending…' : 'Envoi en cours…';
 
-    if (!endpoint) {
-      showDemoSuccess(data);
-      submitBtn.disabled = false;
-      submitBtn.removeAttribute('aria-busy');
-      if (label) label.textContent = initialLabel;
+    if (CONFIG.demoMode || !endpoint) {
+      setTimeout(function () {
+        showDemoSuccess(data);
+        submitBtn.disabled = false;
+        submitBtn.removeAttribute('aria-busy');
+        if (label) label.textContent = initialLabel;
+      }, 450);
       return;
     }
 
@@ -192,15 +194,15 @@
     resetValidation();
     if (isEn) {
       showStatus('success',
-        '<p><span class="demo-badge">Demo Mode</span><strong>Message recorded for ' + escapeHTML(data.name) + '.</strong></p>' +
-        '<p class="mt-2">The fictional Web3Forms key is not wired to a live inbox. ' +
+        '<p><span class="demo-badge">Demo Mode</span><strong>Message recorded (Demo Mode — Showcase project).</strong></p>' +
+        '<p class="mt-2">For a real inquiry: ' +
         '<a href="' + mailtoHref(data) + '">Send via your email app (' + escapeHTML(email) + ')</a>.</p>'
       );
     } else {
       showStatus('success',
-        '<p><span class="demo-badge">Mode Démo</span><strong>Message enregistré pour ' + escapeHTML(data.name) + '.</strong></p>' +
-        '<p class="mt-2">La clé de démonstration n’est pas raccordée à une boîte réelle. ' +
-        '<a href="' + mailtoHref(data) + '">Ouvrir dans votre messagerie (' + escapeHTML(email) + ')</a>.</p>'
+        '<p><span class="demo-badge">Mode Démo</span><strong>Message enregistré (Mode Démonstration — Projet vitrine).</strong></p>' +
+        '<p class="mt-2">Pour un contact réel : ' +
+        '<a href="' + mailtoHref(data) + '">Envoyer par e-mail (' + escapeHTML(email) + ')</a>.</p>'
       );
     }
   }

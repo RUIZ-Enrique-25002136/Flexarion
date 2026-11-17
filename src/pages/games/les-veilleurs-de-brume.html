@@ -5,7 +5,8 @@
   "nav": "games",
   "prefix": "../",
   "animations": true,
-  "scripts": ["js/wishlist.js", "js/newsletter.js"],
+  "gameCode": "FLX-01",
+  "scripts": ["js/wishlist.js", "js/lightbox.js", "js/newsletter.js"],
   "canonical": "games/les-veilleurs-de-brume.html",
   "frPath": "games/les-veilleurs-de-brume.html",
   "enPath": "en/games/les-veilleurs-de-brume.html",
@@ -13,7 +14,7 @@
   "description": "Les Veilleurs de Brume est une aventure narrative développée sur Godot 4.3 par Flexarion à Aix-en-Provence. Cartographiez une cité engloutie par les nuages.",
   "ogImageAlt": "Les Veilleurs de Brume — Jeu vidéo indépendant par Flexarion.",
   "sitemap": { "changefreq": "monthly", "priority": "0.9" },
-  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Les Veilleurs de Brume\",\n        \"url\": \"https://flexarion.timeoms.fr/games/les-veilleurs-de-brume.html\",\n        \"description\": \"Aventure narrative atmosphérique sur Godot 4.3 où une cartographe suit les balises lumineuses d'une cité suspendue au-dessus de la brume.\",\n        \"genre\": \"Aventure narrative\",\n        \"gamePlatform\": [\"PC\", \"Windows\", \"Linux\"],\n        \"applicationCategory\": \"Game\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"fr-FR\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Accueil\", \"item\": \"https://flexarion.timeoms.fr/\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Nos jeux\", \"item\": \"https://flexarion.timeoms.fr/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Les Veilleurs de Brume\", \"item\": \"https://flexarion.timeoms.fr/games/les-veilleurs-de-brume.html\" }\n        ]\n      }\n    ]\n  }"
+  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Les Veilleurs de Brume\",\n        \"url\": \"https://flexarion.timeoms.fr/games/les-veilleurs-de-brume.html\",\n        \"description\": \"Aventure narrative atmosphérique sur Godot 4.3 où une cartographe suit les balises lumineuses d'une cité suspendue au-dessus de la brume.\",\n        \"genre\": \"Aventure narrative\",\n        \"gamePlatform\": [\"PC\", \"Windows\", \"Linux\"],\n        \"applicationCategory\": \"Game\",\n        \"datePublished\": \"2027-11-15\",\n        \"releaseDate\": \"2027-11-15\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"fr-FR\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Accueil\", \"item\": \"https://flexarion.timeoms.fr/\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Nos jeux\", \"item\": \"https://flexarion.timeoms.fr/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Les Veilleurs de Brume\", \"item\": \"https://flexarion.timeoms.fr/games/les-veilleurs-de-brume.html\" }\n        ]\n      }\n    ]\n  }"
 }
 -->
 <body id="top">
@@ -153,6 +154,12 @@
         </div>
       </div>
     </section>
+
+    <hr class="rule">
+
+    {{> game-gallery}}
+
+    {{> game-devlog}}
 
     <hr class="rule">
 
