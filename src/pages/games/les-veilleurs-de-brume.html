@@ -4,14 +4,16 @@
   "lang": "fr",
   "nav": "games",
   "prefix": "../",
+  "animations": true,
+  "scripts": ["js/wishlist.js", "js/newsletter.js"],
   "canonical": "games/les-veilleurs-de-brume.html",
   "frPath": "games/les-veilleurs-de-brume.html",
   "enPath": "en/games/les-veilleurs-de-brume.html",
   "title": "Les Veilleurs de Brume | Jeu vidéo Flexarion",
-  "description": "Les Veilleurs de Brume est une aventure narrative en développement par Flexarion, studio indépendant à Aix-en-Provence.",
+  "description": "Les Veilleurs de Brume est une aventure narrative développée sur Godot 4.3 par Flexarion à Aix-en-Provence. Cartographiez une cité engloutie par les nuages.",
   "ogImageAlt": "Les Veilleurs de Brume — Jeu vidéo indépendant par Flexarion.",
-  "sitemap": { "changefreq": "monthly", "priority": "0.8" },
-  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Les Veilleurs de Brume\",\n        \"url\": \"https://flexarion.timeoms.fr/games/les-veilleurs-de-brume.html\",\n        \"description\": \"Une aventure narrative où une cartographe suit les lumières d’une cité engloutie.\",\n        \"genre\": \"Aventure narrative\",\n        \"gamePlatform\": \"PC\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"fr-FR\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Accueil\", \"item\": \"https://flexarion.timeoms.fr/\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Nos jeux\", \"item\": \"https://flexarion.timeoms.fr/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Les Veilleurs de Brume\", \"item\": \"https://flexarion.timeoms.fr/games/les-veilleurs-de-brume.html\" }\n        ]\n      }\n    ]\n  }"
+  "sitemap": { "changefreq": "monthly", "priority": "0.9" },
+  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Les Veilleurs de Brume\",\n        \"url\": \"https://flexarion.timeoms.fr/games/les-veilleurs-de-brume.html\",\n        \"description\": \"Aventure narrative atmosphérique sur Godot 4.3 où une cartographe suit les balises lumineuses d'une cité suspendue au-dessus de la brume.\",\n        \"genre\": \"Aventure narrative\",\n        \"gamePlatform\": [\"PC\", \"Windows\", \"Linux\"],\n        \"applicationCategory\": \"Game\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"fr-FR\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Accueil\", \"item\": \"https://flexarion.timeoms.fr/\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Nos jeux\", \"item\": \"https://flexarion.timeoms.fr/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Les Veilleurs de Brume\", \"item\": \"https://flexarion.timeoms.fr/games/les-veilleurs-de-brume.html\" }\n        ]\n      }\n    ]\n  }"
 }
 -->
 <body id="top">
@@ -31,7 +33,7 @@
         </nav>
 
         <h1 id="game-title" class="page-hero__title">
-          <span class="page-hero__kicker">FLX-01 · En développement</span>
+          <span class="page-hero__kicker">FLX-01 · Production principale · Godot 4.3</span>
           <span class="page-hero__display">
             <span class="split-word"><span>LES VEILLEURS</span></span>
             <span class="split-word"><span class="text-ember">DE BRUME</span></span>
@@ -42,45 +44,119 @@
 
     <hr class="rule">
 
-    <section class="section">
+    <!-- ==================== PITCH & VISUEL ==================== -->
+    <section class="section" aria-labelledby="pitch-heading">
       <div class="container-flx">
         <div class="grid gap-12 lg:grid-cols-12 lg:items-start">
           <div class="lg:col-span-5">
-            <figure class="media-frame aspect-[4/5]">
+            <figure class="media-frame aspect-[4/5]" data-mask-reveal>
               <img src="../assets/images/games/projet-01.webp" width="800" height="1000" alt="Illustration de Les Veilleurs de Brume" loading="eager">
+              <figcaption class="media-frame__caption tag">FLX-01 · En développement</figcaption>
             </figure>
           </div>
 
-          <div class="lg:col-span-7 prose-flx">
-            <span class="status status--dev">En développement</span>
-            <h2 class="h-sub mt-6">Écouter ce que la brume cache</h2>
+          <div class="lg:col-span-7 prose-flx" data-reveal>
+            <span class="status status--dev">En développement · Sortie visée T4 2027</span>
+            <h2 id="pitch-heading" class="h-sub mt-6">Écouter ce que la brume cache</h2>
             <p class="mt-4">
-              Dans une cité engloutie par les nuages, une cartographe suit des balises lumineuses qui apparaissent chaque nuit. Explorez des ruines mouvantes, recomposez les souvenirs des habitants et choisissez ce que vous souhaitez ramener à la surface.
+              Perchée sur des arches de pierre calcaire au-dessus d’une mer de nuages perpétuelle, la cité d’Ombrefalaise ne se laisse lire qu’à la tombée du jour. Chaque nuit, d’anciens phares optiques s’allument spontanément dans les quartiers engloutis, traçant des corridors éphémères à travers une brume mouvante qui efface les cartes imprimées la veille.
+            </p>
+            <p>
+              Vous incarnez Nara, jeune veilleuse-cartographe équipée d’un astrolabe acoustique et d’une lanterne à prisme. En reliant les balises par triangulation lumineuse et en décodant les résonances laissées par les habitants disparus, vous décidez quels fragments d’histoire méritent d’être consignés dans le Grand Atlas avant que le brouillard ne les recouvre définitivement.
             </p>
 
-            <dl class="game-card__facts mt-10">
-              <dt>Studio</dt>
-              <dd>Flexarion (Aix-en-Provence, France)</dd>
-              <dt>Genre</dt>
-              <dd>Aventure narrative</dd>
-              <dt>Plateforme</dt>
-              <dd>PC</dd>
-              <dt>Statut</dt>
-              <dd>En développement</dd>
-            </dl>
-
-            <div class="mt-10 flex flex-wrap gap-4">
-              <a href="../games.html" class="btn">Retour aux jeux</a>
-              <a href="../devlog.html#log-03" class="btn">Lire le Devlog</a>
-              <a href="../contact.html" class="btn btn--primary" data-magnetic>
-                <span>Parler à l’équipe</span>
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <button type="button" class="btn btn--primary" data-wishlist-btn="Les Veilleurs de Brume" data-magnetic>
+                <span>Ajouter à la liste de souhaits Steam / Itch.io</span>
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+              <a href="../devlog.html#log-01" class="btn" data-magnetic>
+                <span>Lire le devlog Godot 4</span>
               </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <hr class="rule">
+
+    <!-- ==================== PILIERS DE GAMEPLAY ==================== -->
+    <section class="section section--coal" aria-labelledby="pillars-heading">
+      <div class="container-flx">
+        <div class="section-head">
+          <span class="eyebrow">01 / Piliers de gameplay</span>
+          <h2 id="pillars-heading" class="h-section mt-4" data-split>
+            Trois axes au cœur de l’expérience
+          </h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3" data-reveal-stagger>
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pilier 01 · Cartographie dynamique</span>
+            <h3 class="h-sub mt-3">Dessiner la ville en temps réel</h3>
+            <p>Votre carte n’est jamais acquise : relevez les angles entre les phares, annotez les courants de brume et tracez vos propres chemins sur un carnet de terrain interactif.</p>
+          </article>
+
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pilier 02 · Lumière &amp; Vent</span>
+            <h3 class="h-sub mt-3">Sculpter le brouillard</h3>
+            <p>Orientez les miroirs des belvédères pour percer les nappes volumétriques réactives au vent, révéler des passerelles oubliées et activer d’anciens relais mécaniques.</p>
+          </article>
+
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pilier 03 · Mémoire sélective</span>
+            <h3 class="h-sub mt-3">Choisir ce qui survit</h3>
+            <p>Chaque expédition impose un tri narratif : votre lanterne ne peut préserver qu’un nombre limité d’échos sonores, influençant les récits et l’équilibre de la cité haute.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FICHE TECHNIQUE ==================== -->
+    <section class="section" aria-labelledby="specs-heading">
+      <div class="container-flx">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">02 / Fiche technique</span>
+            <h2 id="specs-heading" class="h-section mt-4" data-split>
+              Spécifications &amp; Configuration
+            </h2>
+          </div>
+          <p class="lead" data-reveal>
+            Conçu pour tourner avec fluidité sur des configurations modestes grâce à un pipeline Forward+ optimisé sous Godot 4.3.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2" data-reveal-stagger>
+          <div class="contact-card" data-reveal>
+            <p class="mono text-ember">Informations de production</p>
+            <dl class="specs-list">
+              <div class="specs-list__row"><dt>Moteur</dt><dd>Godot 4.3</dd></div>
+              <div class="specs-list__row"><dt>Fenêtre de sortie</dt><dd>T4 2027 (estimée)</dd></div>
+              <div class="specs-list__row"><dt>Plateformes</dt><dd>PC (Windows, Linux)</dd></div>
+              <div class="specs-list__row"><dt>Langues</dt><dd>Français, Anglais (voix &amp; textes)</dd></div>
+              <div class="specs-list__row"><dt>Studio</dt><dd>Flexarion (Aix-en-Provence)</dd></div>
+            </dl>
+          </div>
+
+          <div class="contact-card" data-reveal>
+            <p class="mono text-ember">Configuration PC minimale estimée</p>
+            <dl class="specs-list">
+              <div class="specs-list__row"><dt>OS</dt><dd>Windows 10/11 64-bit · Ubuntu 22.04+</dd></div>
+              <div class="specs-list__row"><dt>Processeur</dt><dd>Intel Core i5-8400 / Ryzen 5 2600</dd></div>
+              <div class="specs-list__row"><dt>Mémoire</dt><dd>8 Go RAM</dd></div>
+              <div class="specs-list__row"><dt>Carte graphique</dt><dd>GTX 1060 6 Go / RX 580</dd></div>
+              <div class="specs-list__row"><dt>Stockage</dt><dd>6 Go d’espace libre (SSD recommandé)</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    {{> newsletter}}
   </main>
 
   {{> footer}}

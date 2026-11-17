@@ -3,14 +3,16 @@
   "out": "devlog.html",
   "lang": "fr",
   "nav": "devlog",
+  "animations": true,
+  "scripts": ["js/newsletter.js"],
   "canonical": "devlog.html",
   "frPath": "devlog.html",
   "enPath": "en/devlog.html",
-  "title": "Devlog | Journal de développement du studio Flexarion",
-  "description": "Suivez les notes de développement, recherches techniques et étapes clés de création des jeux vidéo du studio indépendant Flexarion à Aix-en-Provence.",
-  "ogImageAlt": "Devlog — Journal de développement du studio Flexarion.",
+  "title": "Devlog | Journal technique du studio Flexarion",
+  "description": "Notes techniques du studio Flexarion : brouillard volumétrique dans Godot 4, rendu cel-shaded dans Unreal Engine 5 et architecture sonore procédurale.",
+  "ogImageAlt": "Devlog — Journal technique du studio Flexarion.",
   "sitemap": { "changefreq": "weekly", "priority": "0.8" },
-  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"Blog\",\n        \"@id\": \"https://flexarion.timeoms.fr/devlog.html#webpage\",\n        \"url\": \"https://flexarion.timeoms.fr/devlog.html\",\n        \"name\": \"Devlog | Journal de développement du studio Flexarion\",\n        \"description\": \"Notes de développement et journal d'avancement du studio indépendant Flexarion.\",\n        \"isPartOf\": { \"@id\": \"https://flexarion.timeoms.fr/#website\" },\n        \"publisher\": { \"@id\": \"https://flexarion.timeoms.fr/#organization\" },\n        \"inLanguage\": \"fr-FR\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Accueil\", \"item\": \"https://flexarion.timeoms.fr/\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Devlog\", \"item\": \"https://flexarion.timeoms.fr/devlog.html\" }\n        ]\n      }\n    ]\n  }"
+  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"Blog\",\n        \"@id\": \"https://flexarion.timeoms.fr/devlog.html#webpage\",\n        \"url\": \"https://flexarion.timeoms.fr/devlog.html\",\n        \"name\": \"Devlog | Journal technique du studio Flexarion\",\n        \"description\": \"Notes techniques et journal de développement du studio indépendant Flexarion.\",\n        \"isPartOf\": { \"@id\": \"https://flexarion.timeoms.fr/#website\" },\n        \"publisher\": { \"@id\": \"https://flexarion.timeoms.fr/#organization\" },\n        \"inLanguage\": \"fr-FR\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Accueil\", \"item\": \"https://flexarion.timeoms.fr/\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Devlog\", \"item\": \"https://flexarion.timeoms.fr/devlog.html\" }\n        ]\n      }\n    ]\n  }"
 }
 -->
 <body id="top">
@@ -31,7 +33,7 @@
         </nav>
 
         <h1 id="devlog-hero-title" class="page-hero__title">
-          <span class="page-hero__kicker">Journal de bord — Coulisses de production</span>
+          <span class="page-hero__kicker">Journal technique — Coulisses de production</span>
           <span class="page-hero__display" lang="en">
             <span class="split-word"><span>STUDIO</span></span>
             <span class="split-word"><span class="text-ember">DEVLOG</span></span>
@@ -40,7 +42,7 @@
 
         <div class="mt-10 grid gap-8 lg:grid-cols-12 lg:items-end">
           <p class="lead lg:col-span-7" data-hero-fade>
-            Ici sont consignées nos étapes de prototypage, nos recherches visuelles et l’évolution de nos chantiers internes à Aix-en-Provence, avant les annonces publiques.
+            Carnets d’ingénierie et de direction artistique rédigés par Timéo, Hugo et Enrique sur le développement de <em>Les Veilleurs de Brume</em> et nos prototypes R&amp;D.
           </p>
           <div class="lg:col-span-5 lg:flex lg:justify-end" data-hero-fade>
             <a href="feed.xml" class="btn btn--small" data-no-transition>
@@ -63,16 +65,17 @@
           <article id="log-03" class="devlog-card" data-reveal>
             <div class="devlog-card__meta">
               <span class="tag">LOG #03</span>
-              <span class="status status--dev">FLX-01 · Les Veilleurs de Brume</span>
-              <time class="mono text-muted" datetime="2026-11-16">16 novembre 2026</time>
+              <span class="status status--soon">FLX-03 · Lisière</span>
+              <time class="mono text-muted" datetime="2026-11-10">10 novembre 2026</time>
+              <span class="mono text-muted">Par Enrique Ruiz</span>
             </div>
-            <h3 class="h-sub mt-5">Les Veilleurs de Brume : prototypage des mécaniques et boucle de jeu</h3>
+            <h3 class="h-sub mt-5">Architecture sonore procédurale et nappes synthétiques minimalistes</h3>
             <div class="prose-flx mt-4">
               <p>
-                Avant de figer les décors ou de produire des assets définitifs, nos tests actuels sur <a href="games/les-veilleurs-de-brume.html"><strong>Les Veilleurs de Brume</strong></a> se concentrent sur le ressenti immédiat manette et clavier en main : temps de réponse, lisibilité des déplacements et rythme des interactions autour des balises lumineuses.
+                Dans <a href="games/lisiere.html"><strong>Lisière</strong></a>, la musique n’est pas une piste WAV pré-enregistrée : chaque pierre acoustique posée dans une clairière agit comme un nœud DSP pilotant en temps réel un graphe de synthèse additive (ondes sinusoïdales désaccordées, filtre passe-bas résonant et ligne à retard modulée) sous Godot 4 et PipeWire.
               </p>
               <p>
-                Cette phase en « boîte grise » nous permet d’itérer vite, de tester plusieurs hypothèses de game design et de ne conserver que ce qui sert réellement l’expérience du joueur.
+                Lorsque le joueur s’approche de l’accord cible d’une énigme, les battements de phase s’alignent progressivement sur une quinte juste avant d’ouvrir le passage végétal. Ce système consomme moins de 1,8 % de temps CPU sur un cœur standard et garantit une continuité organique sans coupure entre les zones.
               </p>
             </div>
           </article>
@@ -80,13 +83,17 @@
           <article id="log-02" class="devlog-card" data-reveal>
             <div class="devlog-card__meta">
               <span class="tag">LOG #02</span>
-              <span class="mono text-ember">Direction artistique</span>
-              <time class="mono text-muted" datetime="2026-11-01">1er novembre 2026</time>
+              <span class="status status--soon">FLX-02 · Neon Calanques</span>
+              <time class="mono text-muted" datetime="2026-10-14">14 octobre 2026</time>
+              <span class="mono text-muted">Par Hugo Banti</span>
             </div>
-            <h3 class="h-sub mt-5">Lumière, contraste et grammaire visuelle du studio</h3>
+            <h3 class="h-sub mt-5">Direction artistique : traduire la lumière des calanques méditerranéennes en rendu cell-shaded</h3>
             <div class="prose-flx mt-4">
               <p>
-                Nos recherches visuelles posent un principe clair : la lisibilité des silhouettes et des intentions de jeu prime sur la surcharge graphique. Nous travaillons sur des ambiances sombres et contrastées ponctuées d’accents lumineux nets pour guider le regard naturellement.
+                Pour le prototype <a href="games/neon-calanques.html"><strong>Neon Calanques</strong></a> sous Unreal Engine 5, nous voulions éviter l’écueil d’une science-fiction générique grise. Nous sommes partis de relevés photographiques des falaises de Sormiou à midi : un calcaire presque aveuglant découpé par des ombres franches bleu cobalt.
+              </p>
+              <p>
+                En post-traitement, un buffer personnalisé quantifie la luminance en trois paliers nets tout en préservant l’émission HDR des enseignes et créatures de néon. Le contour d’encre est calculé par détection d’écarts de normales et de profondeur, puis affiné en fonction de la vitesse du parkour pour garder les silhouettes lisibles à haute vélocité.
               </p>
             </div>
           </article>
@@ -94,22 +101,27 @@
           <article id="log-01" class="devlog-card" data-reveal>
             <div class="devlog-card__meta">
               <span class="tag">LOG #01</span>
-              <span class="mono text-ember">Studio</span>
-              <time class="mono text-muted" datetime="2026-10-15">15 octobre 2026</time>
+              <span class="status status--dev">FLX-01 · Les Veilleurs de Brume</span>
+              <time class="mono text-muted" datetime="2026-09-18">18 septembre 2026</time>
+              <span class="mono text-muted">Par Timéo Morsilli</span>
             </div>
-            <h3 class="h-sub mt-5">Ouverture du site officiel de Flexarion à Aix-en-Provence</h3>
+            <h3 class="h-sub mt-5">Générer un brouillard volumétrique réactif au vent dans Godot 4</h3>
             <div class="prose-flx mt-4">
               <p>
-                Mise en ligne de la vitrine officielle de <strong>Flexarion</strong>, rédigée en français et en anglais pour poser les bases de notre communication avec les joueurs, les créateurs de la région PACA et les partenaires potentiels.
+                Sur <a href="games/les-veilleurs-de-brume.html"><strong>Les Veilleurs de Brume</strong></a>, le brouillard n’est pas un simple décor : c’est l’obstacle principal de la navigation. Nous utilisons le <code>FogMaterial</code> volumétrique de Godot 4.3 couplé à un texture-3D de bruit de Worley-Perlin échantillonnée le long d’un champ de vecteurs de vent calculé côté CPU à 15 Hz.
               </p>
               <p>
-                Consultez la page <a href="studio.html">Le studio</a> pour découvrir notre démarche ou le <a href="press.html">Press Kit</a> pour nos ressources médias.
+                Quand Nara oriente le faisceau d’un phare ou sa lanterne à prisme, un volume d’occlusion négatif creuse localement la densité du brouillard et déclenche un gradient de diffusion chaude. En limitant les pas de raymarching à 48 froxels avec reprojection temporelle, la scène tient les 60 ips stables sur une GTX 1060.
               </p>
             </div>
           </article>
         </div>
       </div>
     </section>
+
+    <hr class="rule">
+
+    {{> newsletter}}
 
   </main>
 

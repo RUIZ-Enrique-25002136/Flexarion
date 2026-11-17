@@ -19,6 +19,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://flexarion.timeoms.fr/games/les-veilleurs-de-brume.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://flexarion.timeoms.fr/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -26,11 +31,6 @@
   <url>
     <loc>https://flexarion.timeoms.fr/devlog.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://flexarion.timeoms.fr/games/les-veilleurs-de-brume.html</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -79,6 +79,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flexarion.timeoms.fr/en/games/les-veilleurs-de-brume.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://flexarion.timeoms.fr/en/studio.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -91,11 +96,6 @@
   <url>
     <loc>https://flexarion.timeoms.fr/en/devlog.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://flexarion.timeoms.fr/en/games/les-veilleurs-de-brume.html</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>

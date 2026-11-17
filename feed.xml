@@ -4,28 +4,28 @@
     <title>Flexarion — Devlog du studio</title>
     <link>https://flexarion.timeoms.fr/devlog.html</link>
     <atom:link href="https://flexarion.timeoms.fr/feed.xml" rel="self" type="application/rss+xml" />
-    <description>Journal de développement et notes techniques du studio indépendant Flexarion (Aix-en-Provence).</description>
+    <description>Notes techniques de développement, direction artistique et architecture sonore du studio indépendant Flexarion (Aix-en-Provence).</description>
     <language>fr-FR</language>
     <item>
-      <title>Les Veilleurs de Brume (FLX-01) : prototypage des mécaniques et boucle de jeu</title>
+      <title>Architecture sonore procédurale et nappes synthétiques minimalistes</title>
       <link>https://flexarion.timeoms.fr/devlog.html#log-03</link>
       <guid>https://flexarion.timeoms.fr/devlog.html#log-03</guid>
-      <pubDate>Mon, 16 Nov 2026 10:00:00 +0100</pubDate>
-      <description>Point d'étape sur les premiers prototypes internes de Les Veilleurs de Brume : priorisation du ressenti manette en main avant la production d'assets finaux.</description>
+      <pubDate>Tue, 10 Nov 2026 10:00:00 +0100</pubDate>
+      <description>Lisière : comment chaque interaction puzzle pilote des synthétiseurs modulaires légers et des filtres passe-bas dans Godot 4 et PipeWire.</description>
     </item>
     <item>
-      <title>Direction artistique : lumière, contraste et identité Flexarion</title>
+      <title>Direction artistique : traduire la lumière des calanques méditerranéennes en rendu cell-shaded</title>
       <link>https://flexarion.timeoms.fr/devlog.html#log-02</link>
       <guid>https://flexarion.timeoms.fr/devlog.html#log-02</guid>
-      <pubDate>Sun, 01 Nov 2026 10:00:00 +0100</pubDate>
-      <description>Définition de la grammaire visuelle du studio : lisibilité des silhouettes, palette sombre contrastée et signature orange électrique.</description>
+      <pubDate>Wed, 14 Oct 2026 10:00:00 +0200</pubDate>
+      <description>Neon Calanques : construction d’un pipeline cel-shaded dans Unreal Engine 5 mariant calcaire blanc éblouissant et néons synthétiques nocturnes.</description>
     </item>
     <item>
-      <title>Ouverture du site officiel de Flexarion à Aix-en-Provence</title>
+      <title>Générer un brouillard volumétrique réactif au vent dans Godot 4</title>
       <link>https://flexarion.timeoms.fr/devlog.html#log-01</link>
       <guid>https://flexarion.timeoms.fr/devlog.html#log-01</guid>
-      <pubDate>Thu, 15 Oct 2026 10:00:00 +0200</pubDate>
-      <description>Mise en ligne de la vitrine officielle du studio indépendant Flexarion, fondé par Timéo Morsilli, Hugo Banti et Enrique Ruiz.</description>
+      <pubDate>Fri, 18 Sep 2026 10:00:00 +0200</pubDate>
+      <description>Les Veilleurs de Brume : retour technique sur les shaders 3D de densité, champs de vecteurs de vent et éclairage des balises nocturnes dans Godot 4.3.</description>
     </item>
   </channel>
 </rss>

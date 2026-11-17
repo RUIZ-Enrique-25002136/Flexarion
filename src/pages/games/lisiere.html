@@ -4,14 +4,16 @@
   "lang": "fr",
   "nav": "games",
   "prefix": "../",
+  "animations": true,
+  "scripts": ["js/wishlist.js", "js/newsletter.js"],
   "canonical": "games/lisiere.html",
   "frPath": "games/lisiere.html",
   "enPath": "en/games/lisiere.html",
   "title": "Lisière | Jeu vidéo Flexarion",
-  "description": "Lisière est un puzzle contemplatif en préparation chez Flexarion, studio indépendant de jeux vidéo à Aix-en-Provence.",
+  "description": "Lisière est un puzzle contemplatif sonore sous Godot 4 imaginé par Flexarion, studio indépendant à Aix-en-Provence.",
   "ogImageAlt": "Lisière — Jeu vidéo indépendant par Flexarion.",
   "sitemap": { "changefreq": "monthly", "priority": "0.8" },
-  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Lisière\",\n        \"url\": \"https://flexarion.timeoms.fr/games/lisiere.html\",\n        \"description\": \"Un puzzle contemplatif sur la frontière entre forêt et mémoire, construit autour de la lumière et du son.\",\n        \"genre\": \"Puzzle contemplatif\",\n        \"gamePlatform\": [\"PC\", \"Mobile\"],\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"fr-FR\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Accueil\", \"item\": \"https://flexarion.timeoms.fr/\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Nos jeux\", \"item\": \"https://flexarion.timeoms.fr/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Lisière\", \"item\": \"https://flexarion.timeoms.fr/games/lisiere.html\" }\n        ]\n      }\n    ]\n  }"
+  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Lisière\",\n        \"url\": \"https://flexarion.timeoms.fr/games/lisiere.html\",\n        \"description\": \"Un puzzle contemplatif sous Godot 4 sur la frontière entre forêt et mémoire, construit autour de la synthèse audio et de la lumière.\",\n        \"genre\": \"Puzzle contemplatif\",\n        \"gamePlatform\": [\"PC\", \"Mobile\"],\n        \"applicationCategory\": \"Game\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"fr-FR\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Accueil\", \"item\": \"https://flexarion.timeoms.fr/\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Nos jeux\", \"item\": \"https://flexarion.timeoms.fr/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Lisière\", \"item\": \"https://flexarion.timeoms.fr/games/lisiere.html\" }\n        ]\n      }\n    ]\n  }"
 }
 -->
 <body id="top">
@@ -31,7 +33,7 @@
         </nav>
 
         <h1 id="game-title" class="page-hero__title">
-          <span class="page-hero__kicker">FLX-03 · À venir</span>
+          <span class="page-hero__kicker">FLX-03 · Prototype R&amp;D · Godot 4</span>
           <span class="page-hero__display">
             <span class="split-word"><span>LISIÈRE</span></span>
           </span>
@@ -41,44 +43,116 @@
 
     <hr class="rule">
 
-    <section class="section">
+    <section class="section" aria-labelledby="pitch-heading">
       <div class="container-flx">
         <div class="grid gap-12 lg:grid-cols-12 lg:items-start">
           <div class="lg:col-span-5">
-            <figure class="media-frame aspect-[4/5]">
+            <figure class="media-frame aspect-[4/5]" data-mask-reveal>
               <img src="../assets/images/games/projet-03.webp" width="800" height="1000" alt="Illustration de Lisière" loading="eager">
+              <figcaption class="media-frame__caption tag">FLX-03 · Exploration future</figcaption>
             </figure>
           </div>
 
-          <div class="lg:col-span-7 prose-flx">
-            <span class="status status--soon">À venir</span>
-            <h2 class="h-sub mt-6">La mémoire pousse à la lumière</h2>
+          <div class="lg:col-span-7 prose-flx" data-reveal>
+            <span class="status status--soon">Exploration · Fenêtre 2028</span>
+            <h2 id="pitch-heading" class="h-sub mt-6">La mémoire pousse à la lumière</h2>
             <p class="mt-4">
-              Lisière est un puzzle contemplatif où chaque son révèle un chemin. Faites dialoguer une forêt vivante et les souvenirs d’une voyageuse pour retrouver la forme d’un lieu disparu.
+              À la frontière d’une pinède silencieuse et d’un village abandonné depuis quarante ans, les arbres répondent aux fréquences sonores comme des diapasons vivants. Chaque clairière renferme un souvenir figé qui attend d’être accordé.
+            </p>
+            <p>
+              Sans texte superflu ni chronomètre, <em>Lisière</em> vous invite à déplacer des bornes acoustiques, ouvrir des percées de lumière dans la canopée et composer une polyphonie organique qui révèle pas à pas l’architecture d’un lieu disparu.
             </p>
 
-            <dl class="game-card__facts mt-10">
-              <dt>Studio</dt>
-              <dd>Flexarion (Aix-en-Provence, France)</dd>
-              <dt>Genre</dt>
-              <dd>Puzzle contemplatif</dd>
-              <dt>Plateformes</dt>
-              <dd>PC, mobile</dd>
-              <dt>Statut</dt>
-              <dd>À venir</dd>
-            </dl>
-
-            <div class="mt-10 flex flex-wrap gap-4">
-              <a href="../games.html" class="btn">Retour aux jeux</a>
-              <a href="../contact.html" class="btn btn--primary" data-magnetic>
-                <span>Parler à l’équipe</span>
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <button type="button" class="btn btn--primary" data-wishlist-btn="Lisière" data-magnetic>
+                <span>Ajouter à la liste de souhaits Steam / Itch.io</span>
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+              <a href="../devlog.html#log-03" class="btn" data-magnetic>
+                <span>Lire le devlog audio</span>
               </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <hr class="rule">
+
+    <section class="section section--coal" aria-labelledby="pillars-heading">
+      <div class="container-flx">
+        <div class="section-head">
+          <span class="eyebrow">01 / Piliers de gameplay</span>
+          <h2 id="pillars-heading" class="h-section mt-4" data-split>
+            Écouter pour résoudre
+          </h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3" data-reveal-stagger>
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pilier 01 · Résonance spatiale</span>
+            <h3 class="h-sub mt-3">Le son comme mécanisme</h3>
+            <p>Chaque pierre levée module la hauteur, le filtre et la réverbération d’une nappe synthétique générée en direct pour indiquer la proximité de la solution.</p>
+          </article>
+
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pilier 02 · Botanique vivante</span>
+            <h3 class="h-sub mt-3">Clairières réactives</h3>
+            <p>La flore se déploie ou se rétracte selon l’angle du soleil et l’harmonie acoustique obtenue, ouvrant des passages invisibles au premier regard.</p>
+          </article>
+
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pilier 03 · Narration silencieuse</span>
+            <h3 class="h-sub mt-3">Zéro texte obligatoire</h3>
+            <p>Toute l’histoire se déchiffre par l’image, la topographie des ruines et l’évolution musicale de la forêt, accessible dans toutes les langues.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="specs-heading">
+      <div class="container-flx">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">02 / Fiche technique</span>
+            <h2 id="specs-heading" class="h-section mt-4" data-split>
+              Spécifications &amp; Configuration
+            </h2>
+          </div>
+          <p class="lead" data-reveal>
+            Développé sur Godot 4 avec un moteur audio procédural léger pensé autant pour le PC que pour les écrans tactiles.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2" data-reveal-stagger>
+          <div class="contact-card" data-reveal>
+            <p class="mono text-ember">Informations de production</p>
+            <dl class="specs-list">
+              <div class="specs-list__row"><dt>Moteur</dt><dd>Godot 4</dd></div>
+              <div class="specs-list__row"><dt>Fenêtre visée</dt><dd>2028 (post-FLX-01)</dd></div>
+              <div class="specs-list__row"><dt>Plateformes</dt><dd>PC, Mobile (iOS / Android)</dd></div>
+              <div class="specs-list__row"><dt>Langues</dt><dd>Français, Anglais (interface)</dd></div>
+              <div class="specs-list__row"><dt>Studio</dt><dd>Flexarion (Aix-en-Provence)</dd></div>
+            </dl>
+          </div>
+
+          <div class="contact-card" data-reveal>
+            <p class="mono text-ember">Configuration PC minimale estimée</p>
+            <dl class="specs-list">
+              <div class="specs-list__row"><dt>OS</dt><dd>Windows 10 · macOS 12 · Linux</dd></div>
+              <div class="specs-list__row"><dt>Processeur</dt><dd>Dual-core 2.0 GHz</dd></div>
+              <div class="specs-list__row"><dt>Mémoire</dt><dd>4 Go RAM</dd></div>
+              <div class="specs-list__row"><dt>Carte graphique</dt><dd>Intel Iris Xe / équivalent Vulkan</dd></div>
+              <div class="specs-list__row"><dt>Stockage</dt><dd>2 Go d’espace libre</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    {{> newsletter}}
   </main>
 
   {{> footer}}

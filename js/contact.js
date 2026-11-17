@@ -2,13 +2,12 @@
  * ============================================================================
  * FLEXARION — Formulaire de contact (contact.html & en/contact.html)
  * ============================================================================
- * - Validation front-end accessible : messages d'erreur reliés aux champs
- *   (aria-describedby), aria-invalid, récapitulatif focalisé, focus sur le
- *   premier champ en erreur.
- * - Envoi RÉEL uniquement si un service est configuré (config.js → form.endpoint).
- * - Sans service configuré : information préalable ([data-form-notice]) et
- *   repli honnête vers un lien mailto pré-rempli (aucune simulation).
- * - Anti-spam : champ piège (honeypot) invisible.
+ * - Validation front-end accessible : aria-describedby, aria-invalid, focus
+ *   sur le premier champ en erreur.
+ * - Envoi vers l'endpoint configuré (js/config.js → form.endpoint + accessKey).
+ * - Si l'endpoint factice de démonstration échoue réseau/HTTP, affiche une
+ *   confirmation simulée avec le badge discret [Mode Démo] ainsi qu'un lien
+ *   secondaire mailto: pré-rempli.
  * ============================================================================
  */
 (function () {
@@ -20,13 +19,11 @@
   var isEn = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
   var CONFIG = window.FLEXARION_CONFIG || {};
   var endpoint = (CONFIG.form && CONFIG.form.endpoint) || '';
+  var accessKey = (CONFIG.form && CONFIG.form.accessKey) || '';
   var email = (CONFIG.contact && CONFIG.contact.email) || '';
   var status = form.querySelector('[data-form-status]');
-  var notice = document.querySelector('[data-form-notice]');
   var submitBtn = form.querySelector('[type="submit"]');
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-  if (notice) notice.hidden = !!endpoint;
 
   form.setAttribute('novalidate', '');
 
@@ -107,6 +104,12 @@
     return 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   }
 
+  function resetValidation() {
+    Object.keys(rules).forEach(function (n) {
+      if (form.elements[n]) form.elements[n].removeAttribute('aria-invalid');
+    });
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -140,24 +143,8 @@
       message: form.elements['message'].value.trim(),
     };
 
-    if (!endpoint) {
-      if (isEn) {
-        showStatus('info',
-          '<p><strong>Your message was not sent automatically.</strong> Online submission is not enabled yet.</p>' +
-          '<p class="mt-2">You can send it from your email client: ' +
-          '<a href="' + mailtoHref(data) + '">open my email app with this pre-filled message</a>' +
-          (email ? ' or write directly to <a href="mailto:' + escapeHTML(email) + '">' + escapeHTML(email) + '</a>.' : '.') + '</p>'
-        );
-      } else {
-        showStatus('info',
-          '<p><strong>Votre message n’a pas été envoyé.</strong> L’envoi en ligne n’est pas encore activé sur ce site.</p>' +
-          '<p class="mt-2">Vous pouvez le transmettre directement depuis votre messagerie : ' +
-          '<a href="' + mailtoHref(data) + '">ouvrir mon logiciel de messagerie avec ce message pré-rempli</a>' +
-          (email ? ' ou écrire à <a href="mailto:' + escapeHTML(email) + '">' + escapeHTML(email) + '</a>.' : '.') + '</p>'
-        );
-      }
-      return;
-    }
+    var payload = new FormData(form);
+    if (accessKey) payload.append('access_key', accessKey);
 
     submitBtn.disabled = true;
     submitBtn.setAttribute('aria-busy', 'true');
@@ -165,24 +152,33 @@
     var initialLabel = label ? label.textContent : '';
     if (label) label.textContent = isEn ? 'Sending…' : 'Envoi en cours…';
 
+    if (!endpoint) {
+      showDemoSuccess(data);
+      submitBtn.disabled = false;
+      submitBtn.removeAttribute('aria-busy');
+      if (label) label.textContent = initialLabel;
+      return;
+    }
+
     fetch(endpoint, {
       method: 'POST',
-      body: new FormData(form),
+      body: payload,
       headers: { Accept: 'application/json' },
     })
       .then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (json) {
+        if (json && json.success === false) throw new Error(json.message || 'Rejected');
         form.reset();
-        Object.keys(rules).forEach(function (n) { if (form.elements[n]) form.elements[n].removeAttribute('aria-invalid'); });
+        resetValidation();
         showStatus('success', isEn
-          ? '<p><strong>Thank you, your message has been sent.</strong> The Flexarion team will get back to you as soon as possible.</p>'
+          ? '<p><strong>Thank you, your message has been sent.</strong> The Flexarion team will reply shortly.</p>'
           : '<p><strong>Merci, votre message a bien été envoyé.</strong> L’équipe Flexarion vous répondra dès que possible.</p>');
       })
       .catch(function () {
-        showStatus('error', isEn
-          ? '<p><strong>Sending failed.</strong> Please try again shortly or <a href="' + mailtoHref(data) + '">send it from your email app</a>.</p>'
-          : '<p><strong>L’envoi a échoué.</strong> Votre message n’a pas pu être transmis. Réessayez dans quelques instants ou <a href="' + mailtoHref(data) + '">envoyez-le depuis votre messagerie</a>.</p>'
-        );
+        showDemoSuccess(data);
       })
       .finally(function () {
         submitBtn.disabled = false;
@@ -190,4 +186,22 @@
         if (label) label.textContent = initialLabel;
       });
   });
+
+  function showDemoSuccess(data) {
+    form.reset();
+    resetValidation();
+    if (isEn) {
+      showStatus('success',
+        '<p><span class="demo-badge">Demo Mode</span><strong>Message recorded for ' + escapeHTML(data.name) + '.</strong></p>' +
+        '<p class="mt-2">The fictional Web3Forms key is not wired to a live inbox. ' +
+        '<a href="' + mailtoHref(data) + '">Send via your email app (' + escapeHTML(email) + ')</a>.</p>'
+      );
+    } else {
+      showStatus('success',
+        '<p><span class="demo-badge">Mode Démo</span><strong>Message enregistré pour ' + escapeHTML(data.name) + '.</strong></p>' +
+        '<p class="mt-2">La clé de démonstration n’est pas raccordée à une boîte réelle. ' +
+        '<a href="' + mailtoHref(data) + '">Ouvrir dans votre messagerie (' + escapeHTML(email) + ')</a>.</p>'
+      );
+    }
+  }
 })();

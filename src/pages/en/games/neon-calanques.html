@@ -5,14 +5,16 @@
   "nav": "games",
   "inSubdir": true,
   "prefix": "../../",
+  "animations": true,
+  "scripts": ["js/wishlist.js", "js/newsletter.js"],
   "canonical": "en/games/neon-calanques.html",
   "frPath": "games/neon-calanques.html",
   "enPath": "en/games/neon-calanques.html",
   "title": "Neon Calanques | Flexarion Game",
-  "description": "Neon Calanques is an action roguelite in preparation at Flexarion, an independent game studio in Aix-en-Provence.",
+  "description": "Neon Calanques is a cel-shaded action roguelite built in Unreal Engine 5 by independent studio Flexarion in Aix-en-Provence.",
   "ogImageAlt": "Neon Calanques — Independent game by Flexarion.",
   "sitemap": { "changefreq": "monthly", "priority": "0.7" },
-  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Neon Calanques\",\n        \"url\": \"https://flexarion.timeoms.fr/en/games/neon-calanques.html\",\n        \"description\": \"A fast-paced roguelite set in futuristic Marseille, blending solar parkour and creatures of light.\",\n        \"genre\": \"Action roguelite\",\n        \"gamePlatform\": [\"PC\", \"Console\"],\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"en-US\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://flexarion.timeoms.fr/en/index.html\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Games\", \"item\": \"https://flexarion.timeoms.fr/en/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Neon Calanques\", \"item\": \"https://flexarion.timeoms.fr/en/games/neon-calanques.html\" }\n        ]\n      }\n    ]\n  }"
+  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Neon Calanques\",\n        \"url\": \"https://flexarion.timeoms.fr/en/games/neon-calanques.html\",\n        \"description\": \"Fast-paced cel-shaded roguelite in Unreal Engine 5 set in a futuristic Marseille blending solar parkour and neon creatures.\",\n        \"genre\": \"Action roguelite\",\n        \"gamePlatform\": [\"PC\", \"Console\"],\n        \"applicationCategory\": \"Game\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"en-US\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://flexarion.timeoms.fr/en/index.html\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Games\", \"item\": \"https://flexarion.timeoms.fr/en/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Neon Calanques\", \"item\": \"https://flexarion.timeoms.fr/en/games/neon-calanques.html\" }\n        ]\n      }\n    ]\n  }"
 }
 -->
 <body id="top">
@@ -32,7 +34,7 @@
         </nav>
 
         <h1 id="game-title" class="page-hero__title">
-          <span class="page-hero__kicker">FLX-02 · Coming soon</span>
+          <span class="page-hero__kicker">FLX-02 · R&amp;D Prototype · Unreal Engine 5</span>
           <span class="page-hero__display">
             <span class="split-word"><span>NEON</span></span>
             <span class="split-word"><span class="text-ember">CALANQUES</span></span>
@@ -43,40 +45,116 @@
 
     <hr class="rule">
 
-    <section class="section">
+    <section class="section" aria-labelledby="pitch-heading">
       <div class="container-flx">
         <div class="grid gap-12 lg:grid-cols-12 lg:items-start">
           <div class="lg:col-span-5">
-            <figure class="media-frame aspect-[4/5]">
+            <figure class="media-frame aspect-[4/5]" data-mask-reveal>
               <img src="../../assets/images/games/projet-02.webp" width="800" height="1000" alt="Artwork for Neon Calanques" loading="eager">
+              <figcaption class="media-frame__caption tag">FLX-02 · Future exploration</figcaption>
             </figure>
           </div>
 
-          <div class="lg:col-span-7 prose-flx">
-            <span class="status status--soon">Coming soon</span>
-            <h2 class="h-sub mt-6">The night belongs to the bold</h2>
+          <div class="lg:col-span-7 prose-flx" data-reveal>
+            <span class="status status--soon">Exploration · Target 2028</span>
+            <h2 id="pitch-heading" class="h-sub mt-6">The night belongs to the bold</h2>
             <p class="mt-4">
-              In a neon-drenched futuristic Marseille, every run reshapes the city. Chain fluid movements, tame creatures of light, and trace a mysterious signal rising from the sea.
+              In 2094, Marseille’s white limestone cliffs house tidal generators and suspended viaducts towering above a bioluminescent Mediterranean. When an unknown offshore signal destabilizes the harbor grid, only solar couriers can traverse the reefs before dawn.
+            </p>
+            <p>
+              Each run throws you into a kinetic vertical climb where momentum is your best shield. Chain cable grinds, wall-bounces, and light-creature captures mid-fight to mutate your loadout and trace the wave back to its source.
             </p>
 
-            <dl class="game-card__facts mt-10">
-              <dt>Studio</dt><dd>Flexarion (Aix-en-Provence, France)</dd>
-              <dt>Genre</dt><dd>Action roguelite</dd>
-              <dt>Platforms</dt><dd>PC, Consoles</dd>
-              <dt>Status</dt><dd>Coming soon</dd>
-            </dl>
-
-            <div class="mt-10 flex flex-wrap gap-4">
-              <a href="../games.html" class="btn">Back to games</a>
-              <a href="../contact.html" class="btn btn--primary" data-magnetic>
-                <span>Talk to the team</span>
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <button type="button" class="btn btn--primary" data-wishlist-btn="Neon Calanques" data-magnetic>
+                <span>Add to Steam / Itch.io Wishlist</span>
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+              <a href="../devlog.html#log-02" class="btn" data-magnetic>
+                <span>Read cel-shading devlog</span>
               </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <hr class="rule">
+
+    <section class="section section--coal" aria-labelledby="pillars-heading">
+      <div class="container-flx">
+        <div class="section-head">
+          <span class="eyebrow">01 / Gameplay pillars</span>
+          <h2 id="pillars-heading" class="h-section mt-4" data-split>
+            Momentum, light, and risk
+          </h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3" data-reveal-stagger>
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pillar 01 · Solar parkour</span>
+            <h3 class="h-sub mt-3">Preserve momentum</h3>
+            <p>Magnetic grapple, limestone wall-runs, and suspended cable surfing: the faster you flow, the faster your abilities recharge.</p>
+          </article>
+
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pillar 02 · Light symbiosis</span>
+            <h3 class="h-sub mt-3">Tame neon wisps</h3>
+            <p>Capture luminous entities mid-run to fuse elemental modifiers onto your melee strikes and ranged bursts.</p>
+          </article>
+
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pillar 03 · Day-to-night shift</span>
+            <h3 class="h-sub mt-3">A shifting coastline</h3>
+            <p>Arenas transition from blinding Mediterranean noon to electric midnight shadows, altering enemy patterns and traversal shortcuts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="specs-heading">
+      <div class="container-flx">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">02 / Technical sheet</span>
+            <h2 id="specs-heading" class="h-section mt-4" data-split>
+              Specs &amp; Requirements
+            </h2>
+          </div>
+          <p class="lead" data-reveal>
+            Prototype currently explored in Unreal Engine 5 with a crisp cel-shaded lighting pipeline.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2" data-reveal-stagger>
+          <div class="contact-card" data-reveal>
+            <p class="mono text-ember">Production overview</p>
+            <dl class="specs-list">
+              <div class="specs-list__row"><dt>Engine</dt><dd>Unreal Engine 5</dd></div>
+              <div class="specs-list__row"><dt>Target window</dt><dd>2028 (post-FLX-01)</dd></div>
+              <div class="specs-list__row"><dt>Platforms</dt><dd>PC, Consoles</dd></div>
+              <div class="specs-list__row"><dt>Languages</dt><dd>English, French</dd></div>
+              <div class="specs-list__row"><dt>Studio</dt><dd>Flexarion (Aix-en-Provence)</dd></div>
+            </dl>
+          </div>
+
+          <div class="contact-card" data-reveal>
+            <p class="mono text-ember">Estimated minimum PC specs</p>
+            <dl class="specs-list">
+              <div class="specs-list__row"><dt>OS</dt><dd>Windows 10/11 64-bit</dd></div>
+              <div class="specs-list__row"><dt>CPU</dt><dd>Intel Core i5-10400 / Ryzen 5 3600</dd></div>
+              <div class="specs-list__row"><dt>Memory</dt><dd>16 GB RAM</dd></div>
+              <div class="specs-list__row"><dt>GPU</dt><dd>RTX 2060 / RX 5700 XT</dd></div>
+              <div class="specs-list__row"><dt>Storage</dt><dd>12 GB SSD</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    {{> newsletter}}
   </main>
 
   {{> footer}}

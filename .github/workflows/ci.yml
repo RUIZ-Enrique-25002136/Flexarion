@@ -1,0 +1,31 @@
+name: CI — Build & Integrity Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build Tailwind CSS and static HTML pages
+        run: npm run build
+
+      - name: Verify generated HTML, links, and assets
+        run: npm run check
+
+      - name: Syntax check JavaScript files
+        run: |
+          for f in js/*.js scripts/*.mjs tailwind.config.js; do
+            node --check "$f"
+          done

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
-    (function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js');try{if(sessionStorage.getItem('flx-pt')){sessionStorage.removeItem('flx-pt');r.classList.add('pt-enter');}}catch(e){}window.__flxFailsafe=setTimeout(function(){r.classList.add('anim-fallback');},2500);})();
+    (function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js','anim-fallback');})();
   </script>
 
   <title>Page introuvable (404) | Flexarion</title>
@@ -30,20 +30,12 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/responsive.css">
 
-  <!-- Scripts différés (GSAP + ScrollTrigger via CDN + modules Flexarion) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <!-- Scripts différés -->
   <script src="/js/config.js" defer></script>
   <script src="/js/main.js" defer></script>
-  <script src="/js/animations.js" defer></script>
 </head>
 <body id="top">
   <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-
-  <!-- Rideau de transition entre pages -->
-  <div class="page-curtain" aria-hidden="true">
-    <span class="page-curtain__label">FLEXARION</span>
-  </div>
 
   <!-- En-tête & Navigation principale -->
   <header class="site-header" data-header>
@@ -70,11 +62,11 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="/en/index.html" class="lang-switch lang-switch--to-en" hreflang="en" aria-label="Passer le site en anglais (English)" title="Passer le site en anglais (English)">
-          <span class="lang-switch__current" aria-hidden="true">FR</span>
-          <svg class="lang-switch__arrow" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9.5 4.5 13 8l-3.5 3.5"/></svg>
-          <span class="lang-switch__target" aria-hidden="true">EN</span>
-        </a>
+        <nav class="lang-switch" aria-label="Choix de la langue">
+          <a href="/index.html" class="lang-switch__item font-bold text-[#FF5A1F]" lang="fr" hreflang="fr" aria-current="true">FR</a>
+          <span class="lang-switch__sep" aria-hidden="true">|</span>
+          <a href="/en/index.html" class="lang-switch__item" lang="en" hreflang="en">EN</a>
+        </nav>
         <a href="/contact.html" class="btn btn--small header-cta" data-magnetic>
           <span>Parler d’un projet</span>
           <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -108,18 +100,17 @@
           <p class="mono text-muted">Studio indépendant · Aix-en-Provence</p>
           <a href="mailto:contact@flexarion.timeoms.fr" class="contact-email mt-2" data-email-link data-email-text>contact@flexarion.timeoms.fr</a>
         </div>
-        <a href="/en/index.html" class="lang-switch lang-switch--to-en" hreflang="en" aria-label="Passer le site en anglais (English)" title="Passer le site en anglais (English)">
-          <span class="lang-switch__current" aria-hidden="true">FR</span>
-          <svg class="lang-switch__arrow" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9.5 4.5 13 8l-3.5 3.5"/></svg>
-          <span class="lang-switch__target" aria-hidden="true">EN</span>
-        </a>
+        <nav class="lang-switch" aria-label="Choix de la langue">
+          <a href="/index.html" class="lang-switch__item font-bold text-[#FF5A1F]" lang="fr" hreflang="fr" aria-current="true">FR</a>
+          <span class="lang-switch__sep" aria-hidden="true">|</span>
+          <a href="/en/index.html" class="lang-switch__item" lang="en" hreflang="en">EN</a>
+        </nav>
       </div>
       <div class="social-list">
-        <a class="social-link" data-social="instagram" aria-label="Instagram — bientôt disponible">Instagram <span class="social-link__soon">Bientôt</span></a>
-            <a class="social-link" data-social="tiktok" aria-label="TikTok — bientôt disponible">TikTok <span class="social-link__soon">Bientôt</span></a>
-            <a class="social-link" data-social="youtube" aria-label="YouTube — bientôt disponible">YouTube <span class="social-link__soon">Bientôt</span></a>
-            <a class="social-link" data-social="discord" aria-label="Discord — bientôt disponible">Discord <span class="social-link__soon">Bientôt</span></a>
-            <a class="social-link" data-social="x" aria-label="X — bientôt disponible">X <span class="social-link__soon">Bientôt</span></a>
+        <a href="https://bsky.app/profile/flexarion-studio.bsky.social" target="_blank" rel="noopener me" class="social-link" data-social="bluesky" aria-label="Bluesky de Flexarion (nouvel onglet)"><span>Bluesky</span></a>
+            <a href="https://www.youtube.com/@FlexarionStudio" target="_blank" rel="noopener me" class="social-link" data-social="youtube" aria-label="YouTube de Flexarion (nouvel onglet)"><span>YouTube</span></a>
+            <a href="https://flexarion.itch.io" target="_blank" rel="noopener me" class="social-link" data-social="itch" aria-label="Itch.io de Flexarion (nouvel onglet)"><span>Itch.io</span></a>
+            <a href="https://github.com/flexarion-studio" target="_blank" rel="noopener me" class="social-link" data-social="github" aria-label="GitHub de Flexarion (nouvel onglet)"><span>GitHub</span></a>
       </div>
     </div>
   </div>

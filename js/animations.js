@@ -91,8 +91,7 @@
     var words = hero.querySelectorAll('.split-word > span');
     var fades = hero.querySelectorAll('[data-hero-fade]');
     var media = hero.querySelector('[data-hero-media]');
-    // Délai si le rideau d'entrée est en train de se retirer.
-    var delay = root.classList.contains('pt-enter') ? 0.45 : 0.1;
+    var delay = 0.08;
 
     // Mot par mot : on reprend l'état initial défini en CSS (translateY 110%).
     gsap.set(words, { yPercent: 110, y: 0 });
@@ -189,7 +188,7 @@
     gsap.utils.toArray('[data-mask-reveal]').forEach(function (el) {
       var img = el.querySelector('img');
       var tl = gsap.timeline({
-        scrollTrigger: hasST ? { trigger: el, start: 'top 85%', once: true } : null,
+        scrollTrigger: hasST ? { trigger: el, start: 'top 96%', once: true } : null,
       });
       tl.fromTo(el, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.4, ease: 'expo.inOut' });
       if (img) tl.fromTo(img, { scale: 1.25 }, { scale: 1, duration: 1.8, ease: 'expo.out' }, 0.1);

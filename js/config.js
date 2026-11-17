@@ -2,21 +2,8 @@
  * ============================================================================
  * FLEXARION — Configuration centrale du site
  * ============================================================================
- * Toutes les informations modifiables du studio sont regroupées ici.
- *
- * ⚠️ IMPORTANT POUR LE SEO
- * Ce fichier alimente l'interface (liens sociaux, e-mail, rôles…) au moment de
- * l'affichage. Les moteurs de recherche lisent en priorité le HTML statique :
- * lorsqu'une information devient officielle, mettez-la AUSSI à jour dans les
- * pages HTML (texte, JSON-LD « sameAs », etc.). La procédure complète
- * (rechercher / remplacer) est décrite dans README.md.
- *
- * Convention : une chaîne vide "" = information pas encore connue.
- * L'interface affiche alors un état « bientôt disponible » au lieu d'un faux lien.
- * ============================================================================
  */
 window.FLEXARION_CONFIG = Object.freeze({
-  /* Domaine officiel (sans barre oblique finale). */
   siteUrl: 'https://flexarion.timeoms.fr',
 
   studio: {
@@ -33,38 +20,28 @@ window.FLEXARION_CONFIG = Object.freeze({
     email: 'contact@flexarion.timeoms.fr',
   },
 
-  /* Formulaire de contact.
-     Le site est statique : sans service d'envoi, AUCUN message n'est transmis.
-     Renseignez ici l'URL d'un service de formulaire (ex. Formspree, Basin,
-     Getform, une fonction serverless, un script PHP…) qui accepte un POST
-     multipart/form-data et répond en JSON (code HTTP 2xx en cas de succès).
-     Laisser vide = l'envoi en ligne est désactivé et l'utilisateur est invité
-     à écrire directement par e-mail (aucune simulation d'envoi). */
+  /* Formulaire de contact :
+     Endpoint Web3Forms configuré avec une clé de démonstration factice.
+     Remplacer `accessKey` par une clé Web3Forms réelle en production. */
   form: {
-    endpoint: '',
+    endpoint: 'https://api.web3forms.com/submit',
+    accessKey: '00000000-0000-0000-0000-flexariondemo',
   },
 
-  /* Réseaux sociaux officiels — renseigner l'URL complète quand le compte existe.
-     Penser à ajouter la même URL dans le tableau JSON-LD "sameAs" des pages. */
+  /* Réseaux sociaux officiels du studio */
   social: {
-    instagram: { label: 'Instagram', url: '' },
-    tiktok: { label: 'TikTok', url: '' },
-    youtube: { label: 'YouTube', url: '' },
-    discord: { label: 'Discord', url: '' },
-    x: { label: 'X (anciennement Twitter)', url: '' },
+    bluesky: { label: 'Bluesky', url: 'https://bsky.app/profile/flexarion-studio.bsky.social' },
+    youtube: { label: 'YouTube', url: 'https://www.youtube.com/@FlexarionStudio' },
+    itch: { label: 'Itch.io', url: 'https://flexarion.itch.io' },
+    github: { label: 'GitHub', url: 'https://github.com/RUIZ-Enrique-25002136/Flexarion.git' },
   },
 
-  /* Équipe — les rôles et biographies vides restent affichés comme
-     placeholders dans le HTML. Renseignez-les ici ET dans credits.html. */
   team: {
     timeo: { name: 'Timéo Morsilli', role: 'Développeur', bio: '' },
     hugo: { name: 'Hugo Banti', role: 'Modélisateur 3D', bio: '' },
     enrique: { name: 'Enrique Ruiz', role: 'Développeur', bio: '' },
   },
 
-  /* Jeux — concepts originaux présentés sur le site.
-     status : "dev" (en développement) | "soon" (à venir) | "available" (disponible)
-     detailUrl : chemin de la fiche détaillée (ex. "games/nom-du-jeu.html"). */
   games: [
     { id: 'projet-01', name: 'Les Veilleurs de Brume', status: 'dev', genre: 'Aventure narrative', platforms: ['PC'], detailUrl: 'games/les-veilleurs-de-brume.html' },
     { id: 'projet-02', name: 'Neon Calanques', status: 'soon', genre: 'Action roguelite', platforms: ['PC', 'Console'], detailUrl: 'games/neon-calanques.html' },

@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
-    (function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js');try{if(sessionStorage.getItem('flx-pt')){sessionStorage.removeItem('flx-pt');r.classList.add('pt-enter');}}catch(e){}window.__flxFailsafe=setTimeout(function(){r.classList.add('anim-fallback');},2500);})();
+    (function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js');window.__flxFailsafe=setTimeout(function(){r.classList.add('anim-fallback');},2500);})();
   </script>
 
-  <title>Flexarion | Independent Game Studio in Aix-en-Provence, France</title>
-  <meta name="description" content="Discover Flexarion, an independent game development studio based in Aix-en-Provence, France. Explore our vision, team, and upcoming worlds.">
+  <title>Flexarion | The Mist Watchers — Independent Game Studio in Aix-en-Provence</title>
+  <meta name="description" content="Flexarion is an independent game studio based in Aix-en-Provence, France. Discover our flagship project: The Mist Watchers (Godot 4.3, PC).">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#090909">
   <link rel="canonical" href="https://flexarion.timeoms.fr/en/index.html">
@@ -18,21 +18,21 @@
 
   <meta property="og:url" content="https://flexarion.timeoms.fr/en/index.html">
   <meta property="og:site_name" content="Flexarion">
-  <meta property="og:title" content="Flexarion | Independent Game Studio in Aix-en-Provence, France">
-  <meta property="og:description" content="Discover Flexarion, an independent game development studio based in Aix-en-Provence, France. Explore our vision, team, and upcoming worlds.">
+  <meta property="og:title" content="Flexarion | The Mist Watchers — Independent Game Studio in Aix-en-Provence">
+  <meta property="og:description" content="Flexarion is an independent game studio based in Aix-en-Provence, France. Discover our flagship project: The Mist Watchers (Godot 4.3, PC).">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://flexarion.timeoms.fr/assets/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Flexarion — We Create Worlds. Independent game studio in Aix-en-Provence, France.">
+  <meta property="og:image:alt" content="Flexarion — The Mist Watchers. Independent game studio in Aix-en-Provence, France.">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter / X Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Flexarion | Independent Game Studio in Aix-en-Provence, France">
-  <meta name="twitter:description" content="Discover Flexarion, an independent game development studio based in Aix-en-Provence, France. Explore our vision, team, and upcoming worlds.">
+  <meta name="twitter:title" content="Flexarion | The Mist Watchers — Independent Game Studio in Aix-en-Provence">
+  <meta name="twitter:description" content="Flexarion is an independent game studio based in Aix-en-Provence, France. Discover our flagship project: The Mist Watchers (Godot 4.3, PC).">
   <meta name="twitter:image" content="https://flexarion.timeoms.fr/assets/images/og-image.jpg">
-  <meta name="twitter:image:alt" content="Flexarion — We Create Worlds. Independent game studio in Aix-en-Provence, France.">
+  <meta name="twitter:image:alt" content="Flexarion — The Mist Watchers. Independent game studio in Aix-en-Provence, France.">
 
   <!-- Icônes & Manifest -->
   <link rel="icon" href="../favicon.ico" sizes="32x32">
@@ -58,11 +58,25 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://flexarion.timeoms.fr/#organization",
+        "name": "Flexarion",
+        "url": "https://flexarion.timeoms.fr/",
+        "logo": { "@type": "ImageObject", "url": "https://flexarion.timeoms.fr/assets/images/logo.png", "width": 512, "height": 512 },
+        "email": "contact@flexarion.timeoms.fr",
+        "sameAs": [
+          "https://bsky.app/profile/flexarion-studio.bsky.social",
+          "https://www.youtube.com/@FlexarionStudio",
+          "https://flexarion.itch.io",
+          "https://github.com/flexarion-studio"
+        ]
+      },
+      {
         "@type": "WebPage",
         "@id": "https://flexarion.timeoms.fr/en/index.html#webpage",
         "url": "https://flexarion.timeoms.fr/en/index.html",
-        "name": "Flexarion | Independent Game Studio in Aix-en-Provence, France",
-        "description": "Discover Flexarion, an independent game development studio based in Aix-en-Provence, France.",
+        "name": "Flexarion | The Mist Watchers — Independent Game Studio in Aix-en-Provence",
+        "description": "Discover The Mist Watchers, the flagship narrative adventure from independent studio Flexarion in Aix-en-Provence.",
         "isPartOf": { "@id": "https://flexarion.timeoms.fr/#website" },
         "about": { "@id": "https://flexarion.timeoms.fr/#organization" },
         "inLanguage": "en-US"
@@ -71,20 +85,16 @@
   }
   </script>
 
-  <!-- Scripts différés (GSAP + ScrollTrigger via CDN + modules Flexarion) -->
+  <!-- Scripts différés -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="../js/config.js" defer></script>
   <script src="../js/main.js" defer></script>
   <script src="../js/animations.js" defer></script>
+  <script src="../js/newsletter.js" defer></script>
 </head>
 <body id="top">
   <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- Rideau de transition entre pages -->
-  <div class="page-curtain" aria-hidden="true">
-    <span class="page-curtain__label">FLEXARION</span>
-  </div>
 
   <!-- En-tête & Navigation principale -->
   <header class="site-header" data-header>
@@ -111,11 +121,11 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="../index.html" class="lang-switch lang-switch--to-fr" hreflang="fr" aria-label="Switch site to French (Français)" title="Switch site to French (Français)">
-          <span class="lang-switch__target" aria-hidden="true">FR</span>
-          <svg class="lang-switch__arrow" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 8H3M6.5 4.5 3 8l3.5 3.5"/></svg>
-          <span class="lang-switch__current" aria-hidden="true">EN</span>
-        </a>
+        <nav class="lang-switch" aria-label="Language selector">
+          <a href="../index.html" class="lang-switch__item" lang="fr" hreflang="fr">FR</a>
+          <span class="lang-switch__sep" aria-hidden="true">|</span>
+          <a href="index.html" class="lang-switch__item font-bold text-[#FF5A1F]" lang="en" hreflang="en" aria-current="true">EN</a>
+        </nav>
         <a href="contact.html" class="btn btn--small header-cta" data-magnetic>
           <span>Start a conversation</span>
           <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -149,25 +159,24 @@
           <p class="mono text-muted">Independent studio · Aix-en-Provence</p>
           <a href="mailto:contact@flexarion.timeoms.fr" class="contact-email mt-2" data-email-link data-email-text>contact@flexarion.timeoms.fr</a>
         </div>
-        <a href="../index.html" class="lang-switch lang-switch--to-fr" hreflang="fr" aria-label="Switch site to French (Français)" title="Switch site to French (Français)">
-          <span class="lang-switch__target" aria-hidden="true">FR</span>
-          <svg class="lang-switch__arrow" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 8H3M6.5 4.5 3 8l3.5 3.5"/></svg>
-          <span class="lang-switch__current" aria-hidden="true">EN</span>
-        </a>
+        <nav class="lang-switch" aria-label="Language selector">
+          <a href="../index.html" class="lang-switch__item" lang="fr" hreflang="fr">FR</a>
+          <span class="lang-switch__sep" aria-hidden="true">|</span>
+          <a href="index.html" class="lang-switch__item font-bold text-[#FF5A1F]" lang="en" hreflang="en" aria-current="true">EN</a>
+        </nav>
       </div>
       <div class="social-list">
-        <a class="social-link" data-social="instagram" aria-label="Instagram — coming soon">Instagram <span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="tiktok" aria-label="TikTok — coming soon">TikTok <span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="youtube" aria-label="YouTube — coming soon">YouTube <span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="discord" aria-label="Discord — coming soon">Discord <span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="x" aria-label="X — coming soon">X <span class="social-link__soon">Soon</span></a>
+        <a href="https://bsky.app/profile/flexarion-studio.bsky.social" target="_blank" rel="noopener me" class="social-link" data-social="bluesky" aria-label="Flexarion on Bluesky (new tab)"><span>Bluesky</span></a>
+            <a href="https://www.youtube.com/@FlexarionStudio" target="_blank" rel="noopener me" class="social-link" data-social="youtube" aria-label="Flexarion on YouTube (new tab)"><span>YouTube</span></a>
+            <a href="https://flexarion.itch.io" target="_blank" rel="noopener me" class="social-link" data-social="itch" aria-label="Flexarion on Itch.io (new tab)"><span>Itch.io</span></a>
+            <a href="https://github.com/flexarion-studio" target="_blank" rel="noopener me" class="social-link" data-social="github" aria-label="Flexarion on GitHub (new tab)"><span>GitHub</span></a>
       </div>
     </div>
   </div>
 
   <main id="main-content">
 
-    <!-- ==================== HERO ==================== -->
+    <!-- ==================== HERO (FLAGSHIP FLX-01) ==================== -->
     <section class="hero" data-hero aria-labelledby="hero-title">
       <div class="hero__media">
         <img
@@ -178,32 +187,32 @@
           height="1200"
           fetchpriority="high"
           decoding="async"
-          alt="Abstract futuristic world evoking video game creation by Flexarion studio"
+          alt="Misty luminous skyline of The Mist Watchers, flagship project by Flexarion"
           data-hero-media>
       </div>
       <div class="hero__overlay" aria-hidden="true"></div>
 
       <div class="container-flx">
-        <p class="hero__kicker" data-hero-fade>Independent game studio — Aix-en-Provence, France</p>
+        <p class="hero__kicker" data-hero-fade>FLX-01 · In production on Godot 4.3 — Flexarion Studio, Aix-en-Provence</p>
 
         <h1 id="hero-title" class="display hero__title">
-          <span class="split-word"><span>WE</span></span>
-          <span class="split-word"><span>CREATE</span></span>
+          <span class="split-word"><span>THE</span></span>
+          <span class="split-word"><span>MIST</span></span>
           <br>
-          <span class="split-word"><span class="text-ember">WORLDS.</span></span>
+          <span class="split-word"><span class="text-ember">WATCHERS.</span></span>
         </h1>
 
         <div class="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">
           <p class="hero__subtitle lg:col-span-6" data-hero-fade>
-            Independent game studio based in Aix-en-Provence, France.
+            Our flagship narrative adventure: chart a cloud-drowned city and listen to the echoes carried by its nocturnal beacons.
           </p>
           <div class="hero__actions flex flex-wrap gap-4 lg:col-span-6 lg:justify-end" data-hero-fade>
-            <a href="studio.html" class="btn btn--primary" data-magnetic>
-              <span>Discover the studio</span>
+            <a href="games/les-veilleurs-de-brume.html" class="btn btn--primary" data-magnetic>
+              <span>Discover <em>The Mist Watchers</em></span>
               <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
-            <a href="games.html" class="btn" data-magnetic>
-              <span>Explore our games</span>
+            <a href="press.html" class="btn" data-magnetic>
+              <span>Press &amp; Publishers</span>
               <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -211,10 +220,10 @@
 
         <div class="hero__meta" data-hero-fade>
           <div class="flex flex-wrap gap-x-8 gap-y-2 mono">
-            <span>43.5297° N, 5.4474° E · Provence-Alpes-Côte d’Azur</span>
-            <span>Game Design &amp; Engineering</span>
+            <span>Target release: Q4 2027 · PC (Steam / Itch.io)</span>
+            <span>43.5297° N, 5.4474° E · Aix-en-Provence</span>
           </div>
-          <a href="#presentation" class="scroll-indicator mono" aria-label="Scroll to studio presentation">
+          <a href="#flagship" class="scroll-indicator mono" aria-label="Scroll to flagship project">
             <span class="scroll-indicator__line" aria-hidden="true"></span>
             <span>Scroll</span>
           </a>
@@ -225,40 +234,85 @@
     <div class="marquee" data-marquee aria-hidden="true">
       <div class="marquee__track">
         <div class="marquee__group">
+          <span>The Mist Watchers</span><span class="marquee__star">✦</span>
+          <span class="text-outline">Godot 4.3</span><span class="marquee__star">✦</span>
           <span>Indie Game Studio</span><span class="marquee__star">✦</span>
           <span class="text-outline">Aix-en-Provence</span><span class="marquee__star">✦</span>
-          <span>World Building</span><span class="marquee__star">✦</span>
-          <span class="text-outline">Game Development</span><span class="marquee__star">✦</span>
         </div>
         <div class="marquee__group">
+          <span>The Mist Watchers</span><span class="marquee__star">✦</span>
+          <span class="text-outline">Godot 4.3</span><span class="marquee__star">✦</span>
           <span>Indie Game Studio</span><span class="marquee__star">✦</span>
           <span class="text-outline">Aix-en-Provence</span><span class="marquee__star">✦</span>
-          <span>World Building</span><span class="marquee__star">✦</span>
-          <span class="text-outline">Game Development</span><span class="marquee__star">✦</span>
         </div>
       </div>
     </div>
+
+    <!-- ==================== FLAGSHIP PROJECT: FLX-01 ==================== -->
+    <section id="flagship" class="section" aria-labelledby="flagship-heading">
+      <div class="container-flx">
+        <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
+          <div class="lg:col-span-5">
+            <figure class="media-frame aspect-[4/5]" data-mask-reveal>
+              <img src="../assets/images/games/projet-01.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Artwork for The Mist Watchers (Les Veilleurs de Brume), narrative adventure by Flexarion">
+              <figcaption class="media-frame__caption tag">FLX-01 · Primary production</figcaption>
+            </figure>
+          </div>
+
+          <div class="lg:col-span-7" data-reveal>
+            <span class="eyebrow">01 / Flagship production</span>
+            <h2 id="flagship-heading" class="h-section mt-4" data-split>
+              The Mist Watchers
+            </h2>
+            <div class="prose-flx mt-6">
+              <p class="lead">
+                A three-person team focused on one immediate goal: delivering a tightly crafted, atmospheric narrative adventure.
+              </p>
+              <p>
+                Suspended above a sea of drifting clouds, you play as Nara, a night cartographer tracking signals from ancient lighthouses. Every beam uncovers forgotten memories and reshapes the sunken city’s geography.
+              </p>
+            </div>
+
+            <dl class="game-card__facts mt-8">
+              <dt>Engine</dt><dd>Godot 4.3 (custom volumetric shaders)</dd>
+              <dt>Genre</dt><dd>Narrative adventure &amp; exploration</dd>
+              <dt>Platform</dt><dd>PC (Windows / Linux)</dd>
+              <dt>Target window</dt><dd>Q4 2027</dd>
+            </dl>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="games/les-veilleurs-de-brume.html" class="btn btn--primary" data-magnetic>
+                <span>Explore full game page</span>
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a href="devlog.html#log-01" class="btn" data-magnetic>
+                <span>Read technical devlog</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
 
     <!-- ==================== STUDIO INTRO ==================== -->
     <section id="presentation" class="section" aria-labelledby="intro-heading">
       <div class="container-flx">
         <div class="section-head section-head--split">
           <div>
-            <span class="eyebrow">01 / The studio</span>
+            <span class="eyebrow">02 / The studio</span>
             <h2 id="intro-heading" class="h-section mt-4" data-split>
               An independent studio driven by creative craft
             </h2>
           </div>
           <div class="prose-flx" data-reveal>
             <p class="lead">
-              Flexarion is an independent game development studio based in Aix-en-Provence, southern France. We design and engineer interactive worlds where art, technology, and playfulness meet.
-            </p>
-            <p>
-              Built to protect editorial freedom, our studio brings together game design, art direction, and software engineering to craft memorable indie games for players worldwide.
+              Flexarion is an independent game studio in Aix-en-Provence, southern France. We craft human-scale works where art direction, sound, and engineering evolve as one.
             </p>
             <p class="mt-6">
               <a href="studio.html" class="link-arrow">
-                <span>Explore Flexarion’s vision and method</span>
+                <span>Meet the team, our tools, and our method</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
               </a>
             </p>
@@ -267,120 +321,19 @@
 
         <div class="grid gap-8 md:grid-cols-3" data-reveal-stagger>
           <article class="pillar" data-reveal>
-            <span class="pillar__num">01 — INDEPENDENCE</span>
-            <h3 class="h-sub pillar__title">Creative freedom</h3>
-            <p>An independent structure that puts artistic intent, world coherence, and gameplay feel ahead of standardized formulas.</p>
+            <span class="pillar__num">01 — FOCUS</span>
+            <h3 class="h-sub pillar__title">One primary production</h3>
+            <p>As a trio, discipline means focus: our full production bandwidth goes into <em>The Mist Watchers</em>.</p>
           </article>
           <article class="pillar" data-reveal>
             <span class="pillar__num">02 — CRAFT</span>
-            <h3 class="h-sub pillar__title">Technical &amp; artistic mastery</h3>
-            <p>From early mechanics prototyping to sound and lighting direction, every layer of game development is tailored to the experience.</p>
+            <h3 class="h-sub pillar__title">Open &amp; custom tooling</h3>
+            <p>From Godot 4.3 to Blender and PipeWire pipelines, we build lean technologies tailored to each world.</p>
           </article>
           <article class="pillar" data-reveal>
             <span class="pillar__num">03 — AMBITION</span>
             <h3 class="h-sub pillar__title">Local roots, global reach</h3>
-            <p>Rooted in Aix-en-Provence’s creative ecosystem with the ambition to share our games with players across the globe.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule">
-
-    <!-- ==================== PROJECTS ==================== -->
-    <section class="section" aria-labelledby="games-heading">
-      <div class="container-flx">
-        <div class="section-head section-head--split">
-          <div>
-            <span class="eyebrow">02 / Our creations</span>
-            <h2 id="games-heading" class="h-section mt-4" data-split>
-              Projects &amp; worlds in progress
-            </h2>
-          </div>
-          <div class="prose-flx" data-reveal>
-            <p>
-              Our studio projects are currently in internal concept and development stages. Full game pages will launch here as soon as each title is officially revealed.
-            </p>
-            <p class="mt-5">
-              <a href="games.html" class="link-arrow">
-                <span>Browse the full project gallery</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="game-grid game-grid--featured" data-reveal-stagger>
-          <article class="game-card" data-reveal>
-            <div class="game-card__media">
-              <img src="../assets/images/games/projet-01.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Artwork for narrative adventure Les Veilleurs de Brume by Flexarion">
-              <div class="game-card__badges">
-                <span class="tag">FLX-01</span>
-                <span class="status status--dev">In development</span>
-              </div>
-            </div>
-            <div class="game-card__body">
-              <h3 class="game-card__title">Les Veilleurs de Brume</h3>
-              <p class="game-card__desc">A narrative adventure where a cartographer follows the lights of a sunken city.</p>
-              <dl class="game-card__facts">
-                <dt>Genre</dt><dd>Narrative adventure</dd>
-                <dt>Status</dt><dd>In development</dd>
-              </dl>
-              <div class="game-card__footer">
-                <a href="games/les-veilleurs-de-brume.html" class="link-arrow">
-                  <span>View game page</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="game-card" data-reveal>
-            <div class="game-card__media">
-              <img src="../assets/images/games/projet-02.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Neon artwork for action roguelite Neon Calanques by Flexarion">
-              <div class="game-card__badges">
-                <span class="tag">FLX-02</span>
-                <span class="status status--soon">Coming soon</span>
-              </div>
-            </div>
-            <div class="game-card__body">
-              <h3 class="game-card__title">Neon Calanques</h3>
-              <p class="game-card__desc">A fast-paced roguelite set in futuristic Marseille, blending solar parkour and creatures of light.</p>
-              <dl class="game-card__facts">
-                <dt>Genre</dt><dd>Action roguelite</dd>
-                <dt>Status</dt><dd>Coming soon</dd>
-              </dl>
-              <div class="game-card__footer">
-                <a href="games/neon-calanques.html" class="link-arrow">
-                  <span>View game page</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="game-card" data-reveal>
-            <div class="game-card__media">
-              <img src="../assets/images/games/projet-03.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Abstract artwork for contemplative puzzle game Lisière by Flexarion">
-              <div class="game-card__badges">
-                <span class="tag">FLX-03</span>
-                <span class="status status--soon">Coming soon</span>
-              </div>
-            </div>
-            <div class="game-card__body">
-              <h3 class="game-card__title">Lisière</h3>
-              <p class="game-card__desc">A contemplative puzzle game on the border between forest and memory, built around light and sound.</p>
-              <dl class="game-card__facts">
-                <dt>Genre</dt><dd>Contemplative puzzle</dd>
-                <dt>Status</dt><dd>Coming soon</dd>
-              </dl>
-              <div class="game-card__footer">
-                <a href="games/lisiere.html" class="link-arrow">
-                  <span>View game page</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
+            <p>Rooted in Aix-en-Provence’s creative scene, designing games from day one in both French and English.</p>
           </article>
         </div>
       </div>
@@ -413,14 +366,7 @@
 
           <div class="lg:col-span-5">
             <figure class="media-frame aspect-[4/3]" data-mask-reveal>
-              <img
-                src="../assets/images/studio-aix.webp"
-                width="1200"
-                height="900"
-                loading="lazy"
-                decoding="async"
-                alt="Stylized visual of Mount Sainte-Victoire in Aix-en-Provence in Flexarion's dark palette"
-                data-parallax="0.1">
+              <img src="../assets/images/studio-aix.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Stylized visual of Mount Sainte-Victoire in Aix-en-Provence in Flexarion's dark palette" data-parallax="0.1">
               <figcaption class="media-frame__caption tag">Aix-en-Provence · Southern France</figcaption>
             </figure>
           </div>
@@ -428,12 +374,89 @@
       </div>
     </section>
 
+    <!-- ==================== PROTOTYPES & FUTURE EXPLORATIONS ==================== -->
+    <section class="section" aria-labelledby="prototypes-heading">
+      <div class="container-flx">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">04 / Internal R&amp;D</span>
+            <h2 id="prototypes-heading" class="h-section mt-4" data-split>
+              Prototypes &amp; Future Explorations
+            </h2>
+          </div>
+          <div class="prose-flx" data-reveal>
+            <p>
+              Alongside <em>The Mist Watchers</em>, we maintain two visual and mechanical R&amp;D tracks slated for full production after our debut release.
+            </p>
+            <p class="mt-5">
+              <a href="games.html" class="link-arrow">
+                <span>Browse the full game catalog</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2" data-reveal-stagger>
+          <article class="game-card" data-reveal>
+            <div class="game-card__media">
+              <img src="../assets/images/games/projet-02.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Neon artwork for action roguelite prototype Neon Calanques by Flexarion">
+              <div class="game-card__badges">
+                <span class="tag">FLX-02</span>
+                <span class="status status--soon">Exploration · 2028</span>
+              </div>
+            </div>
+            <div class="game-card__body">
+              <h3 class="game-card__title">Neon Calanques</h3>
+              <p class="game-card__desc">Solar action roguelite set in cel-shaded futuristic Marseille, built on Unreal Engine 5.</p>
+              <dl class="game-card__facts">
+                <dt>Engine</dt><dd>Unreal Engine 5</dd>
+                <dt>Platforms</dt><dd>PC, Consoles</dd>
+              </dl>
+              <div class="game-card__footer">
+                <a href="games/neon-calanques.html" class="link-arrow">
+                  <span>Explore FLX-02 prototype</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card" data-reveal>
+            <div class="game-card__media">
+              <img src="../assets/images/games/projet-03.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Abstract artwork for acoustic puzzle prototype Lisière by Flexarion">
+              <div class="game-card__badges">
+                <span class="tag">FLX-03</span>
+                <span class="status status--soon">Exploration · 2028</span>
+              </div>
+            </div>
+            <div class="game-card__body">
+              <h3 class="game-card__title">Lisière</h3>
+              <p class="game-card__desc">Contemplative puzzle driven by minimalist procedural synth architecture on Godot 4.</p>
+              <dl class="game-card__facts">
+                <dt>Engine</dt><dd>Godot 4</dd>
+                <dt>Platforms</dt><dd>PC, Mobile</dd>
+              </dl>
+              <div class="game-card__footer">
+                <a href="games/lisiere.html" class="link-arrow">
+                  <span>Explore FLX-03 prototype</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
     <!-- ==================== TEAM ==================== -->
     <section class="section" aria-labelledby="team-heading">
       <div class="container-flx">
         <div class="section-head section-head--split">
           <div>
-            <span class="eyebrow">04 / The team</span>
+            <span class="eyebrow">05 / The team</span>
             <h2 id="team-heading" class="h-section mt-4" data-split>
               The minds behind Flexarion
             </h2>
@@ -441,8 +464,8 @@
           <div class="prose-flx" data-reveal>
             <p>Three complementary creators united by a shared passion for independent game development.</p>
             <p class="mt-4">
-              <a href="credits.html" class="link-arrow">
-                <span>View the full credits page</span>
+              <a href="studio.html#studio-team-heading" class="link-arrow">
+                <span>View tools, inspirations &amp; links</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
               </a>
             </p>
@@ -453,8 +476,8 @@
           <article class="team-card" data-reveal>
             <div class="team-card__portrait">
               <span class="tag team-card__index">01</span>
-              <img src="../assets/images/team/timeo-morsilli.webp" width="720" height="900" loading="lazy" decoding="async" alt="Placeholder portrait of Timéo Morsilli, Flexarion co-founder">
-              <div class="team-card__hover"><span class="mono">Flexarion</span><span class="mono text-ember">Aix-en-Provence</span></div>
+              <img src="../assets/images/team/timeo-morsilli.webp" width="720" height="900" loading="lazy" decoding="async" alt="Portrait of Timéo Morsilli, developer and co-founder at Flexarion">
+              <div class="team-card__hover"><span class="mono">Godot · C++ · Shaders</span><span class="mono text-ember">Aix-en-Provence</span></div>
             </div>
             <h3 class="team-card__name">Timéo Morsilli</h3>
             <p class="team-card__role mono">Developer</p>
@@ -463,8 +486,8 @@
           <article class="team-card" data-reveal>
             <div class="team-card__portrait">
               <span class="tag team-card__index">02</span>
-              <img src="../assets/images/team/hugo-banti.webp" width="720" height="900" loading="lazy" decoding="async" alt="Placeholder portrait of Hugo Banti, Flexarion co-founder">
-              <div class="team-card__hover"><span class="mono">Flexarion</span><span class="mono text-ember">Aix-en-Provence</span></div>
+              <img src="../assets/images/team/hugo-banti.webp" width="720" height="900" loading="lazy" decoding="async" alt="Portrait of Hugo Banti, 3D artist and co-founder at Flexarion">
+              <div class="team-card__hover"><span class="mono">Blender · Houdini · UE5</span><span class="mono text-ember">Aix-en-Provence</span></div>
             </div>
             <h3 class="team-card__name">Hugo Banti</h3>
             <p class="team-card__role mono">3D Artist</p>
@@ -473,8 +496,8 @@
           <article class="team-card" data-reveal>
             <div class="team-card__portrait">
               <span class="tag team-card__index">03</span>
-              <img src="../assets/images/team/enrique-ruiz.webp" width="720" height="900" loading="lazy" decoding="async" alt="Placeholder portrait of Enrique Ruiz, Flexarion co-founder">
-              <div class="team-card__hover"><span class="mono">Flexarion</span><span class="mono text-ember">Aix-en-Provence</span></div>
+              <img src="../assets/images/team/enrique-ruiz.webp" width="720" height="900" loading="lazy" decoding="async" alt="Portrait of Enrique Ruiz, developer and co-founder at Flexarion">
+              <div class="team-card__hover"><span class="mono">Rust · C++ · PipeWire</span><span class="mono text-ember">Aix-en-Provence</span></div>
             </div>
             <h3 class="team-card__name">Enrique Ruiz</h3>
             <p class="team-card__role mono">Developer</p>
@@ -485,15 +508,65 @@
 
     <hr class="rule">
 
+    <section class="section section--tight" aria-labelledby="newsletter-heading">
+      <div class="container-flx">
+        <div class="newsletter-box">
+          <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div class="lg:col-span-6">
+              <span class="eyebrow">Newsletter &amp; Playtests</span>
+              <h2 id="newsletter-heading" class="h-sub mt-4" style="font-size: clamp(1.6rem, 3vw, 2.4rem);">
+                Follow development &amp; access private demos
+              </h2>
+              <p class="mt-3 text-muted max-w-xl">
+                One concise dispatch per major milestone: devlog notes on The Mist Watchers, playtest invitations, and release dates. Zero spam.
+              </p>
+            </div>
+            <div class="lg:col-span-6">
+              <form class="form-grid" data-newsletter-form>
+                <div class="flex flex-col gap-3 sm:flex-row">
+                  <div class="field flex-1">
+                    <label for="nl-email" class="sr-only">Email address</label>
+                    <input
+                      type="email"
+                      id="nl-email"
+                      name="email"
+                      required
+                      autocomplete="email"
+                      placeholder="you@domain.com"
+                      aria-describedby="nl-email-error">
+                    <p id="nl-email-error" class="field__error" data-nl-email-error aria-live="polite"></p>
+                  </div>
+                  <button type="submit" class="btn btn--primary" data-magnetic>
+                    <span>Join waitlist</span>
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+                <div>
+                  <label class="newsletter-check" for="nl-consent">
+                    <input type="checkbox" id="nl-consent" name="consent" required aria-describedby="nl-consent-error">
+                    <span>
+                      I agree to receive Flexarion studio updates in accordance with the <a href="privacy.html" class="underline decoration-ember">privacy policy</a>.
+                    </span>
+                  </label>
+                  <p id="nl-consent-error" class="field__error mt-1" data-nl-consent-error aria-live="polite"></p>
+                </div>
+                <div class="form-status" data-nl-status tabindex="-1" role="status" aria-live="polite" hidden></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ==================== FINAL CTA ==================== -->
     <section class="section cta-block" aria-labelledby="cta-heading">
       <div class="container-flx text-center">
-        <span class="eyebrow">05 / Collaboration &amp; Contact</span>
+        <span class="eyebrow">06 / Collaboration &amp; Contact</span>
         <h2 id="cta-heading" class="cta-block__title mt-6" data-split>
           LET’S CREATE SOMETHING <span class="text-ember">UNFORGETTABLE.</span>
         </h2>
         <p class="lead mx-auto mt-6" data-reveal>
-          Questions about our projects, partnership inquiries, or press requests? Reach out to our independent game studio in Aix-en-Provence.
+          Press inquiries, publishing conversations, or questions about <em>The Mist Watchers</em>? Reach out to the studio directly.
         </p>
         <div class="mt-10 flex flex-wrap justify-center gap-4" data-reveal>
           <a href="contact.html" class="btn btn--primary" data-magnetic>
@@ -501,7 +574,7 @@
             <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
           <a href="press.html" class="btn" data-magnetic>
-            <span>Press Kit</span>
+            <span>Press &amp; Publishers</span>
           </a>
         </div>
       </div>
@@ -526,16 +599,14 @@
             Independent game development studio based in Aix-en-Provence, Provence-Alpes-Côte d’Azur, France.
           </p>
           <div class="social-list mt-6" aria-label="Flexarion social channels">
-            <a class="social-link" data-social="instagram" aria-label="Instagram — coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-              <span class="sr-only">Instagram</span><span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="tiktok" aria-label="TikTok — coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3v11.5a4.5 4.5 0 1 1-3.5-4.38"/><path d="M14 6.5c1.5 2 3.5 3 6 3"/></svg>
-              <span class="sr-only">TikTok</span><span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="youtube" aria-label="YouTube — coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>
-              <span class="sr-only">YouTube</span><span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="discord" aria-label="Discord — coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7.5 7.5a12 12 0 0 1 9 0l1.5 8a10 10 0 0 1-4.5 1.5l-1-1.5m-1 0-1 1.5A10 10 0 0 1 6 15.5l1.5-8Z"/><circle cx="9.5" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
-              <span class="sr-only">Discord</span><span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="x" aria-label="X — coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg>
-              <span class="sr-only">X</span><span class="social-link__soon">Soon</span></a>
+            <a href="https://bsky.app/profile/flexarion-studio.bsky.social" target="_blank" rel="noopener me" class="social-link" data-social="bluesky" aria-label="Flexarion on Bluesky (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 10.8C10.2 7.5 6.4 4.5 4.2 5.7c-1.8 1-1.3 5.2-.7 6.8.7 2 2.9 2.6 4.9 2.3-2.6.4-4.7 1.8-2.4 4.7 2.2 2.7 5-1.1 6-3.7 1 2.6 3.8 6.4 6 3.7 2.3-2.9.2-4.3-2.4-4.7 2 .3 4.2-.3 4.9-2.3.6-1.6 1.1-5.8-.7-6.8-2.2-1.2-6 1.8-7.8 5.1Z"/></svg>
+              <span class="sr-only">Bluesky</span></a>
+            <a href="https://www.youtube.com/@FlexarionStudio" target="_blank" rel="noopener me" class="social-link" data-social="youtube" aria-label="Flexarion on YouTube (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>
+              <span class="sr-only">YouTube</span></a>
+            <a href="https://flexarion.itch.io" target="_blank" rel="noopener me" class="social-link" data-social="itch" aria-label="Flexarion on Itch.io (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4.5 6.5 6 4h12l1.5 2.5v2a2 2 0 0 1-3.5 1.3 2 2 0 0 1-4 0 2 2 0 0 1-4 0A2 2 0 0 1 4.5 8.5v-2Z"/><path d="M5.5 10.5V19a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-8.5"/><path d="M9.5 15h5M12 12.5v5"/></svg>
+              <span class="sr-only">Itch.io</span></a>
+            <a href="https://github.com/flexarion-studio" target="_blank" rel="noopener me" class="social-link" data-social="github" aria-label="Flexarion on GitHub (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              <span class="sr-only">GitHub</span></a>
           </div>
         </div>
 

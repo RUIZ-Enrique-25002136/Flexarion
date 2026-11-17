@@ -3,10 +3,10 @@
  * ============================================================================
  * FLEXARION — Build statique & vérifications (zéro dépendance externe)
  * ============================================================================
- * - Compile src/pages/*.html avec les partials partagés (header, menu, footer)
- * - Génère sitemap.xml et feed.xml (RSS du Devlog)
- * - Génère assets/flexarion-presskit.zip si Python 3 est disponible
- * - Vérifie l'absence de liens internes cassés, de CDN Tailwind ou de vieux domaines
+ * - Compile src/pages/*.html avec les partials partagés (header, menu, newsletter, footer)
+ * - Injecte GSAP / animations.js uniquement sur les pages animées au scroll
+ * - Génère sitemap.xml, feed.xml (RSS du Devlog) et assets/flexarion-presskit.zip
+ * - Vérifie l'absence de liens cassés, de CDN Tailwind ou de vieux placeholders
  * ============================================================================
  */
 
@@ -18,6 +18,7 @@ import {
   renderHeadCommon,
   renderHeader,
   renderMobileMenu,
+  renderNewsletter,
   renderFooter,
   renderSocialList,
 } from './partials.mjs';
@@ -54,6 +55,7 @@ function renderPage(meta, body) {
   const renderedBody = body
     .replaceAll('{{> header}}', renderHeader(meta))
     .replaceAll('{{> mobile-menu}}', renderMobileMenu(meta))
+    .replaceAll('{{> newsletter}}', renderNewsletter(meta))
     .replaceAll('{{> footer}}', renderFooter(meta))
     .replaceAll('{{> social-list}}', renderSocialList(meta.lang, true))
     .replaceAll('{{SITE_URL}}', SITE_URL);
@@ -95,28 +97,28 @@ function generateFeed() {
     <title>Flexarion — Devlog du studio</title>
     <link>${SITE_URL}/devlog.html</link>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml" />
-    <description>Journal de développement et notes techniques du studio indépendant Flexarion (Aix-en-Provence).</description>
+    <description>Notes techniques de développement, direction artistique et architecture sonore du studio indépendant Flexarion (Aix-en-Provence).</description>
     <language>fr-FR</language>
     <item>
-      <title>Les Veilleurs de Brume (FLX-01) : prototypage des mécaniques et boucle de jeu</title>
+      <title>Architecture sonore procédurale et nappes synthétiques minimalistes</title>
       <link>${SITE_URL}/devlog.html#log-03</link>
       <guid>${SITE_URL}/devlog.html#log-03</guid>
-      <pubDate>Mon, 16 Nov 2026 10:00:00 +0100</pubDate>
-      <description>Point d'étape sur les premiers prototypes internes de Les Veilleurs de Brume : priorisation du ressenti manette en main avant la production d'assets finaux.</description>
+      <pubDate>Tue, 10 Nov 2026 10:00:00 +0100</pubDate>
+      <description>Lisière : comment chaque interaction puzzle pilote des synthétiseurs modulaires légers et des filtres passe-bas dans Godot 4 et PipeWire.</description>
     </item>
     <item>
-      <title>Direction artistique : lumière, contraste et identité Flexarion</title>
+      <title>Direction artistique : traduire la lumière des calanques méditerranéennes en rendu cell-shaded</title>
       <link>${SITE_URL}/devlog.html#log-02</link>
       <guid>${SITE_URL}/devlog.html#log-02</guid>
-      <pubDate>Sun, 01 Nov 2026 10:00:00 +0100</pubDate>
-      <description>Définition de la grammaire visuelle du studio : lisibilité des silhouettes, palette sombre contrastée et signature orange électrique.</description>
+      <pubDate>Wed, 14 Oct 2026 10:00:00 +0200</pubDate>
+      <description>Neon Calanques : construction d’un pipeline cel-shaded dans Unreal Engine 5 mariant calcaire blanc éblouissant et néons synthétiques nocturnes.</description>
     </item>
     <item>
-      <title>Ouverture du site officiel de Flexarion à Aix-en-Provence</title>
+      <title>Générer un brouillard volumétrique réactif au vent dans Godot 4</title>
       <link>${SITE_URL}/devlog.html#log-01</link>
       <guid>${SITE_URL}/devlog.html#log-01</guid>
-      <pubDate>Thu, 15 Oct 2026 10:00:00 +0200</pubDate>
-      <description>Mise en ligne de la vitrine officielle du studio indépendant Flexarion, fondé par Timéo Morsilli, Hugo Banti et Enrique Ruiz.</description>
+      <pubDate>Fri, 18 Sep 2026 10:00:00 +0200</pubDate>
+      <description>Les Veilleurs de Brume : retour technique sur les shaders 3D de densité, champs de vecteurs de vent et éclairage des balises nocturnes dans Godot 4.3.</description>
     </item>
   </channel>
 </rss>
@@ -135,10 +137,10 @@ Site officiel : ${SITE_URL}
 Contact : contact@flexarion.timeoms.fr
 Fondateurs : Timeo Morsilli (Developpeur), Hugo Banti (Modelisateur 3D), Enrique Ruiz (Developpeur)
 
-Jeux en preparation :
-- Les Veilleurs de Brume (FLX-01) — Aventure narrative (PC)
-- Neon Calanques (FLX-02) — Action roguelite (PC, Consoles)
-- Lisiere (FLX-03) — Puzzle contemplatif (PC, Mobile)
+Jeux :
+- Les Veilleurs de Brume / The Mist Watchers (FLX-01) — Aventure narrative (PC, Godot 4.3, T4 2027)
+- Neon Calanques (FLX-02) — Action roguelite (PC / Consoles, Unreal Engine 5, 2028)
+- Lisiere (FLX-03) — Puzzle contemplatif (PC / Mobile, Godot 4, 2028)
 
 Palette officielle :
 - Noir profond (Ink) : #090909
@@ -156,6 +158,9 @@ with zipfile.ZipFile(out, 'w', compression=zipfile.ZIP_DEFLATED) as zf:
         'assets/images/hero.webp',
         'assets/images/studio-aix.webp',
         'assets/images/og-image.jpg',
+        'assets/images/games/projet-01.webp',
+        'assets/images/games/projet-02.webp',
+        'assets/images/games/projet-03.webp',
     ]:
         p = root / rel
         if p.exists():
@@ -170,7 +175,7 @@ with zipfile.ZipFile(out, 'w', compression=zipfile.ZIP_DEFLATED) as zf:
 
 function checkOutputs(htmlOutputs) {
   const errors = [];
-  for (const { outRel, content } of htmlOutputs) {
+  for (const { meta, outRel, content } of htmlOutputs) {
     const stripped = content.replace(/<!--[\s\S]*?-->/g, '');
     if (stripped.includes('cdn.tailwindcss.com')) {
       errors.push(`${outRel}: contains runtime cdn.tailwindcss.com script`);
@@ -181,10 +186,12 @@ function checkOutputs(htmlOutputs) {
     if (stripped.includes('www.flexarion.timeoms.fr')) {
       errors.push(`${outRel}: contains mismatched www.flexarion.timeoms.fr`);
     }
+    if (!meta.animations && (stripped.includes('gsap.min.js') || stripped.includes('animations.js'))) {
+      errors.push(`${outRel}: utility page must not load GSAP or animations.js`);
+    }
 
     const outDir = path.dirname(path.join(ROOT, outRel));
 
-    // Check local href / src targets
     const attrRe = /(?:href|src)="([^"]+)"/g;
     let m;
     while ((m = attrRe.exec(stripped)) !== null) {
@@ -210,7 +217,6 @@ function checkOutputs(htmlOutputs) {
       }
     }
 
-    // Check <img> attributes
     const imgRe = /<img\b([^>]*)>/g;
     while ((m = imgRe.exec(stripped)) !== null) {
       const attrs = m[1];

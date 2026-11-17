@@ -5,14 +5,16 @@
   "nav": "games",
   "inSubdir": true,
   "prefix": "../../",
+  "animations": true,
+  "scripts": ["js/wishlist.js", "js/newsletter.js"],
   "canonical": "en/games/les-veilleurs-de-brume.html",
   "frPath": "games/les-veilleurs-de-brume.html",
   "enPath": "en/games/les-veilleurs-de-brume.html",
-  "title": "Les Veilleurs de Brume | Flexarion Game",
-  "description": "Les Veilleurs de Brume is a narrative adventure in development by Flexarion, an independent game studio in Aix-en-Provence.",
-  "ogImageAlt": "Les Veilleurs de Brume — Independent game by Flexarion.",
-  "sitemap": { "changefreq": "monthly", "priority": "0.7" },
-  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Les Veilleurs de Brume\",\n        \"url\": \"https://flexarion.timeoms.fr/en/games/les-veilleurs-de-brume.html\",\n        \"description\": \"A narrative adventure where a cartographer follows the lights of a sunken city.\",\n        \"genre\": \"Narrative adventure\",\n        \"gamePlatform\": \"PC\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"en-US\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://flexarion.timeoms.fr/en/index.html\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Games\", \"item\": \"https://flexarion.timeoms.fr/en/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Les Veilleurs de Brume\", \"item\": \"https://flexarion.timeoms.fr/en/games/les-veilleurs-de-brume.html\" }\n        ]\n      }\n    ]\n  }"
+  "title": "The Mist Watchers (Les Veilleurs de Brume) | Flexarion Game",
+  "description": "The Mist Watchers is an atmospheric narrative adventure built in Godot 4.3 by Flexarion in Aix-en-Provence. Chart a cloud-drowned city and decode nocturnal beacons.",
+  "ogImageAlt": "The Mist Watchers — Independent narrative game by Flexarion.",
+  "sitemap": { "changefreq": "monthly", "priority": "0.8" },
+  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"The Mist Watchers\",\n        \"alternateName\": \"Les Veilleurs de Brume\",\n        \"url\": \"https://flexarion.timeoms.fr/en/games/les-veilleurs-de-brume.html\",\n        \"description\": \"Atmospheric narrative adventure built in Godot 4.3 where a night cartographer tracks beacons across a sunken city.\",\n        \"genre\": \"Narrative adventure\",\n        \"gamePlatform\": [\"PC\", \"Windows\", \"Linux\"],\n        \"applicationCategory\": \"Game\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"en-US\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://flexarion.timeoms.fr/en/index.html\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Games\", \"item\": \"https://flexarion.timeoms.fr/en/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"The Mist Watchers\", \"item\": \"https://flexarion.timeoms.fr/en/games/les-veilleurs-de-brume.html\" }\n        ]\n      }\n    ]\n  }"
 }
 -->
 <body id="top">
@@ -27,15 +29,15 @@
           <ol>
             <li><a href="../index.html">Home</a></li>
             <li><a href="../games.html">Games</a></li>
-            <li><span aria-current="page">Les Veilleurs de Brume</span></li>
+            <li><span aria-current="page">The Mist Watchers</span></li>
           </ol>
         </nav>
 
         <h1 id="game-title" class="page-hero__title">
-          <span class="page-hero__kicker">FLX-01 · In development</span>
+          <span class="page-hero__kicker">FLX-01 · Flagship production · Godot 4.3</span>
           <span class="page-hero__display">
-            <span class="split-word"><span>LES VEILLEURS</span></span>
-            <span class="split-word"><span class="text-ember">DE BRUME</span></span>
+            <span class="split-word"><span>THE MIST</span></span>
+            <span class="split-word"><span class="text-ember">WATCHERS</span></span>
           </span>
         </h1>
       </div>
@@ -43,41 +45,116 @@
 
     <hr class="rule">
 
-    <section class="section">
+    <section class="section" aria-labelledby="pitch-heading">
       <div class="container-flx">
         <div class="grid gap-12 lg:grid-cols-12 lg:items-start">
           <div class="lg:col-span-5">
-            <figure class="media-frame aspect-[4/5]">
-              <img src="../../assets/images/games/projet-01.webp" width="800" height="1000" alt="Artwork for Les Veilleurs de Brume" loading="eager">
+            <figure class="media-frame aspect-[4/5]" data-mask-reveal>
+              <img src="../../assets/images/games/projet-01.webp" width="800" height="1000" alt="Artwork for The Mist Watchers" loading="eager">
+              <figcaption class="media-frame__caption tag">FLX-01 · In development</figcaption>
             </figure>
           </div>
 
-          <div class="lg:col-span-7 prose-flx">
-            <span class="status status--dev">In development</span>
-            <h2 class="h-sub mt-6">Listen to what the mist hides</h2>
+          <div class="lg:col-span-7 prose-flx" data-reveal>
+            <span class="status status--dev">In development · Target Q4 2027</span>
+            <h2 id="pitch-heading" class="h-sub mt-6">Listen to what the mist hides</h2>
             <p class="mt-4">
-              In a city swallowed by clouds, a cartographer follows luminous beacons that emerge every night. Explore shifting ruins, piece together the inhabitants’ memories, and decide what to bring back to the surface.
+              Perched atop limestone arches above a perpetual sea of clouds, the city of Ombrefalaise only reveals itself at dusk. Every night, ancient optical lighthouses ignite across its sunken districts, carving fleeting corridors through shifting fog that erases yesterday’s charts.
+            </p>
+            <p>
+              You play as Nara, a night cartographer equipped with an acoustic astrolabe and a prism lantern. By triangulating lighthouse beams and decoding resonant echoes left by vanished citizens, you choose which fragments of history survive in the Grand Atlas before the mist swallows them forever.
             </p>
 
-            <dl class="game-card__facts mt-10">
-              <dt>Studio</dt><dd>Flexarion (Aix-en-Provence, France)</dd>
-              <dt>Genre</dt><dd>Narrative adventure</dd>
-              <dt>Platform</dt><dd>PC</dd>
-              <dt>Status</dt><dd>In development</dd>
-            </dl>
-
-            <div class="mt-10 flex flex-wrap gap-4">
-              <a href="../games.html" class="btn">Back to games</a>
-              <a href="../devlog.html#log-03" class="btn">Read Devlog</a>
-              <a href="../contact.html" class="btn btn--primary" data-magnetic>
-                <span>Talk to the team</span>
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <button type="button" class="btn btn--primary" data-wishlist-btn="The Mist Watchers" data-magnetic>
+                <span>Add to Steam / Itch.io Wishlist</span>
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+              <a href="../devlog.html#log-01" class="btn" data-magnetic>
+                <span>Read Godot 4 devlog</span>
               </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <hr class="rule">
+
+    <section class="section section--coal" aria-labelledby="pillars-heading">
+      <div class="container-flx">
+        <div class="section-head">
+          <span class="eyebrow">01 / Gameplay pillars</span>
+          <h2 id="pillars-heading" class="h-section mt-4" data-split>
+            Three pillars at the core
+          </h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3" data-reveal-stagger>
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pillar 01 · Dynamic cartography</span>
+            <h3 class="h-sub mt-3">Chart the city live</h3>
+            <p>Your map is never static: measure angles between beacons, sketch wind currents, and plot safe routes directly inside an interactive field journal.</p>
+          </article>
+
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pillar 02 · Light &amp; Wind</span>
+            <h3 class="h-sub mt-3">Carve through the fog</h3>
+            <p>Rotate belvedere mirrors to slice through wind-reactive volumetric mist, uncover forgotten walkways, and power ancient mechanical relays.</p>
+          </article>
+
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pillar 03 · Selective memory</span>
+            <h3 class="h-sub mt-3">Choose what endures</h3>
+            <p>Each expedition demands narrative choices: your lantern can only preserve a limited number of acoustic echoes, shaping the upper city’s fate.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="specs-heading">
+      <div class="container-flx">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">02 / Technical sheet</span>
+            <h2 id="specs-heading" class="h-section mt-4" data-split>
+              Specs &amp; Requirements
+            </h2>
+          </div>
+          <p class="lead" data-reveal>
+            Engineered to run smoothly on modest hardware via a lean Forward+ pipeline in Godot 4.3.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2" data-reveal-stagger>
+          <div class="contact-card" data-reveal>
+            <p class="mono text-ember">Production overview</p>
+            <dl class="specs-list">
+              <div class="specs-list__row"><dt>Engine</dt><dd>Godot 4.3</dd></div>
+              <div class="specs-list__row"><dt>Release window</dt><dd>Q4 2027 (estimated)</dd></div>
+              <div class="specs-list__row"><dt>Platforms</dt><dd>PC (Windows, Linux)</dd></div>
+              <div class="specs-list__row"><dt>Languages</dt><dd>English, French (audio &amp; text)</dd></div>
+              <div class="specs-list__row"><dt>Studio</dt><dd>Flexarion (Aix-en-Provence)</dd></div>
+            </dl>
+          </div>
+
+          <div class="contact-card" data-reveal>
+            <p class="mono text-ember">Estimated minimum PC specs</p>
+            <dl class="specs-list">
+              <div class="specs-list__row"><dt>OS</dt><dd>Windows 10/11 64-bit · Ubuntu 22.04+</dd></div>
+              <div class="specs-list__row"><dt>CPU</dt><dd>Intel Core i5-8400 / Ryzen 5 2600</dd></div>
+              <div class="specs-list__row"><dt>Memory</dt><dd>8 GB RAM</dd></div>
+              <div class="specs-list__row"><dt>GPU</dt><dd>GTX 1060 6 GB / RX 580</dd></div>
+              <div class="specs-list__row"><dt>Storage</dt><dd>6 GB available space (SSD recommended)</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    {{> newsletter}}
   </main>
 
   {{> footer}}

@@ -5,14 +5,16 @@
   "nav": "games",
   "inSubdir": true,
   "prefix": "../../",
+  "animations": true,
+  "scripts": ["js/wishlist.js", "js/newsletter.js"],
   "canonical": "en/games/lisiere.html",
   "frPath": "games/lisiere.html",
   "enPath": "en/games/lisiere.html",
   "title": "Lisière | Flexarion Game",
-  "description": "Lisière is a contemplative puzzle game in preparation at Flexarion, an independent game studio in Aix-en-Provence.",
+  "description": "Lisière is a contemplative acoustic puzzle game built in Godot 4 by independent studio Flexarion in Aix-en-Provence.",
   "ogImageAlt": "Lisière — Independent game by Flexarion.",
   "sitemap": { "changefreq": "monthly", "priority": "0.7" },
-  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Lisière\",\n        \"url\": \"https://flexarion.timeoms.fr/en/games/lisiere.html\",\n        \"description\": \"A contemplative puzzle game on the border between forest and memory, built around light and sound.\",\n        \"genre\": \"Contemplative puzzle\",\n        \"gamePlatform\": [\"PC\", \"Mobile\"],\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"en-US\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://flexarion.timeoms.fr/en/index.html\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Games\", \"item\": \"https://flexarion.timeoms.fr/en/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Lisière\", \"item\": \"https://flexarion.timeoms.fr/en/games/lisiere.html\" }\n        ]\n      }\n    ]\n  }"
+  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"VideoGame\",\n        \"name\": \"Lisière\",\n        \"url\": \"https://flexarion.timeoms.fr/en/games/lisiere.html\",\n        \"description\": \"Contemplative puzzle game in Godot 4 on the border between forest and memory, built around procedural audio synthesis and light.\",\n        \"genre\": \"Contemplative puzzle\",\n        \"gamePlatform\": [\"PC\", \"Mobile\"],\n        \"applicationCategory\": \"Game\",\n        \"author\": { \"@type\": \"Organization\", \"name\": \"Flexarion\", \"url\": \"https://flexarion.timeoms.fr/\" },\n        \"inLanguage\": \"en-US\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://flexarion.timeoms.fr/en/index.html\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Games\", \"item\": \"https://flexarion.timeoms.fr/en/games.html\" },\n          { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Lisière\", \"item\": \"https://flexarion.timeoms.fr/en/games/lisiere.html\" }\n        ]\n      }\n    ]\n  }"
 }
 -->
 <body id="top">
@@ -32,7 +34,7 @@
         </nav>
 
         <h1 id="game-title" class="page-hero__title">
-          <span class="page-hero__kicker">FLX-03 · Coming soon</span>
+          <span class="page-hero__kicker">FLX-03 · R&amp;D Prototype · Godot 4</span>
           <span class="page-hero__display">
             <span class="split-word"><span>LISIÈRE</span></span>
           </span>
@@ -42,40 +44,116 @@
 
     <hr class="rule">
 
-    <section class="section">
+    <section class="section" aria-labelledby="pitch-heading">
       <div class="container-flx">
         <div class="grid gap-12 lg:grid-cols-12 lg:items-start">
           <div class="lg:col-span-5">
-            <figure class="media-frame aspect-[4/5]">
+            <figure class="media-frame aspect-[4/5]" data-mask-reveal>
               <img src="../../assets/images/games/projet-03.webp" width="800" height="1000" alt="Artwork for Lisière" loading="eager">
+              <figcaption class="media-frame__caption tag">FLX-03 · Future exploration</figcaption>
             </figure>
           </div>
 
-          <div class="lg:col-span-7 prose-flx">
-            <span class="status status--soon">Coming soon</span>
-            <h2 class="h-sub mt-6">Memory grows toward the light</h2>
+          <div class="lg:col-span-7 prose-flx" data-reveal>
+            <span class="status status--soon">Exploration · Target 2028</span>
+            <h2 id="pitch-heading" class="h-sub mt-6">Memory grows toward the light</h2>
             <p class="mt-4">
-              Lisière is a contemplative puzzle game where every sound reveals a path. Bring a living forest and a traveler’s memories into dialogue to reconstruct the shape of a vanished place.
+              At the edge of a quiet pine forest and a village abandoned forty years ago, the trees respond to acoustic frequencies like living tuning forks. Every clearing holds a frozen memory waiting to be harmonized.
+            </p>
+            <p>
+              With no dialogue boxes and no timers, <em>Lisière</em> invites you to reposition acoustic stones, part the canopy to let sunbeams fall, and compose an organic polyphony that slowly unveils the shape of a vanished place.
             </p>
 
-            <dl class="game-card__facts mt-10">
-              <dt>Studio</dt><dd>Flexarion (Aix-en-Provence, France)</dd>
-              <dt>Genre</dt><dd>Contemplative puzzle</dd>
-              <dt>Platforms</dt><dd>PC, Mobile</dd>
-              <dt>Status</dt><dd>Coming soon</dd>
-            </dl>
-
-            <div class="mt-10 flex flex-wrap gap-4">
-              <a href="../games.html" class="btn">Back to games</a>
-              <a href="../contact.html" class="btn btn--primary" data-magnetic>
-                <span>Talk to the team</span>
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <button type="button" class="btn btn--primary" data-wishlist-btn="Lisière" data-magnetic>
+                <span>Add to Steam / Itch.io Wishlist</span>
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+              <a href="../devlog.html#log-03" class="btn" data-magnetic>
+                <span>Read audio devlog</span>
               </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <hr class="rule">
+
+    <section class="section section--coal" aria-labelledby="pillars-heading">
+      <div class="container-flx">
+        <div class="section-head">
+          <span class="eyebrow">01 / Gameplay pillars</span>
+          <h2 id="pillars-heading" class="h-section mt-4" data-split>
+            Listen to solve
+          </h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3" data-reveal-stagger>
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pillar 01 · Spatial resonance</span>
+            <h3 class="h-sub mt-3">Sound as mechanics</h3>
+            <p>Each standing stone modulates the pitch, filter cutoff, and reverb of a live synth pad to guide you toward harmonic alignment.</p>
+          </article>
+
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pillar 02 · Living botany</span>
+            <h3 class="h-sub mt-3">Reactive clearings</h3>
+            <p>Foliage blooms or retracts based on sunlight angles and acoustic harmony, uncovering hidden trails across the woods.</p>
+          </article>
+
+          <article class="value-card" data-reveal>
+            <span class="mono text-ember">Pillar 03 · Wordless narrative</span>
+            <h3 class="h-sub mt-3">Zero mandatory text</h3>
+            <p>The story unfolds strictly through light, ruin topography, and the forest’s musical evolution—universally readable in any language.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="specs-heading">
+      <div class="container-flx">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">02 / Technical sheet</span>
+            <h2 id="specs-heading" class="h-section mt-4" data-split>
+              Specs &amp; Requirements
+            </h2>
+          </div>
+          <p class="lead" data-reveal>
+            Built in Godot 4 with a lightweight procedural audio engine tailored for both desktop and touch devices.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2" data-reveal-stagger>
+          <div class="contact-card" data-reveal>
+            <p class="mono text-ember">Production overview</p>
+            <dl class="specs-list">
+              <div class="specs-list__row"><dt>Engine</dt><dd>Godot 4</dd></div>
+              <div class="specs-list__row"><dt>Target window</dt><dd>2028 (post-FLX-01)</dd></div>
+              <div class="specs-list__row"><dt>Platforms</dt><dd>PC, Mobile (iOS / Android)</dd></div>
+              <div class="specs-list__row"><dt>Languages</dt><dd>English, French (UI)</dd></div>
+              <div class="specs-list__row"><dt>Studio</dt><dd>Flexarion (Aix-en-Provence)</dd></div>
+            </dl>
+          </div>
+
+          <div class="contact-card" data-reveal>
+            <p class="mono text-ember">Estimated minimum PC specs</p>
+            <dl class="specs-list">
+              <div class="specs-list__row"><dt>OS</dt><dd>Windows 10 · macOS 12 · Linux</dd></div>
+              <div class="specs-list__row"><dt>CPU</dt><dd>Dual-core 2.0 GHz</dd></div>
+              <div class="specs-list__row"><dt>Memory</dt><dd>4 GB RAM</dd></div>
+              <div class="specs-list__row"><dt>GPU</dt><dd>Intel Iris Xe / Vulkan compatible</dd></div>
+              <div class="specs-list__row"><dt>Storage</dt><dd>2 GB available space</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    {{> newsletter}}
   </main>
 
   {{> footer}}

@@ -196,61 +196,9 @@
   }
 
   /* ------------------------------------------------------------------------
-   * 4. TRANSITIONS DE PAGE
-   *    Sortie : rideau orange animé par GSAP, puis navigation classique.
-   *    Entrée : drapeau sessionStorage lu en <head> → animation CSS pure.
-   *    Les liens restent de vrais liens <a href> crawlables.
-   * --------------------------------------------------------------------- */
-  function initPageTransitions() {
-    var curtain = document.querySelector('.page-curtain');
-    if (!curtain) return;
-    var leaving = false;
-
-    // Retour arrière (bfcache) et nettoyage à l'entrée.
-    window.addEventListener('pageshow', function (e) {
-      leaving = false;
-      root.classList.remove('pt-leave');
-      var shouldAnimateEntry = e.persisted || root.classList.contains('pt-enter');
-      if (e.persisted) root.classList.add('pt-enter');
-      if (shouldAnimateEntry) {
-        window.setTimeout(function () { root.classList.remove('pt-enter'); }, 600);
-      }
-      if (window.gsap) window.gsap.set(curtain, { scaleY: 0 });
-      else curtain.style.transform = 'scaleY(0)';
-    });
-
-    document.addEventListener('click', function (e) {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      var link = e.target.closest('a[href]');
-      if (!link || reduceMotion.matches || leaving) return;
-      if (link.target && link.target !== '_self') return;
-      if (link.hasAttribute('download') || link.hasAttribute('data-no-transition')) return;
-
-      var href = link.getAttribute('href');
-      if (!href || href.charAt(0) === '#' || /^(mailto|tel|javascript):/i.test(href)) return;
-
-      var url = new URL(link.href, window.location.href);
-      if (url.origin !== window.location.origin) return;
-      // Même page avec ancre : laisser le défilement natif.
-      if (url.pathname === window.location.pathname && url.hash) return;
-
-      e.preventDefault();
-      leaving = true;
-      try { sessionStorage.setItem('flx-pt', '1'); } catch (err) { /* navigation privée */ }
-      root.classList.add('pt-leave');
-      var navigate = function () { window.location.href = url.href; };
-      if (!window.gsap) {
-        window.setTimeout(navigate, 320);
-        return;
-      }
-      window.gsap.timeline({ onComplete: navigate })
-        .set(curtain, { transformOrigin: 'bottom', scaleY: 0 })
-        .to(curtain, { scaleY: 1, duration: 0.32, ease: 'expo.inOut' });
-    });
-  }
-
-  /* ------------------------------------------------------------------------
-   * 5. PRÉCHARGEMENT AU SURVOL DES LIENS INTERNES
+   * 4. PRÉCHARGEMENT AU SURVOL DES LIENS INTERNES
+   *    La transition visuelle entre pages est assurée nativement par CSS
+   *    (@view-transition { navigation: auto; }) sans blocage JavaScript.
    * --------------------------------------------------------------------- */
   function initLinkPrefetch() {
     var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
@@ -258,7 +206,7 @@
     var prefetched = Object.create(null);
 
     function prefetch(link) {
-      if (!link || link.target && link.target !== '_self') return;
+      if (!link || (link.target && link.target !== '_self')) return;
       if (link.hasAttribute('download')) return;
       var href = link.getAttribute('href');
       if (!href || href.charAt(0) === '#' || /^(mailto|tel|javascript):/i.test(href)) return;
@@ -287,7 +235,7 @@
   }
 
   /* ------------------------------------------------------------------------
-   * 6. DIVERS
+   * 5. DIVERS
    * --------------------------------------------------------------------- */
   function initYear() {
     var year = String(new Date().getFullYear());
@@ -303,7 +251,6 @@
     hydrateBindings();
     initHeader();
     initMobileMenu();
-    initPageTransitions();
     initLinkPrefetch();
     initYear();
   }

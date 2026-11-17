@@ -3,14 +3,16 @@
   "out": "en/devlog.html",
   "lang": "en",
   "nav": "devlog",
+  "animations": true,
+  "scripts": ["js/newsletter.js"],
   "canonical": "en/devlog.html",
   "frPath": "devlog.html",
   "enPath": "en/devlog.html",
-  "title": "Devlog | Development Journal — Flexarion Studio",
-  "description": "Follow development notes, technical research, and production milestones from independent game studio Flexarion in Aix-en-Provence.",
-  "ogImageAlt": "Flexarion Studio Development Log.",
+  "title": "Devlog | Technical Engineering Log — Flexarion Studio",
+  "description": "Technical devlog by Flexarion Studio: wind-reactive volumetric fog in Godot 4, cel-shaded Mediterranean lighting in UE5, and procedural audio synthesis.",
+  "ogImageAlt": "Flexarion Studio Technical Devlog.",
   "sitemap": { "changefreq": "weekly", "priority": "0.7" },
-  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"Blog\",\n        \"@id\": \"https://flexarion.timeoms.fr/en/devlog.html#webpage\",\n        \"url\": \"https://flexarion.timeoms.fr/en/devlog.html\",\n        \"name\": \"Devlog | Development Journal — Flexarion Studio\",\n        \"isPartOf\": { \"@id\": \"https://flexarion.timeoms.fr/#website\" },\n        \"publisher\": { \"@id\": \"https://flexarion.timeoms.fr/#organization\" },\n        \"inLanguage\": \"en-US\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://flexarion.timeoms.fr/en/index.html\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Devlog\", \"item\": \"https://flexarion.timeoms.fr/en/devlog.html\" }\n        ]\n      }\n    ]\n  }"
+  "jsonLd": "  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"Blog\",\n        \"@id\": \"https://flexarion.timeoms.fr/en/devlog.html#webpage\",\n        \"url\": \"https://flexarion.timeoms.fr/en/devlog.html\",\n        \"name\": \"Devlog | Technical Engineering Log — Flexarion Studio\",\n        \"isPartOf\": { \"@id\": \"https://flexarion.timeoms.fr/#website\" },\n        \"publisher\": { \"@id\": \"https://flexarion.timeoms.fr/#organization\" },\n        \"inLanguage\": \"en-US\"\n      },\n      {\n        \"@type\": \"BreadcrumbList\",\n        \"itemListElement\": [\n          { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://flexarion.timeoms.fr/en/index.html\" },\n          { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Devlog\", \"item\": \"https://flexarion.timeoms.fr/en/devlog.html\" }\n        ]\n      }\n    ]\n  }"
 }
 -->
 <body id="top">
@@ -30,7 +32,7 @@
         </nav>
 
         <h1 id="devlog-hero-title" class="page-hero__title">
-          <span class="page-hero__kicker">Production notes — Behind the scenes</span>
+          <span class="page-hero__kicker">Technical log — Behind the scenes</span>
           <span class="page-hero__display">
             <span class="split-word"><span>STUDIO</span></span>
             <span class="split-word"><span class="text-ember">DEVLOG</span></span>
@@ -39,7 +41,7 @@
 
         <div class="mt-10 grid gap-8 lg:grid-cols-12 lg:items-end">
           <p class="lead lg:col-span-7" data-hero-fade>
-            Development logs documenting our prototyping milestones, visual research, and internal progress in Aix-en-Provence ahead of public reveals.
+            Engineering and art direction dispatches by Timéo, Hugo, and Enrique covering <em>The Mist Watchers</em> and our internal R&amp;D prototypes.
           </p>
           <div class="lg:col-span-5 lg:flex lg:justify-end" data-hero-fade>
             <a href="../feed.xml" class="btn btn--small" data-no-transition>
@@ -61,16 +63,17 @@
           <article id="log-03" class="devlog-card" data-reveal>
             <div class="devlog-card__meta">
               <span class="tag">LOG #03</span>
-              <span class="status status--dev">FLX-01 · Les Veilleurs de Brume</span>
-              <time class="mono text-muted" datetime="2026-11-16">November 16, 2026</time>
+              <span class="status status--soon">FLX-03 · Lisière</span>
+              <time class="mono text-muted" datetime="2026-11-10">November 10, 2026</time>
+              <span class="mono text-muted">By Enrique Ruiz</span>
             </div>
-            <h3 class="h-sub mt-5">Les Veilleurs de Brume: Prototyping core mechanics &amp; gameplay loop</h3>
+            <h3 class="h-sub mt-5">Procedural Audio Architecture and Minimalist Synth Pads</h3>
             <div class="prose-flx mt-4">
               <p>
-                Before locking down environments or final art assets, our current tests on <a href="games/les-veilleurs-de-brume.html"><strong>Les Veilleurs de Brume</strong></a> focus purely on immediate feel on controller and keyboard: input responsiveness, movement clarity, and interaction pacing around the sunken city’s beacons.
+                In <a href="games/lisiere.html"><strong>Lisière</strong></a>, music is never a static pre-recorded WAV loop: every acoustic stone placed in a forest clearing acts as a live DSP node driving an additive synthesis graph (detuned sine oscillators, resonant low-pass filter, and modulated delay line) powered by Godot 4 and PipeWire.
               </p>
               <p>
-                Working in greybox lets us iterate quickly, test bold design hypotheses, and keep only what truly elevates the player experience.
+                As the player approaches a puzzle’s harmonic solution, phase beating settles cleanly into a pure fifth before parting the canopy. The whole synth graph uses under 1.8% of a single CPU core and preserves seamless musical continuity between clearings.
               </p>
             </div>
           </article>
@@ -78,13 +81,17 @@
           <article id="log-02" class="devlog-card" data-reveal>
             <div class="devlog-card__meta">
               <span class="tag">LOG #02</span>
-              <span class="mono text-ember">Art Direction</span>
-              <time class="mono text-muted" datetime="2026-11-01">November 1, 2026</time>
+              <span class="status status--soon">FLX-02 · Neon Calanques</span>
+              <time class="mono text-muted" datetime="2026-10-14">October 14, 2026</time>
+              <span class="mono text-muted">By Hugo Banti</span>
             </div>
-            <h3 class="h-sub mt-5">Light, contrast, and Flexarion’s visual grammar</h3>
+            <h3 class="h-sub mt-5">Art Direction: Translating Mediterranean Calanques Light into Cel-Shading</h3>
             <div class="prose-flx mt-4">
               <p>
-                Our visual research starts from a clear rule: silhouette readability and gameplay clarity come before visual clutter. We explore dark, high-contrast atmospheres punctuated by sharp light accents to guide the player’s eye naturally.
+                For the <a href="games/neon-calanques.html"><strong>Neon Calanques</strong></a> prototype in Unreal Engine 5, we wanted to avoid generic grey sci-fi tropes. We started from noon photo studies of Marseille’s Sormiou cliffs: blinding white limestone sliced by crisp cobalt-blue cast shadows.
+              </p>
+              <p>
+                Our custom post-process pass quantizes diffuse luminance into three sharp steps while keeping HDR bloom intact on neon signage and light wisps. Ink outlines combine depth and normal-edge discontinuities, dynamically thinning during high-speed parkour so silhouettes stay readable at full momentum.
               </p>
             </div>
           </article>
@@ -92,22 +99,27 @@
           <article id="log-01" class="devlog-card" data-reveal>
             <div class="devlog-card__meta">
               <span class="tag">LOG #01</span>
-              <span class="mono text-ember">Studio</span>
-              <time class="mono text-muted" datetime="2026-10-15">October 15, 2026</time>
+              <span class="status status--dev">FLX-01 · The Mist Watchers</span>
+              <time class="mono text-muted" datetime="2026-09-18">September 18, 2026</time>
+              <span class="mono text-muted">By Timéo Morsilli</span>
             </div>
-            <h3 class="h-sub mt-5">Launching the official Flexarion website</h3>
+            <h3 class="h-sub mt-5">Generating Wind-Reactive Volumetric Fog in Godot 4</h3>
             <div class="prose-flx mt-4">
               <p>
-                Our official bilingual site is now live, introducing <strong>Flexarion</strong> to players, fellow creators in southern France, and international partners.
+                In <a href="games/les-veilleurs-de-brume.html"><strong>The Mist Watchers</strong></a>, fog is not mere set dressing—it is the core navigation obstacle. We pair Godot 4.3’s volumetric <code>FogMaterial</code> with a 3D Worley-Perlin noise texture advected along a 15 Hz CPU wind vector field.
               </p>
               <p>
-                Visit <a href="studio.html">The Studio</a> to learn about our approach or browse our <a href="press.html">Press Kit</a> for media resources.
+                When Nara aims a lighthouse mirror or her prism lantern, a negative-density occlusion volume carves straight through the mist while injecting a warm scattering gradient. Capping froxel raymarching at 48 steps with temporal reprojection holds a steady 60 fps on a GTX 1060.
               </p>
             </div>
           </article>
         </div>
       </div>
     </section>
+
+    <hr class="rule">
+
+    {{> newsletter}}
 
   </main>
 

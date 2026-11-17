@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
-    (function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js');try{if(sessionStorage.getItem('flx-pt')){sessionStorage.removeItem('flx-pt');r.classList.add('pt-enter');}}catch(e){}window.__flxFailsafe=setTimeout(function(){r.classList.add('anim-fallback');},2500);})();
+    (function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js');window.__flxFailsafe=setTimeout(function(){r.classList.add('anim-fallback');},2500);})();
   </script>
 
-  <title>Devlog | Development Journal — Flexarion Studio</title>
-  <meta name="description" content="Follow development notes, technical research, and production milestones from independent game studio Flexarion in Aix-en-Provence.">
+  <title>Devlog | Technical Engineering Log — Flexarion Studio</title>
+  <meta name="description" content="Technical devlog by Flexarion Studio: wind-reactive volumetric fog in Godot 4, cel-shaded Mediterranean lighting in UE5, and procedural audio synthesis.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#090909">
   <link rel="canonical" href="https://flexarion.timeoms.fr/en/devlog.html">
@@ -18,21 +18,21 @@
 
   <meta property="og:url" content="https://flexarion.timeoms.fr/en/devlog.html">
   <meta property="og:site_name" content="Flexarion">
-  <meta property="og:title" content="Devlog | Development Journal — Flexarion Studio">
-  <meta property="og:description" content="Follow development notes, technical research, and production milestones from independent game studio Flexarion in Aix-en-Provence.">
+  <meta property="og:title" content="Devlog | Technical Engineering Log — Flexarion Studio">
+  <meta property="og:description" content="Technical devlog by Flexarion Studio: wind-reactive volumetric fog in Godot 4, cel-shaded Mediterranean lighting in UE5, and procedural audio synthesis.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://flexarion.timeoms.fr/assets/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Flexarion Studio Development Log.">
+  <meta property="og:image:alt" content="Flexarion Studio Technical Devlog.">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter / X Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Devlog | Development Journal — Flexarion Studio">
-  <meta name="twitter:description" content="Follow development notes, technical research, and production milestones from independent game studio Flexarion in Aix-en-Provence.">
+  <meta name="twitter:title" content="Devlog | Technical Engineering Log — Flexarion Studio">
+  <meta name="twitter:description" content="Technical devlog by Flexarion Studio: wind-reactive volumetric fog in Godot 4, cel-shaded Mediterranean lighting in UE5, and procedural audio synthesis.">
   <meta name="twitter:image" content="https://flexarion.timeoms.fr/assets/images/og-image.jpg">
-  <meta name="twitter:image:alt" content="Flexarion Studio Development Log.">
+  <meta name="twitter:image:alt" content="Flexarion Studio Technical Devlog.">
 
   <!-- Icônes & Manifest -->
   <link rel="icon" href="../favicon.ico" sizes="32x32">
@@ -59,7 +59,7 @@
         "@type": "Blog",
         "@id": "https://flexarion.timeoms.fr/en/devlog.html#webpage",
         "url": "https://flexarion.timeoms.fr/en/devlog.html",
-        "name": "Devlog | Development Journal — Flexarion Studio",
+        "name": "Devlog | Technical Engineering Log — Flexarion Studio",
         "isPartOf": { "@id": "https://flexarion.timeoms.fr/#website" },
         "publisher": { "@id": "https://flexarion.timeoms.fr/#organization" },
         "inLanguage": "en-US"
@@ -75,20 +75,16 @@
   }
   </script>
 
-  <!-- Scripts différés (GSAP + ScrollTrigger via CDN + modules Flexarion) -->
+  <!-- Scripts différés -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="../js/config.js" defer></script>
   <script src="../js/main.js" defer></script>
   <script src="../js/animations.js" defer></script>
+  <script src="../js/newsletter.js" defer></script>
 </head>
 <body id="top">
   <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- Rideau de transition entre pages -->
-  <div class="page-curtain" aria-hidden="true">
-    <span class="page-curtain__label">FLEXARION</span>
-  </div>
 
   <!-- En-tête & Navigation principale -->
   <header class="site-header" data-header>
@@ -115,11 +111,11 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="../devlog.html" class="lang-switch lang-switch--to-fr" hreflang="fr" aria-label="Switch site to French (Français)" title="Switch site to French (Français)">
-          <span class="lang-switch__target" aria-hidden="true">FR</span>
-          <svg class="lang-switch__arrow" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 8H3M6.5 4.5 3 8l3.5 3.5"/></svg>
-          <span class="lang-switch__current" aria-hidden="true">EN</span>
-        </a>
+        <nav class="lang-switch" aria-label="Language selector">
+          <a href="../devlog.html" class="lang-switch__item" lang="fr" hreflang="fr">FR</a>
+          <span class="lang-switch__sep" aria-hidden="true">|</span>
+          <a href="devlog.html" class="lang-switch__item font-bold text-[#FF5A1F]" lang="en" hreflang="en" aria-current="true">EN</a>
+        </nav>
         <a href="contact.html" class="btn btn--small header-cta" data-magnetic>
           <span>Start a conversation</span>
           <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -153,18 +149,17 @@
           <p class="mono text-muted">Independent studio · Aix-en-Provence</p>
           <a href="mailto:contact@flexarion.timeoms.fr" class="contact-email mt-2" data-email-link data-email-text>contact@flexarion.timeoms.fr</a>
         </div>
-        <a href="../devlog.html" class="lang-switch lang-switch--to-fr" hreflang="fr" aria-label="Switch site to French (Français)" title="Switch site to French (Français)">
-          <span class="lang-switch__target" aria-hidden="true">FR</span>
-          <svg class="lang-switch__arrow" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 8H3M6.5 4.5 3 8l3.5 3.5"/></svg>
-          <span class="lang-switch__current" aria-hidden="true">EN</span>
-        </a>
+        <nav class="lang-switch" aria-label="Language selector">
+          <a href="../devlog.html" class="lang-switch__item" lang="fr" hreflang="fr">FR</a>
+          <span class="lang-switch__sep" aria-hidden="true">|</span>
+          <a href="devlog.html" class="lang-switch__item font-bold text-[#FF5A1F]" lang="en" hreflang="en" aria-current="true">EN</a>
+        </nav>
       </div>
       <div class="social-list">
-        <a class="social-link" data-social="instagram" aria-label="Instagram — coming soon">Instagram <span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="tiktok" aria-label="TikTok — coming soon">TikTok <span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="youtube" aria-label="YouTube — coming soon">YouTube <span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="discord" aria-label="Discord — coming soon">Discord <span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="x" aria-label="X — coming soon">X <span class="social-link__soon">Soon</span></a>
+        <a href="https://bsky.app/profile/flexarion-studio.bsky.social" target="_blank" rel="noopener me" class="social-link" data-social="bluesky" aria-label="Flexarion on Bluesky (new tab)"><span>Bluesky</span></a>
+            <a href="https://www.youtube.com/@FlexarionStudio" target="_blank" rel="noopener me" class="social-link" data-social="youtube" aria-label="Flexarion on YouTube (new tab)"><span>YouTube</span></a>
+            <a href="https://flexarion.itch.io" target="_blank" rel="noopener me" class="social-link" data-social="itch" aria-label="Flexarion on Itch.io (new tab)"><span>Itch.io</span></a>
+            <a href="https://github.com/flexarion-studio" target="_blank" rel="noopener me" class="social-link" data-social="github" aria-label="Flexarion on GitHub (new tab)"><span>GitHub</span></a>
       </div>
     </div>
   </div>
@@ -181,7 +176,7 @@
         </nav>
 
         <h1 id="devlog-hero-title" class="page-hero__title">
-          <span class="page-hero__kicker">Production notes — Behind the scenes</span>
+          <span class="page-hero__kicker">Technical log — Behind the scenes</span>
           <span class="page-hero__display">
             <span class="split-word"><span>STUDIO</span></span>
             <span class="split-word"><span class="text-ember">DEVLOG</span></span>
@@ -190,7 +185,7 @@
 
         <div class="mt-10 grid gap-8 lg:grid-cols-12 lg:items-end">
           <p class="lead lg:col-span-7" data-hero-fade>
-            Development logs documenting our prototyping milestones, visual research, and internal progress in Aix-en-Provence ahead of public reveals.
+            Engineering and art direction dispatches by Timéo, Hugo, and Enrique covering <em>The Mist Watchers</em> and our internal R&amp;D prototypes.
           </p>
           <div class="lg:col-span-5 lg:flex lg:justify-end" data-hero-fade>
             <a href="../feed.xml" class="btn btn--small" data-no-transition>
@@ -212,16 +207,17 @@
           <article id="log-03" class="devlog-card" data-reveal>
             <div class="devlog-card__meta">
               <span class="tag">LOG #03</span>
-              <span class="status status--dev">FLX-01 · Les Veilleurs de Brume</span>
-              <time class="mono text-muted" datetime="2026-11-16">November 16, 2026</time>
+              <span class="status status--soon">FLX-03 · Lisière</span>
+              <time class="mono text-muted" datetime="2026-11-10">November 10, 2026</time>
+              <span class="mono text-muted">By Enrique Ruiz</span>
             </div>
-            <h3 class="h-sub mt-5">Les Veilleurs de Brume: Prototyping core mechanics &amp; gameplay loop</h3>
+            <h3 class="h-sub mt-5">Procedural Audio Architecture and Minimalist Synth Pads</h3>
             <div class="prose-flx mt-4">
               <p>
-                Before locking down environments or final art assets, our current tests on <a href="games/les-veilleurs-de-brume.html"><strong>Les Veilleurs de Brume</strong></a> focus purely on immediate feel on controller and keyboard: input responsiveness, movement clarity, and interaction pacing around the sunken city’s beacons.
+                In <a href="games/lisiere.html"><strong>Lisière</strong></a>, music is never a static pre-recorded WAV loop: every acoustic stone placed in a forest clearing acts as a live DSP node driving an additive synthesis graph (detuned sine oscillators, resonant low-pass filter, and modulated delay line) powered by Godot 4 and PipeWire.
               </p>
               <p>
-                Working in greybox lets us iterate quickly, test bold design hypotheses, and keep only what truly elevates the player experience.
+                As the player approaches a puzzle’s harmonic solution, phase beating settles cleanly into a pure fifth before parting the canopy. The whole synth graph uses under 1.8% of a single CPU core and preserves seamless musical continuity between clearings.
               </p>
             </div>
           </article>
@@ -229,13 +225,17 @@
           <article id="log-02" class="devlog-card" data-reveal>
             <div class="devlog-card__meta">
               <span class="tag">LOG #02</span>
-              <span class="mono text-ember">Art Direction</span>
-              <time class="mono text-muted" datetime="2026-11-01">November 1, 2026</time>
+              <span class="status status--soon">FLX-02 · Neon Calanques</span>
+              <time class="mono text-muted" datetime="2026-10-14">October 14, 2026</time>
+              <span class="mono text-muted">By Hugo Banti</span>
             </div>
-            <h3 class="h-sub mt-5">Light, contrast, and Flexarion’s visual grammar</h3>
+            <h3 class="h-sub mt-5">Art Direction: Translating Mediterranean Calanques Light into Cel-Shading</h3>
             <div class="prose-flx mt-4">
               <p>
-                Our visual research starts from a clear rule: silhouette readability and gameplay clarity come before visual clutter. We explore dark, high-contrast atmospheres punctuated by sharp light accents to guide the player’s eye naturally.
+                For the <a href="games/neon-calanques.html"><strong>Neon Calanques</strong></a> prototype in Unreal Engine 5, we wanted to avoid generic grey sci-fi tropes. We started from noon photo studies of Marseille’s Sormiou cliffs: blinding white limestone sliced by crisp cobalt-blue cast shadows.
+              </p>
+              <p>
+                Our custom post-process pass quantizes diffuse luminance into three sharp steps while keeping HDR bloom intact on neon signage and light wisps. Ink outlines combine depth and normal-edge discontinuities, dynamically thinning during high-speed parkour so silhouettes stay readable at full momentum.
               </p>
             </div>
           </article>
@@ -243,19 +243,72 @@
           <article id="log-01" class="devlog-card" data-reveal>
             <div class="devlog-card__meta">
               <span class="tag">LOG #01</span>
-              <span class="mono text-ember">Studio</span>
-              <time class="mono text-muted" datetime="2026-10-15">October 15, 2026</time>
+              <span class="status status--dev">FLX-01 · The Mist Watchers</span>
+              <time class="mono text-muted" datetime="2026-09-18">September 18, 2026</time>
+              <span class="mono text-muted">By Timéo Morsilli</span>
             </div>
-            <h3 class="h-sub mt-5">Launching the official Flexarion website</h3>
+            <h3 class="h-sub mt-5">Generating Wind-Reactive Volumetric Fog in Godot 4</h3>
             <div class="prose-flx mt-4">
               <p>
-                Our official bilingual site is now live, introducing <strong>Flexarion</strong> to players, fellow creators in southern France, and international partners.
+                In <a href="games/les-veilleurs-de-brume.html"><strong>The Mist Watchers</strong></a>, fog is not mere set dressing—it is the core navigation obstacle. We pair Godot 4.3’s volumetric <code>FogMaterial</code> with a 3D Worley-Perlin noise texture advected along a 15 Hz CPU wind vector field.
               </p>
               <p>
-                Visit <a href="studio.html">The Studio</a> to learn about our approach or browse our <a href="press.html">Press Kit</a> for media resources.
+                When Nara aims a lighthouse mirror or her prism lantern, a negative-density occlusion volume carves straight through the mist while injecting a warm scattering gradient. Capping froxel raymarching at 48 steps with temporal reprojection holds a steady 60 fps on a GTX 1060.
               </p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section class="section section--tight" aria-labelledby="newsletter-heading">
+      <div class="container-flx">
+        <div class="newsletter-box">
+          <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div class="lg:col-span-6">
+              <span class="eyebrow">Newsletter &amp; Playtests</span>
+              <h2 id="newsletter-heading" class="h-sub mt-4" style="font-size: clamp(1.6rem, 3vw, 2.4rem);">
+                Follow development &amp; access private demos
+              </h2>
+              <p class="mt-3 text-muted max-w-xl">
+                One concise dispatch per major milestone: devlog notes on The Mist Watchers, playtest invitations, and release dates. Zero spam.
+              </p>
+            </div>
+            <div class="lg:col-span-6">
+              <form class="form-grid" data-newsletter-form>
+                <div class="flex flex-col gap-3 sm:flex-row">
+                  <div class="field flex-1">
+                    <label for="nl-email" class="sr-only">Email address</label>
+                    <input
+                      type="email"
+                      id="nl-email"
+                      name="email"
+                      required
+                      autocomplete="email"
+                      placeholder="you@domain.com"
+                      aria-describedby="nl-email-error">
+                    <p id="nl-email-error" class="field__error" data-nl-email-error aria-live="polite"></p>
+                  </div>
+                  <button type="submit" class="btn btn--primary" data-magnetic>
+                    <span>Join waitlist</span>
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+                <div>
+                  <label class="newsletter-check" for="nl-consent">
+                    <input type="checkbox" id="nl-consent" name="consent" required aria-describedby="nl-consent-error">
+                    <span>
+                      I agree to receive Flexarion studio updates in accordance with the <a href="privacy.html" class="underline decoration-ember">privacy policy</a>.
+                    </span>
+                  </label>
+                  <p id="nl-consent-error" class="field__error mt-1" data-nl-consent-error aria-live="polite"></p>
+                </div>
+                <div class="form-status" data-nl-status tabindex="-1" role="status" aria-live="polite" hidden></div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -279,16 +332,14 @@
             Independent game development studio based in Aix-en-Provence, Provence-Alpes-Côte d’Azur, France.
           </p>
           <div class="social-list mt-6" aria-label="Flexarion social channels">
-            <a class="social-link" data-social="instagram" aria-label="Instagram — coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-              <span class="sr-only">Instagram</span><span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="tiktok" aria-label="TikTok — coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3v11.5a4.5 4.5 0 1 1-3.5-4.38"/><path d="M14 6.5c1.5 2 3.5 3 6 3"/></svg>
-              <span class="sr-only">TikTok</span><span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="youtube" aria-label="YouTube — coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>
-              <span class="sr-only">YouTube</span><span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="discord" aria-label="Discord — coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7.5 7.5a12 12 0 0 1 9 0l1.5 8a10 10 0 0 1-4.5 1.5l-1-1.5m-1 0-1 1.5A10 10 0 0 1 6 15.5l1.5-8Z"/><circle cx="9.5" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
-              <span class="sr-only">Discord</span><span class="social-link__soon">Soon</span></a>
-            <a class="social-link" data-social="x" aria-label="X — coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg>
-              <span class="sr-only">X</span><span class="social-link__soon">Soon</span></a>
+            <a href="https://bsky.app/profile/flexarion-studio.bsky.social" target="_blank" rel="noopener me" class="social-link" data-social="bluesky" aria-label="Flexarion on Bluesky (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 10.8C10.2 7.5 6.4 4.5 4.2 5.7c-1.8 1-1.3 5.2-.7 6.8.7 2 2.9 2.6 4.9 2.3-2.6.4-4.7 1.8-2.4 4.7 2.2 2.7 5-1.1 6-3.7 1 2.6 3.8 6.4 6 3.7 2.3-2.9.2-4.3-2.4-4.7 2 .3 4.2-.3 4.9-2.3.6-1.6 1.1-5.8-.7-6.8-2.2-1.2-6 1.8-7.8 5.1Z"/></svg>
+              <span class="sr-only">Bluesky</span></a>
+            <a href="https://www.youtube.com/@FlexarionStudio" target="_blank" rel="noopener me" class="social-link" data-social="youtube" aria-label="Flexarion on YouTube (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>
+              <span class="sr-only">YouTube</span></a>
+            <a href="https://flexarion.itch.io" target="_blank" rel="noopener me" class="social-link" data-social="itch" aria-label="Flexarion on Itch.io (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4.5 6.5 6 4h12l1.5 2.5v2a2 2 0 0 1-3.5 1.3 2 2 0 0 1-4 0 2 2 0 0 1-4 0A2 2 0 0 1 4.5 8.5v-2Z"/><path d="M5.5 10.5V19a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-8.5"/><path d="M9.5 15h5M12 12.5v5"/></svg>
+              <span class="sr-only">Itch.io</span></a>
+            <a href="https://github.com/flexarion-studio" target="_blank" rel="noopener me" class="social-link" data-social="github" aria-label="Flexarion on GitHub (new tab)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              <span class="sr-only">GitHub</span></a>
           </div>
         </div>
 

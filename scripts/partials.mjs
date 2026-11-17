@@ -14,13 +14,32 @@ const BRAND_SVG = `<svg class="brand__mark" viewBox="0 0 64 64" width="32" heigh
 
 const ARROW_SVG = `<svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>`;
 
-const SOCIAL_ICONS = {
-  instagram: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>`,
-  tiktok: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3v11.5a4.5 4.5 0 1 1-3.5-4.38"/><path d="M14 6.5c1.5 2 3.5 3 6 3"/></svg>`,
-  youtube: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>`,
-  discord: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7.5 7.5a12 12 0 0 1 9 0l1.5 8a10 10 0 0 1-4.5 1.5l-1-1.5m-1 0-1 1.5A10 10 0 0 1 6 15.5l1.5-8Z"/><circle cx="9.5" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg>`,
-  x: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg>`,
-};
+const SOCIAL_NETWORKS = [
+  {
+    key: 'bluesky',
+    name: 'Bluesky',
+    url: 'https://bsky.app/profile/flexarion-studio.bsky.social',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 10.8C10.2 7.5 6.4 4.5 4.2 5.7c-1.8 1-1.3 5.2-.7 6.8.7 2 2.9 2.6 4.9 2.3-2.6.4-4.7 1.8-2.4 4.7 2.2 2.7 5-1.1 6-3.7 1 2.6 3.8 6.4 6 3.7 2.3-2.9.2-4.3-2.4-4.7 2 .3 4.2-.3 4.9-2.3.6-1.6 1.1-5.8-.7-6.8-2.2-1.2-6 1.8-7.8 5.1Z"/></svg>`,
+  },
+  {
+    key: 'youtube',
+    name: 'YouTube',
+    url: 'https://www.youtube.com/@FlexarionStudio',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>`,
+  },
+  {
+    key: 'itch',
+    name: 'Itch.io',
+    url: 'https://flexarion.itch.io',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4.5 6.5 6 4h12l1.5 2.5v2a2 2 0 0 1-3.5 1.3 2 2 0 0 1-4 0 2 2 0 0 1-4 0A2 2 0 0 1 4.5 8.5v-2Z"/><path d="M5.5 10.5V19a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-8.5"/><path d="M9.5 15h5M12 12.5v5"/></svg>`,
+  },
+  {
+    key: 'github',
+    name: 'GitHub',
+    url: 'https://github.com/flexarion-studio',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>`,
+  },
+];
 
 const LABELS = {
   fr: {
@@ -32,8 +51,7 @@ const LABELS = {
     cta: 'Parler d’un projet',
     studioTagline: 'Studio indépendant · Aix-en-Provence',
     footerDesc: 'Studio indépendant de développement et création de jeux vidéo basé à Aix-en-Provence, Provence-Alpes-Côte d’Azur, France.',
-    soon: 'Bientôt',
-    soonAria: 'bientôt disponible',
+    newTab: 'nouvel onglet',
     socialAria: 'Réseaux sociaux de Flexarion',
     navTitle: 'Navigation',
     infoTitle: 'Informations',
@@ -68,8 +86,7 @@ const LABELS = {
     cta: 'Start a conversation',
     studioTagline: 'Independent studio · Aix-en-Provence',
     footerDesc: 'Independent game development studio based in Aix-en-Provence, Provence-Alpes-Côte d’Azur, France.',
-    soon: 'Soon',
-    soonAria: 'coming soon',
+    newTab: 'new tab',
     socialAria: 'Flexarion social channels',
     navTitle: 'Navigation',
     infoTitle: 'Information',
@@ -116,37 +133,30 @@ function navHref(meta, itemPath) {
 
 export function renderSocialList(lang, withIcons = true) {
   const t = LABELS[lang];
-  const nets = [
-    ['instagram', 'Instagram'],
-    ['tiktok', 'TikTok'],
-    ['youtube', 'YouTube'],
-    ['discord', 'Discord'],
-    ['x', 'X'],
-  ];
-  return nets
-    .map(([key, name]) => {
-      const icon = withIcons ? `${SOCIAL_ICONS[key]}\n              <span class="sr-only">${name}</span>` : `${name} `;
-      return `<a class="social-link" data-social="${key}" aria-label="${name} — ${t.soonAria}">${icon}<span class="social-link__soon">${t.soon}</span></a>`;
-    })
-    .join('\n            ');
+  return SOCIAL_NETWORKS.map((net) => {
+    const label = lang === 'en'
+      ? `Flexarion on ${net.name} (${t.newTab})`
+      : `${net.name} de Flexarion (${t.newTab})`;
+    const inner = withIcons
+      ? `${net.icon}\n              <span class="sr-only">${net.name}</span>`
+      : `<span>${net.name}</span>`;
+    return `<a href="${net.url}" target="_blank" rel="noopener me" class="social-link" data-social="${net.key}" aria-label="${label}">${inner}</a>`;
+  }).join('\n            ');
 }
 
 export function renderLangSwitch(meta) {
   const isFr = meta.lang === 'fr';
+  const t = LABELS[meta.lang];
   const frUrl = meta.frPath ? hrefFor(meta, meta.frPath) : hrefFor(meta, 'index.html');
   const enUrl = meta.enPath ? hrefFor(meta, meta.enPath) : hrefFor(meta, 'en/index.html');
-  const targetUrl = isFr ? enUrl : frUrl;
-  const targetLang = isFr ? 'en' : 'fr';
-  const label = isFr ? 'Passer le site en anglais (English)' : 'Switch site to French (Français)';
-  const arrowPath = isFr
-    ? 'M3 8h10M9.5 4.5 13 8l-3.5 3.5'
-    : 'M13 8H3M6.5 4.5 3 8l3.5 3.5';
+  const frClass = isFr ? 'lang-switch__item font-bold text-[#FF5A1F]' : 'lang-switch__item';
+  const enClass = !isFr ? 'lang-switch__item font-bold text-[#FF5A1F]' : 'lang-switch__item';
 
-  return `<a href="${targetUrl}" class="lang-switch ${isFr ? 'lang-switch--to-en' : 'lang-switch--to-fr'}" hreflang="${targetLang}" aria-label="${label}" title="${label}">
-          <span class="${isFr ? 'lang-switch__current' : 'lang-switch__target'}" aria-hidden="true">FR</span>
-          <svg class="lang-switch__arrow" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="${arrowPath}"/></svg>
-          <span class="${isFr ? 'lang-switch__target' : 'lang-switch__current'}" aria-hidden="true">EN</span>
-        </a>`;
+  return `<nav class="lang-switch" aria-label="${t.langSwitchAria}">
+          <a href="${frUrl}" class="${frClass}" lang="fr" hreflang="fr"${isFr ? ' aria-current="true"' : ''}>FR</a>
+          <span class="lang-switch__sep" aria-hidden="true">|</span>
+          <a href="${enUrl}" class="${enClass}" lang="en" hreflang="en"${!isFr ? ' aria-current="true"' : ''}>EN</a>
+        </nav>`;
 }
 
 export function renderHeader(meta) {
@@ -161,11 +171,6 @@ export function renderHeader(meta) {
     .join('\n');
 
   return `<a href="#main-content" class="skip-link">${t.skip}</a>
-
-  <!-- Rideau de transition entre pages -->
-  <div class="page-curtain" aria-hidden="true">
-    <span class="page-curtain__label">FLEXARION</span>
-  </div>
 
   <!-- En-tête & Navigation principale -->
   <header class="site-header" data-header>
@@ -228,6 +233,66 @@ ${list}
       </div>
     </div>
   </div>`;
+}
+
+export function renderNewsletter(meta) {
+  const isEn = meta.lang === 'en';
+  const privacyHref = navHref(meta, 'privacy.html');
+  return `<section class="section section--tight" aria-labelledby="newsletter-heading">
+      <div class="container-flx">
+        <div class="newsletter-box">
+          <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div class="lg:col-span-6">
+              <span class="eyebrow">${isEn ? 'Newsletter &amp; Playtests' : 'Infolettre &amp; Playtests'}</span>
+              <h2 id="newsletter-heading" class="h-sub mt-4" style="font-size: clamp(1.6rem, 3vw, 2.4rem);">
+                ${isEn
+                  ? 'Follow development &amp; access private demos'
+                  : 'Suivre le développement &amp; accéder aux démos privées'}
+              </h2>
+              <p class="mt-3 text-muted max-w-xl">
+                ${isEn
+                  ? 'One concise dispatch per major milestone: devlog notes on The Mist Watchers, playtest invitations, and release dates. Zero spam.'
+                  : 'Un message par jalon majeur : notes de devlog sur Les Veilleurs de Brume, invitations aux playtests privés et dates d’annonce. Zéro spam.'}
+              </p>
+            </div>
+            <div class="lg:col-span-6">
+              <form class="form-grid" data-newsletter-form>
+                <div class="flex flex-col gap-3 sm:flex-row">
+                  <div class="field flex-1">
+                    <label for="nl-email" class="sr-only">${isEn ? 'Email address' : 'Adresse e-mail'}</label>
+                    <input
+                      type="email"
+                      id="nl-email"
+                      name="email"
+                      required
+                      autocomplete="email"
+                      placeholder="${isEn ? 'you@domain.com' : 'vous@domaine.fr'}"
+                      aria-describedby="nl-email-error">
+                    <p id="nl-email-error" class="field__error" data-nl-email-error aria-live="polite"></p>
+                  </div>
+                  <button type="submit" class="btn btn--primary" data-magnetic>
+                    <span>${isEn ? 'Join waitlist' : 'S’inscrire'}</span>
+                    ${ARROW_SVG}
+                  </button>
+                </div>
+                <div>
+                  <label class="newsletter-check" for="nl-consent">
+                    <input type="checkbox" id="nl-consent" name="consent" required aria-describedby="nl-consent-error">
+                    <span>
+                      ${isEn
+                        ? `I agree to receive Flexarion studio updates in accordance with the <a href="${privacyHref}" class="underline decoration-ember">privacy policy</a>.`
+                        : `J’accepte de recevoir les actualités du studio Flexarion conformément à la <a href="${privacyHref}" class="underline decoration-ember">politique de confidentialité</a>.`}
+                    </span>
+                  </label>
+                  <p id="nl-consent-error" class="field__error mt-1" data-nl-consent-error aria-live="polite"></p>
+                </div>
+                <div class="form-status" data-nl-status tabindex="-1" role="status" aria-live="polite" hidden></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>`;
 }
 
 export function renderFooter(meta) {
@@ -360,13 +425,24 @@ export function renderHeadCommon(meta) {
     ? `\n  <!-- Données structurées Schema.org (JSON-LD) -->\n  <script type="application/ld+json">\n${meta.jsonLd}\n  </script>`
     : '';
 
+  const useAnimations = !!meta.animations;
+  const bootScript = useAnimations
+    ? `(function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js');window.__flxFailsafe=setTimeout(function(){r.classList.add('anim-fallback');},2500);})();`
+    : `(function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js','anim-fallback');})();`;
+
+  const gsapScripts = useAnimations
+    ? `\n  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>\n  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>`
+    : '';
+
+  const animScript = useAnimations ? `\n  <script src="${p}js/animations.js" defer></script>` : '';
+
   return `<!DOCTYPE html>
 <html lang="${meta.lang}" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
-    (function(){var r=document.documentElement;r.classList.remove('no-js');r.classList.add('js');try{if(sessionStorage.getItem('flx-pt')){sessionStorage.removeItem('flx-pt');r.classList.add('pt-enter');}}catch(e){}window.__flxFailsafe=setTimeout(function(){r.classList.add('anim-fallback');},2500);})();
+    ${bootScript}
   </script>
 
   <title>${meta.title}</title>
@@ -392,11 +468,8 @@ ${socialMeta}
   <link rel="stylesheet" href="${p}css/style.css">
   <link rel="stylesheet" href="${p}css/responsive.css">${jsonLd}
 
-  <!-- Scripts différés (GSAP + ScrollTrigger via CDN + modules Flexarion) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <!-- Scripts différés -->${gsapScripts}
   <script src="${p}js/config.js" defer></script>
-  <script src="${p}js/main.js" defer></script>
-  <script src="${p}js/animations.js" defer></script>${extraScripts}
+  <script src="${p}js/main.js" defer></script>${animScript}${extraScripts}
 </head>`;
 }
