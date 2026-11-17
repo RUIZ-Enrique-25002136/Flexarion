@@ -1,10 +1,10 @@
 # ============================================================================
 # FLEXARION — robots.txt
-# Domaine officiel à remplacer : https://www.flexarion.timeoms.fr
+# Domaine officiel à remplacer : https://flexarion.timeoms.fr
 # ============================================================================
 
 User-agent: *
 Allow: /
 
 # Emplacement du plan du site XML
-Sitemap: https://www.flexarion.timeoms.fr/sitemap.xml
+Sitemap: https://flexarion.timeoms.fr/sitemap.xml

@@ -57,7 +57,7 @@ flexarion/
 
 Toutes les données provisoires sont repérables par la classe `.ph` ou les occurrences suivantes :
 
-1. **Domaine officiel** : le site est configuré pour `https://www.flexarion.timeoms.fr` dans les pages HTML, `robots.txt`, `sitemap.xml` et `js/config.js`.
+1. **Domaine officiel** : le site est configuré pour `https://flexarion.timeoms.fr` dans les pages HTML, `robots.txt`, `sitemap.xml` et `js/config.js`.
 2. **Adresse e-mail** : l’adresse publique configurée est `contact@flexarion.timeoms.fr` ; remplacez-la si nécessaire dans `js/config.js` et les fichiers HTML.
 3. **Réseaux sociaux** : renseigner les URLs officielles (Instagram, TikTok, YouTube, Discord, X) dans `js/config.js` et les ajouter dans le tableau `"sameAs"` du JSON-LD `Organization` (`index.html`, `studio.html`).
 4. **Équipe** : renseigner les rôles et biographies dans `js/config.js`, `index.html`, `studio.html` et `credits.html`, puis remplacer les portraits dans `assets/images/team/`.
