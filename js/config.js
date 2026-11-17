@@ -16,7 +16,9 @@
  * ============================================================================
  */
 window.FLEXARION_CONFIG = Object.freeze({
-  siteUrl: 'https://www.flexarion.timeoms.fr',
+  /* Domaine officiel (sans barre oblique finale). À remplacer partout :
+     rechercher « https://www.flexarion.example » dans le projet. */
+  siteUrl: 'https://flexarion.timeoms.fr',
 
   studio: {
     name: 'Flexarion',
